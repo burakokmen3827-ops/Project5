@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop Creation Preview</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+
+  <style>
+    * {
+      font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body class="bg-transparent text-[#111827]">
+  <main class="min-h-screen w-full flex justify-center px-6 py-10">
+    <!-- OUTER WRAPPER -->
+    <div class="flex items-end gap-6">
+
+      <!-- CENTER COLUMN (ALL 3 CARDS SAME WIDTH & SAME CENTER) -->
+      <div class="w-[720px] flex flex-col gap-5">
+
+        <!-- CARD 1 -->
+        <div class="rounded-[18px] bg-white border border-black/10 px-6 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.12)]">
+          <div class="flex items-center gap-2 text-[18px]">
+            <span class="font-semibold">Preview</span>
+            <span class="text-black/30">·</span>
+            <span class="text-black/40">confirm before publishing</span>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="rounded-[18px] bg-white border border-black/10 px-6 py-5 shadow-[0_18px_40px_rgba(0,0,0,0.12)]">
+          <div class="flex justify-between">
+            <div class="text-[18px] font-semibold">Python functions</div>
+            <div class="text-[13px] text-black/45">30 min</div>
+          </div>
+
+          <div class="mt-4 flex items-center gap-6 text-[13px] text-black/55">
+            <span class="text-[20px] font-semibold text-[#2F62E9]">EN</span>
+            <div class="h-8 w-px bg-black/10"></div>
+            <div class="flex gap-10">
+              <div>
+                <div>OIL 4.30</div>
+                <div>01:30 PM</div>
+              </div>
+              <div>
+                <div>Avetyan, Rafayel</div>
+                <div>Software</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 grid grid-cols-2 gap-4">
+            <button class="h-[44px] rounded-[12px] bg-black/5 text-black/55">
+              View Details
+            </button>
+            <button class="h-[44px] rounded-[12px] bg-[#1F2D4B] text-white">
+              Sign up
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 3 (BIG ONE – SAME WIDTH) -->
+        <div class="rounded-[18px] bg-white border border-black/10 shadow-[0_18px_40px_rgba(0,0,0,0.12)] overflow-hidden">
+          <div class="px-6 py-4 border-b border-black/10 flex justify-between text-[13px] text-black/50">
+            <span>Week Jan 12 - 16 / <strong class="text-[#111827]">Thursday</strong></span>
+            <span class="font-semibold">Request</span>
+          </div>
+
+          <div class="px-6 py-6">
+            <div class="flex justify-between gap-6">
+              <div class="flex gap-5">
+                <div class="h-[72px] w-[72px] rounded-[18px] bg-[#E9ECFF]"></div>
+                <div>
+                  <div class="text-[22px] font-semibold">SQL Injection</div>
+                  <div class="mt-2 text-[13px] text-black/55">
+                    Deckers, Paul · English
+                  </div>
+                </div>
+              </div>
+
+              <button class="h-[40px] px-5 rounded-[12px] bg-[#1F2D4B] text-white">
+                Sign Up
+              </button>
+            </div>
+
+            <div class="mt-6 h-px bg-black/10"></div>
+
+            <div class="mt-6 grid grid-cols-[220px_1fr] gap-y-6 text-[14px]">
+              <div class="text-black/45">Topic</div>
+              <div class="flex gap-3">
+                <span class="px-3 h-[30px] flex items-center rounded-[10px] bg-[#E9F0FF] text-[#2F62E9] text-[12px] font-semibold">
+                  Cyber Security - (CS)
+                </span>
+                <span class="px-3 h-[30px] flex items-center rounded-[10px] bg-[#5259FF] text-white text-[12px] font-semibold">
+                  Software Engineering - (SWE)
+                </span>
+              </div>
+
+              <div class="text-black/45">Room</div>
+              <div>Fontys R10, OIL 4.30</div>
+
+              <div class="text-black/45">Date</div>
+              <div>Jan 15, 2026</div>
+
+              <div class="text-black/45">Time</div>
+              <div>01:30 AM</div>
+
+              <div class="text-black/45">Duration</div>
+              <div>30 min</div>
+
+              <div class="text-black/45">Description</div>
+              <div class="text-black/60">
+                Learn to identify and exploit SQL injection vulnerabilities
+                <span class="text-[#2F62E9] font-medium cursor-pointer">see more</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE BUTTONS (DO NOT AFFECT CENTER) -->
+      <div class="w-[260px] flex flex-col gap-3 pb-2">
+        <button class="h-[46px] rounded-[12px] bg-[#1F2D4B] text-white shadow-[0_10px_22px_rgba(0,0,0,0.18)]">
+          Schedule Workshop
+        </button>
+        <button class="h-[46px] rounded-[12px] bg-white border border-black/15 text-black/40">
+          Cancel
+        </button>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

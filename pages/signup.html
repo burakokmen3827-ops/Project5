@@ -14,7 +14,7 @@
     <style>
     * {
      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-     pointer-events: none; /* tamamen statik */
+     pointer-events: none; 
     }
     </style>
 
@@ -112,8 +112,19 @@
       </div>
     </div>
 
-    <!-- SAĞ PANEL -->
-   <div class="hidden lg:block lg:w-1/2 bg-[#1F2D4B] rounded-[20px]"></div>
+   <!-- SAĞ PANEL -->
+<div class="hidden lg:block lg:w-1/2 self-stretch">
+  <div class="relative h-full rounded-[20px] overflow-hidden bg-[#1F2D4B]">
+    <img
+  src="../assets/images/sidebanner.svg"
+  alt="Side Banner"
+  class="absolute inset-0 w-full h-full object-cover block"
+  style="transform: scale(1);"
+  style="
+    object-position: 100% 100%;
+    transform: translateX(40px);
+  "
+/>
 
   </div>
 

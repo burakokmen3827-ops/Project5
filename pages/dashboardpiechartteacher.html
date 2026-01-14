@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop Forge – Dashboard</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+
+  <style>
+    * { font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    :root{
+      --page-bg:#F6F7FB;
+      --navy:#1F2D4B;
+      --muted:rgba(0,0,0,.55);
+      --line:rgba(0,0,0,.06);
+      --chip:#EEF0F6;
+      --link:#5A5BE7;
+      --radius:20px;
+      --shadow:0 10px 30px rgba(16,24,40,0.06);
+    }
+  </style>
+</head>
+
+<body class="bg-[var(--page-bg)] text-[#0F172A] overflow-hidden font-medium">
+  <div class="h-screen w-full flex overflow-hidden">
+
+    <!-- LEFT SIDEBAR (md+) -->
+    <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-6 flex-col items-center">
+      <div class="h-12 w-12 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
+        <img src="logo.svg" alt="Logo" class="h-7 w-7" />
+      </div>
+
+      <nav class="mt-8 flex flex-col gap-3">
+        <div class="h-11 w-11 rounded-2xl bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M4 10.5L12 4l8 6.5V20a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 20v-9.5Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M9 21v-7h6v7" stroke="white" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M3 12l9 5 9-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M3 16l9 5 9-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#1F2D4B" stroke-width="1.7"/>
+            <path d="M12 6v6l4 2" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M20 21a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z" stroke="#1F2D4B" stroke-width="1.7"/>
+          </svg>
+        </div>
+
+        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M3.5 7.5A2.5 2.5 0 0 1 6 5h4l2 2h6A2.5 2.5 0 0 1 20.5 9.5v9A2.5 2.5 0 0 1 18 21H6a2.5 2.5 0 0 1-2.5-2.5v-11Z" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </nav>
+
+      <div class="mt-auto flex flex-col gap-3">
+        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M10 17l-5-5 5-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="h-12 w-12 rounded-2xl bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
+          <div class="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">
+            <div class="h-7 w-7 rounded-full bg-white/30 flex items-center justify-center">
+              <div class="h-6 w-6 rounded-full bg-white"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 h-screen overflow-hidden py-6 px-4 md:px-6 lg:pr-6">
+      <div class="w-full 2xl:max-w-[1680px] 2xl:mx-auto h-full">
+        <div class="grid grid-cols-12 lg:grid-cols-3 gap-x-6 gap-y-4 h-full items-stretch">
+
+          <!-- LEFT COLUMN -->
+          <section class="col-span-12 lg:col-span-1 min-w-0 flex flex-col gap-4">
+            <!-- Header card -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 min-w-0">
+                  <div class="text-[18px] font-medium truncate">Today's workshops</div>
+                  <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">3</span>
+                </div>
+                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+              </div>
+            </div>
+
+            <!-- Python functions -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-[18px] font-medium truncate">Python functions</div>
+                <div class="text-[13px] text-[rgba(0,0,0,.45)] font-medium shrink-0">30 min</div>
+              </div>
+
+              <div class="mt-3 grid grid-cols-[auto_auto_1fr_auto_1fr] items-center gap-4">
+                <div class="shrink-0">
+                  <div class="text-[20px] font-medium text-[#3B4CCA] leading-none">EN</div>
+                </div>
+
+                <div class="flex justify-center"><div class="w-px h-10 bg-black/10"></div></div>
+
+                <div class="flex items-center gap-2 text-[13px] text-[var(--muted)] shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                    <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                  <span class="leading-4">
+                    OIL 4.30<br>
+                    <span class="text-[rgba(0,0,0,.35)] font-medium">01:30 PM</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-center"><div class="w-px h-10 bg-black/10"></div></div>
+
+                <div class="min-w-0">
+                  <div class="flex flex-col gap-2 text-[13px] text-[var(--muted)] min-w-0">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                        <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                        <path d="M7 9h10M7 13h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span class="truncate">Avetyan, Rafayel</span>
+                    </div>
+                    <div class="flex items-center gap-2 min-w-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                        <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                        <path d="M8 10h8M8 14h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span class="truncate">Software</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 grid grid-cols-2 gap-4">
+                <button class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]">View Details</button>
+                <button class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium">Sign up</button>
+              </div>
+            </div>
+
+            <!-- HTML structure basics -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-[18px] font-medium truncate">HTML structure basics</div>
+                <div class="text-[13px] text-[rgba(0,0,0,.45)] font-medium shrink-0">20 min</div>
+              </div>
+
+              <div class="mt-3 grid grid-cols-[auto_auto_1fr_auto_1fr] items-center gap-4">
+                <div class="shrink-0">
+                  <div class="text-[20px] font-medium text-[#3B4CCA] leading-none">EN</div>
+                </div>
+
+                <div class="flex justify-center"><div class="w-px h-10 bg-black/10"></div></div>
+
+                <div class="flex items-center gap-2 text-[13px] text-[var(--muted)] shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                    <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                  <span class="leading-4">
+                    OIL 4.30<br>
+                    <span class="text-[rgba(0,0,0,.35)] font-medium">01:30 PM</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-center"><div class="w-px h-10 bg-black/10"></div></div>
+
+                <div class="min-w-0">
+                  <div class="flex flex-col gap-2 text-[13px] text-[var(--muted)] min-w-0">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                        <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                        <path d="M7 9h10M7 13h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span class="truncate">Eyck, Anke</span>
+                    </div>
+                    <div class="flex items-center gap-2 min-w-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                        <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                        <path d="M8 10h8M8 14h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span class="truncate">Media Design</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 grid grid-cols-2 gap-4">
+                <button class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]">View Details</button>
+                <button class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium">Sign up</button>
+              </div>
+            </div>
+
+            <!-- Computational Thinking -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-[18px] font-medium truncate">Computational Thinking</div>
+                <div class="text-[13px] text-[rgba(0,0,0,.45)] font-medium shrink-0">50 min</div>
+              </div>
+
+              <div class="mt-3 grid grid-cols-[auto_auto_1fr_auto_1fr] items-center gap-4">
+                <div class="shrink-0">
+                  <div class="text-[20px] font-medium text-[#2B2F3A] leading-none">NL</div>
+                </div>
+
+                <div class="flex justify-center"><div class="w-px h-10 bg-black/10"></div></div>
+
+                <div class="flex items-center gap-2 text-[13px] text-[var(--muted)] shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                    <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                  </svg>
+                  <span class="leading-4">
+                    OIL 4.30<br>
+                    <span class="text-[rgba(0,0,0,.35)] font-medium">01:30 PM</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-center"><div class="w-px h-10 bg-black/10"></div></div>
+
+                <div class="min-w-0">
+                  <div class="flex flex-col gap-2 text-[13px] text-[var(--muted)] min-w-0">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                        <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                        <path d="M7 9h10M7 13h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span class="truncate">Wijnen, John</span>
+                    </div>
+                    <div class="flex items-center gap-2 min-w-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                        <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                        <path d="M8 10h8M8 14h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                      <span class="truncate">IT Management</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 grid grid-cols-2 gap-4">
+                <button class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]">View Details</button>
+                <button class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium">Sign up</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- MIDDLE COLUMN -->
+          <section class="col-span-12 lg:col-span-1 min-w-0 flex flex-col gap-4">
+            <!-- Header card -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 min-w-0">
+                  <div class="text-[18px] font-medium truncate">Student suggestions</div>
+                  <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">16</span>
+                </div>
+                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+              </div>
+            </div>
+
+            <!-- SUGGESTION LIST WITH TIMELINE (dashed + 1/2/3) -->
+            <div class="grid grid-cols-[38px_1fr] gap-4 min-w-0">
+              <!-- Timeline column -->
+              <div class="flex flex-col items-center">
+                <div class="h-4 w-px border-l-2 border-dashed border-black/10"></div>
+
+                <div class="flex-1 w-full flex flex-col">
+                  <!-- item 1 -->
+                  <div class="flex flex-col items-center">
+                    <div class="h-20 w-px border-l-2 border-dashed border-black/10"></div>
+                    <div class="h-7 w-7 rounded-lg bg-white shadow-[var(--shadow)] flex items-center justify-center text-[12px] font-medium text-[#1F2D4B]">1</div>
+                    <div class="h-20 w-px border-l-2 border-dashed border-black/10"></div>
+                  </div>
+
+                  <!-- item 2 -->
+                  <div class="flex flex-col items-center">
+                    <div class="h-12 w-px border-l-2 border-dashed border-black/10"></div>
+                    <div class="h-7 w-7 rounded-lg bg-white shadow-[var(--shadow)] flex items-center justify-center text-[12px] font-medium text-[#1F2D4B]">2</div>
+                    <div class="h-28 w-px border-l-2 border-dashed border-black/10"></div>
+                  </div>
+
+                  <!-- item 3 -->
+                  <div class="flex flex-col items-center">
+                    <div class="h-8 w-px border-l-2 border-dashed border-black/10"></div>
+                    <div class="h-7 w-7 rounded-lg bg-white shadow-[var(--shadow)] flex items-center justify-center text-[12px] font-medium text-[#1F2D4B]">3</div>
+                    <div class="h-20 w-px border-l-2 border-dashed border-black/10"></div>
+                  </div>
+                </div>
+
+                <div class="h-4 w-px border-l-2 border-dashed border-black/10"></div>
+              </div>
+
+              <!-- Cards column -->
+              <div class="min-w-0 flex flex-col gap-4">
+                <!-- Business plan definition -->
+                <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-4 flex gap-4">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-3">
+                      <div class="flex items-center gap-2 text-[12px] text-[rgba(0,0,0,.45)] font-medium min-w-0">
+                        <span class="inline-flex h-7 w-7 rounded-xl bg-[#EEF0F6] items-center justify-center shrink-0">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 3v18M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <span class="truncate">Business Data</span>
+                      </div>
+                      <div class="text-[12px] text-[rgba(0,0,0,.45)] font-medium shrink-0">Jan 6, 2026</div>
+                    </div>
+
+                    <div class="mt-2 flex items-center gap-2 min-w-0">
+                      <div class="text-[16px] font-medium truncate">Business plan definition</div>
+                      <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
+                    </div>
+
+                    <p class="mt-2 text-[13px] leading-5 text-[rgba(0,0,0,.45)]">
+                      Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+                    </p>
+
+                    <div class="mt-3 flex items-center gap-4 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                          <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                        </svg>
+                        <span class="truncate">Deckers, Paul</span>
+                      </div>
+                      <div class="flex items-center gap-2 min-w-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                          <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                        </svg>
+                        <span class="truncate">English</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
+                    <button class="h-10 w-10 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5l6 7H6l6-7Z" fill="white"/>
+                      </svg>
+                    </button>
+                    <div class="text-[18px] font-medium text-[#1F2D4B]">31</div>
+                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Unreal Engine Camera -->
+                <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-4 flex gap-4">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-3">
+                      <div class="flex items-center gap-2 text-[12px] text-[rgba(0,0,0,.45)] font-medium min-w-0">
+                        <span class="inline-flex h-7 w-7 rounded-xl bg-[#EEF0F6] items-center justify-center shrink-0">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 17l7-7 4 4 5-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 20H4" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <span class="truncate">Game Design</span>
+                      </div>
+                      <div class="text-[12px] text-[rgba(0,0,0,.45)] font-medium shrink-0">Dec 15, 2025</div>
+                    </div>
+
+                    <div class="mt-2 text-[16px] font-medium truncate">Unreal Engine Camera</div>
+
+                    <p class="mt-2 text-[13px] leading-5 text-[rgba(0,0,0,.45)]">
+                      Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+                    </p>
+
+                    <div class="mt-3 flex items-center gap-4 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                          <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                        </svg>
+                        <span class="truncate">Hartingsveldt, Stan</span>
+                      </div>
+                      <div class="flex items-center gap-2 min-w-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                          <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                        </svg>
+                        <span class="truncate">Dutch</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
+                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
+                      </svg>
+                    </button>
+                    <div class="text-[18px] font-medium text-[#1F2D4B]">12</div>
+                    <button class="h-10 w-10 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 19l-6-7h12l-6 7Z" fill="white"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Responsive layouts -->
+                <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-4 flex gap-4">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-3">
+                      <div class="flex items-center gap-2 text-[12px] text-[rgba(0,0,0,.45)] font-medium min-w-0">
+                        <span class="inline-flex h-7 w-7 rounded-xl bg-[#EEF0F6] items-center justify-center shrink-0">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                            <path d="M7 8h10M7 16h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <span class="truncate">Media Design</span>
+                      </div>
+                      <div class="text-[12px] text-[rgba(0,0,0,.45)] font-medium shrink-0">Dec 8, 2025</div>
+                    </div>
+
+                    <div class="mt-2 text-[16px] font-medium truncate">Responsive layouts</div>
+
+                    <p class="mt-2 text-[13px] leading-5 text-[rgba(0,0,0,.45)]">
+                      Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+                    </p>
+
+                    <div class="mt-3 flex items-center gap-4 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                          <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                        </svg>
+                        <span class="truncate">Eyck, Anke</span>
+                      </div>
+                      <div class="flex items-center gap-2 min-w-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+                          <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                        </svg>
+                        <span class="truncate">English</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
+                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
+                      </svg>
+                    </button>
+                    <div class="text-[18px] font-medium text-[#1F2D4B]">5</div>
+                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- RIGHT COLUMN -->
+          <section class="col-span-12 lg:col-span-1 lg:row-span-2 flex flex-col gap-4 min-w-0">
+            <!-- Workshop composition -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5">
+              <div class="flex items-center justify-between gap-4">
+                <div class="text-[18px] font-medium truncate">Workshop composition</div>
+                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">Expand</a>
+              </div>
+
+              <div class="mt-6 grid grid-cols-3 gap-x-10 gap-y-8">
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Software</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">42%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Security</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">25%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">IT Management</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">0%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Infrastructure</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">16%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Embedded</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">0%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">AI</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">0%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Media Design</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">17%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Business Data</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">0%</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
+                  <div class="min-w-0">
+                    <div class="text-[12px] font-medium text-[rgba(0,0,0,.40)] truncate">Game Design</div>
+                    <div class="text-[16px] font-medium text-[#1F2D4B] leading-5">0%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 flex-1 min-w-0 flex flex-col">
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 min-w-0">
+                  <div class="text-[18px] font-medium truncate">Notifications</div>
+                  <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">5</span>
+                </div>
+                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+              </div>
+
+              <div class="mt-4 space-y-5 min-w-0">
+                <div class="flex gap-3 min-w-0">
+                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
+                    <span class="text-[14px] font-medium text-[#5A5BE7]">?</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-3 min-w-0">
+                      <div class="text-[16px] font-medium text-[#5A5BE7] truncate">Any ideas for future workshops?</div>
+                      <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
+                    </div>
+                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+                      Share your ideas and interests in the suggestions tab to let teachers know.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3 min-w-0">
+                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
+                    <span class="text-[14px] font-medium text-[#1F2D4B]">i</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-3 min-w-0">
+                      <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+                        Computational Thinking: <span class="font-medium">Changed time</span>
+                      </div>
+                      <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
+                    </div>
+                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+                      Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in <span class="font-medium">02:00 PM</span>.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3 min-w-0">
+                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
+                    <span class="text-[14px] font-medium text-[#1F2D4B]">×</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+                      Computational Thinking: <span class="font-medium">Cancelled</span>
+                    </div>
+                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+                      I have to attend an emergency teacher conference. The workshop will be rescheduled in due time.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3 min-w-0">
+                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
+                    <span class="text-[14px] font-medium text-[#1F2D4B]">i</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+                      HTML structure basics: <span class="font-medium">Message</span>
+                    </div>
+                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+                      To minimize repetition and configurational delays make you have Visual Studio installed. Check the following...
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3 min-w-0">
+                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
+                    <span class="text-[14px] font-medium text-[#1F2D4B]">i</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+                      Python functions: <span class="font-medium">Changed room</span>
+                    </div>
+                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+                      The assigned students exceed the capacity of LAB <span class="font-medium">4.44</span> so we will moving to OIL <span class="font-medium">4.30</span>.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex-1"></div>
+            </div>
+          </section>
+
+          <!-- BOTTOM LEFT+MIDDLE (MY WORKSHOPS) -->
+          <section class="col-span-12 lg:col-span-2 min-w-0 flex flex-col gap-4">
+            <!-- Header card -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-2 min-w-0">
+                  <div class="text-[18px] font-medium truncate">My workshops</div>
+                  <span class="text-[14px] font-medium text-[rgba(0,0,0,.35)] shrink-0">· storage directory</span>
+                </div>
+                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+              </div>
+            </div>
+
+            <!-- Cards row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch min-h-0">
+              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 h-full flex flex-col">
+                <div class="text-[16px] font-medium truncate">Computational Thinking</div>
+                <p class="mt-3 text-[12.5px] leading-5 text-[rgba(0,0,0,.45)]">
+                  This workshop showcases the fundamental problem breakdown behind each software solution and helps students to better understand and implement it.
+                </p>
+                <div class="mt-auto pt-4 flex items-center gap-5 text-[12px] font-medium text-[rgba(0,0,0,.45)] flex-wrap">
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                      <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span>30</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                    </svg>
+                    <span>IT Management</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      <path d="M12 3v18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span>English</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 h-full flex flex-col">
+                <div class="text-[16px] font-medium truncate">JSON Parsing</div>
+                <p class="mt-3 text-[12.5px] leading-5 text-[rgba(0,0,0,.45)]">
+                  This workshop showcases the fundamental problem breakdown behind each software solution and helps students to better understand and implement it.
+                </p>
+                <div class="mt-auto pt-4 flex items-center gap-5 text-[12px] font-medium text-[rgba(0,0,0,.45)] flex-wrap">
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                      <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span>20</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                    </svg>
+                    <span>Business Data</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      <path d="M12 3v18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span>Dutch</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 h-full flex flex-col">
+                <div class="text-[16px] font-medium truncate">Gen AI Fundamentals</div>
+                <p class="mt-3 text-[12.5px] leading-5 text-[rgba(0,0,0,.45)]">
+                  This workshop showcases the fundamental problem breakdown behind each software solution and helps students to better understand and implement it.
+                </p>
+                <div class="mt-auto pt-4 flex items-center gap-5 text-[12px] font-medium text-[rgba(0,0,0,.45)] flex-wrap">
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                      <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span>50</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
+                    </svg>
+                    <span>AI</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                      <path d="M12 3v18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span>English</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
