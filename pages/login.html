@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workshop Forge – Login</title>
+  <title>Workshop anew – Login</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font: SF Pro yerine web uyumlu alternatif -->
- <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
 
   <style>
-  * {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    pointer-events: none; /* tamamen statik */
-  }
-</style>
-
+    * {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+      pointer-events: none; /* tamamen statik */
+    }
+  </style>
 </head>
 
 <body class="w-screen h-screen bg-[#F6F6F6] overflow-hidden">
@@ -29,12 +28,14 @@
 
       <!-- ÜST -->
       <div class="flex justify-between items-center">
-        <div class="flex items-center gap-3 font-semibold text-[#111111]">
+        <div class="flex items-center gap-3 text-[#111111]">
           <img src="../assets/images/logo.svg" alt="Logo" class="w-6 h-6">
-          <span>Workshop Forge</span>
-      </div>
 
-
+          <div class="flex gap-1">
+            <span class="font-semibold">Workshop</span>
+            <span class="font-light">anew</span>
+          </div>
+        </div>
         <div class="text-[16px] leading-[19px]">
           <span class="font-normal text-[#111111]">
             Don’t have an account?
@@ -49,87 +50,157 @@
       <div class="mt-[130px]">
         <div class="max-w-[520px] mx-auto text-left">
 
-        <h1 class="text-[34px] font-semibold text-[#111111] mb-4">
-          Get Started Now
-        </h1>
+          <h1 class="text-[34px] font-semibold text-[#111111] mb-4">
+            Get Started Now
+          </h1>
 
-        <p class="text-[16px] text-[#7A7A7A] leading-[1.5] mb-10">
-          Please enter your information to access your account.
-        </p>
+          <p class="text-[16px] text-[#7A7A7A] leading-[1.5] mb-10">
+            Please enter your information to access your account.
+          </p>
 
-        <!-- SOCIAL LOGIN -->
-         <div class="max-w-[520px] mx-auto">
-        <div class="flex flex-col md:flex-row gap-4 mb-7">
-          <div class="flex-1 h-[52px] border border-[#E5E5E5] rounded-[16px] flex items-center justify-center gap-2 text-[15px] text-[#111111] whitespace-nowrap">
-              <img src="../assets/images/google.svg" alt="Google" class="w-5 h-5">
+          <!-- SOCIAL LOGIN -->
+          <div class="max-w-[520px] mx-auto">
+            <div class="flex flex-col md:flex-row gap-4 mb-7">
+              <div class="flex-1 h-[52px] border border-[#E5E5E5] rounded-[16px] flex items-center justify-center gap-2 text-[15px] text-[#111111] whitespace-nowrap">
+                <img src="../assets/images/google.svg" alt="Google" class="w-5 h-5">
                 <span>Log In with Google</span>
-        </div>
+              </div>
 
-
-          <div class="flex-1 h-[52px] border border-[#E5E5E5] rounded-[16px] flex items-center justify-center gap-2 text-[15px] text-[#111111] whitespace-nowrap">
-              <img src="../assets/images/facebook.svg" alt="Facebook" class="w-5 h-5">
+              <div class="flex-1 h-[52px] border border-[#E5E5E5] rounded-[16px] flex items-center justify-center gap-2 text-[15px] text-[#111111] whitespace-nowrap">
+                <img src="../assets/images/facebook.svg" alt="Facebook" class="w-5 h-5">
                 <span>Log In with Facebook</span>
-          </div>
-        </div>
+              </div>
+            </div>
 
-        <!-- OR -->
-        <div class="flex items-center gap-3 mb-7">
-          <div class="flex-1 h-px bg-[#E0E0E0]"></div>
-          <span class="text-[14px] text-[#9A9A9A]">or</span>
-          <div class="flex-1 h-px bg-[#E0E0E0]"></div>
-        </div>
+            <!-- OR -->
+            <div class="flex items-center gap-3 mb-7">
+              <div class="flex-1 h-px bg-[#E0E0E0]"></div>
+              <span class="text-[14px] text-[#9A9A9A]">or</span>
+              <div class="flex-1 h-px bg-[#E0E0E0]"></div>
+            </div>
 
-        <!-- FORM -->
-        <label class="block text-[14px] font-semibold text-[#111111] mb-2">
-          Email
-        </label>
-        <div class="h-[52px] border border-[#E5E5E5] rounded-[16px] px-4 mb-6 flex items-center text-[#B5B5B5] text-[14px]">
-          Enter your email
-        </div>
+            <!-- FORM -->
+            <label class="block text-[14px] font-semibold text-[#111111] mb-2">
+              Email
+            </label>
+            <div class="h-[52px] border border-[#E5E5E5] rounded-[16px] px-4 mb-6 flex items-center text-[#B5B5B5] text-[14px]">
+              Enter your email
+            </div>
 
-        <label class="block text-[14px] font-semibold text-[#111111] mb-2">
-          Password
-        </label>
-        <div class="relative h-[52px] border border-[#E5E5E5] rounded-[16px] px-4 mb-2 flex items-center text-[#B5B5B5] text-[14px]">
-          <span>Enter your password</span>
-          <img
-               src="../assets/images/eye.svg"
+            <label class="block text-[14px] font-semibold text-[#111111] mb-2">
+              Password
+            </label>
+            <div class="relative h-[52px] border border-[#E5E5E5] rounded-[16px] px-4 mb-2 flex items-center text-[#B5B5B5] text-[14px]">
+              <span>Enter your password</span>
+              <img
+                src="../assets/images/eye.svg"
                 alt="Show password"
-                 class="w-4 h-4 absolute right-4 opacity-60">
-        </div>
+                class="w-4 h-4 absolute right-4 opacity-60">
+            </div>
 
+            <div class="text-right text-[16px] font-semibold text-[#B8B9E8] mb-7">
+              Forgot password?
+            </div>
 
-        <div class="text-right text-[16px] font-semibold text-[#B8B9E8] mb-7">
-          Forgot password?
-        </div>
-
-        <!-- BUTTON -->
-          <div class="h-[52px] bg-[#1F2D4B] rounded-[16px] flex items-center justify-center text-white text-[16px] font-semibold">
-          Login
+            <!-- BUTTON -->
+            <div class="h-[52px] bg-[#1F2D4B] rounded-[16px] flex items-center justify-center text-white text-[16px] font-semibold">
+              Login
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
       <!-- FOOTER -->
       <div class="mt-auto text-center text-[16px] font-normal text-black">
-              © 2025. All Rights Reserved.
+        © 2025. All Rights Reserved.
       </div>
     </div>
 
- <!-- SAĞ PANEL -->
-<div class="hidden lg:block lg:w-1/2 self-stretch">
-  <div class="relative h-full rounded-[20px] overflow-hidden bg-[#1F2D4B]">
-    <img
-  src="../assets/images/sidebanner.svg"
-  alt="Side Banner"
-  class="absolute inset-0 w-full h-full object-cover block"
-  style="transform: scale(1);"
-  style="
-    object-position: 100% 100%;  "
-/>
-</div>
+    <!-- SAĞ PANEL -->
+    <div class="hidden lg:block lg:w-1/2 self-stretch">
+      <div class="relative h-full rounded-[20px] overflow-hidden bg-[#1F2D4B]">
+        <img
+          src="../assets/images/sidebanner.svg"
+          alt="Side Banner"
+          class="absolute inset-0 w-full h-full object-cover block"
+          style="transform: scale(1);"
+          style="object-position: 100% 100%;"
+        />
+      </div>
+    </div>
+
   </div>
 
+  <!-- ================= SCRIPT (GÖRÜNÜM DEĞİŞMEZ) ================= -->
+  <script>
+    // Helper: sayfadaki belirli metne sahip span/div'i bul
+    function findByExactText(tagNames, text) {
+      const tags = Array.isArray(tagNames) ? tagNames : [tagNames];
+      for (const tag of tags) {
+        const nodes = Array.from(document.querySelectorAll(tag));
+        const found = nodes.find(n => (n.textContent || '').trim() === text);
+        if (found) return found;
+      }
+      return null;
+    }
+
+    // Helper
+    function makeClickable(el) {
+      if (!el) return;
+      el.style.pointerEvents = 'auto';
+      el.style.cursor = 'pointer';
+      el.style.transition = 'transform 150ms, opacity 150ms';
+      el.addEventListener('mouseenter', () => { el.style.opacity = '0.9'; });
+      el.addEventListener('mouseleave', () => { el.style.opacity = '1'; el.style.transform = 'scale(1)'; });
+      el.addEventListener('mousedown', () => { el.style.transform = 'scale(0.97)'; });
+      el.addEventListener('mouseup', () => { el.style.transform = 'scale(1)'; });
+    }
+
+    // 1) Sign Up yazisi (üstte)
+    const signUpText = findByExactText(['span'], 'Sign Up');
+    makeClickable(signUpText);
+    if (signUpText) {
+      signUpText.addEventListener('click', () => {
+        window.location.href = 'signup.html';
+      });
+    }
+
+    // 2) Social buttons
+    const googleBtn = findByExactText(['span'], 'Log In with Google')?.closest('div');
+    const facebookBtn = findByExactText(['span'], 'Log In with Facebook')?.closest('div');
+
+    makeClickable(googleBtn);
+    makeClickable(facebookBtn);
+
+    if (googleBtn) {
+      googleBtn.addEventListener('click', () => {
+        console.log('Google login clicked');
+        alert('Google login clicked (backend need)');
+        // Backend bağlanınca:
+        // window.location.href = 'https://YOUR_BACKEND_DOMAIN/api/auth/google';
+      });
+    }
+
+    if (facebookBtn) {
+      facebookBtn.addEventListener('click', () => {
+        console.log('Facebook login clicked');
+        alert('Facebook login clicked (backend need)');
+        // Backend bağlanınca:
+        // window.location.href = 'https://YOUR_BACKEND_DOMAIN/api/auth/facebook';
+      });
+    }
+
+    // 3) Login butonu (alttaki koyu buton)
+    const loginBtn = findByExactText(['div'], 'Login');
+    makeClickable(loginBtn);
+
+    if (loginBtn) {
+      loginBtn.addEventListener('click', async () => {
+        console.log('Login clicked');
+        alert('Login clicked (backend need)');
+
+      });
+    }
+  </script>
 </body>
 </html>

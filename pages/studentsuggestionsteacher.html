@@ -1,0 +1,576 @@
+<!-- studentsuggestionsteacher.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Suggestions – Teacher</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+
+  <style>
+    :root{
+      --navy:#1F2D4B;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+    *{
+      font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#F6F6F6] text-[#0F172A]">
+  <div class="min-h-screen w-full flex">
+
+    <!-- LEFT SIDEBAR (your updated code) -->
+    <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-7 flex-col items-center">
+      <div class="h-12 w-12 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
+        <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
+      </div>
+
+      <nav class="mt-8 flex flex-col gap-3">
+        <div class="h-11 w-11 rounded-2xl overflow-hidden
+         bg-[#F6F6F6]
+         hover:bg-black/5
+         transition-colors duration-200
+         flex items-center justify-center">
+          <img src="../assets/images/Dashboard.svg"
+            alt="Dashboard"
+            class="h-8 w-8 object-contain"/>
+        </div>
+
+        <div class="h-11 w-11 rounded-2xl overflow-hidden
+         bg-[#F6F6F6]
+         hover:bg-black/5
+         transition-colors duration-200
+         flex items-center justify-center">
+          <img
+            src="../assets/images/workshopoverview.svg"
+            alt="Workshop overview"
+            class="h-8 w-8 object-contain" />
+        </div>
+
+        <div
+          class="h-11 w-11 rounded-2xl overflow-hidden
+                 bg-[#F6F6F6]
+                 hover:bg-black/5
+                 transition-colors duration-200
+                 flex items-center justify-center">
+          <img
+            src="../assets/images/recentlyattended.svg"
+            alt="Recently attended"
+            class="h-8 w-8 object-contain" />
+        </div>
+
+        <div
+          class="h-11 w-11 rounded-2xl overflow-hidden
+                 bg-[#F6F6F6]
+                 hover:bg-black/5
+                 transition-colors duration-200
+                 flex items-center justify-center">
+          <img
+            src="../assets/images/studentsuggestions.svg"
+            alt="Student suggestions"
+            class="h-8 w-8 object-contain" />
+        </div>
+      </nav>
+
+      <div class="mt-auto flex flex-col gap-3">
+        <!-- Logout -->
+        <div
+          class="h-11 w-11 rounded-2xl overflow-hidden
+                 bg-[#F6F6F6]
+                 hover:bg-black/5
+                 transition-colors duration-200
+                 flex items-center justify-center">
+          <img
+            src="../assets/images/logout.svg"
+            alt="Logout"
+            class="h-8 w-8 object-contain" />
+        </div>
+
+        <!-- Notifications -->
+        <div
+          class="h-11 w-11 rounded-2xl overflow-hidden
+                 bg-[#F6F6F6]
+                 hover:bg-black/5
+                 transition-colors duration-200
+                 flex items-center justify-center">
+          <img
+            src="../assets/images/notifications.svg"
+            alt="Notifications"
+            class="h-8 w-8 object-contain" />
+        </div>
+
+        <!-- User -->
+        <div
+          class="h-11 w-11 rounded-full
+                 bg-[var(--navy)]
+                 flex items-center justify-center
+                 shadow-[var(--shadow)]
+                 overflow-hidden">
+          <img
+            src="../assets/images/User.svg"
+            alt="User"
+            class="h-8 w-8 object-contain" />
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 px-8 py-6">
+      <div class="grid grid-cols-1 xl:grid-cols-[0.75fr_0.55fr] gap-7">
+
+        <!-- LEFT CONTENT -->
+        <section>
+          <!-- Header -->
+          <div class="bg-white rounded-[18px] px-6 py-5 shadow-[var(--shadow)]
+            flex items-center justify-between h-[72px]">
+            <div class="flex items-center gap-2">
+              <h1 class="text-[18px] font-semibold text-[#0B1B3A]">Student Suggestions</h1>
+              <span class="text-[#94A3B8]">•</span>
+              <span class="text-[14px] text-[#94A3B8]">share your ideas and interests</span>
+              <span class="ml-2 text-[12px] font-semibold text-[#0B1B3A] bg-[#EEF2FF] px-2 py-0.5 rounded-full">16</span>
+            </div>
+
+            <button class="h-10 px-4 rounded-[12px] bg-[#1F2D4B] text-white text-[14px] font-medium hover:brightness-110 transition">
+              Add Suggestion
+            </button>
+          </div>
+
+          <!-- Cards (EXACT count like screenshot) -->
+          <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- 1 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Business Data</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Jan 6, 2026</div>
+              </div>
+
+              <div class="mt-4 flex items-center gap-3">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Business plan definition</h3>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#EEF2FF] text-[#0B1B3A]">new</span>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Deckers, Paul</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>English</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Business Data</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Jan 6, 2026</div>
+              </div>
+
+              <div class="mt-4 flex items-center gap-3">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Business plan definition</h3>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#EEF2FF] text-[#0B1B3A]">new</span>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Deckers, Paul</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>English</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Game Design</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Dec 15, 2025</div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Unreal Engine Camera</h3>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Hartingsveldt, Stan</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Dutch</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Game Design</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Dec 15, 2025</div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Unreal Engine Camera</h3>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Hartingsveldt, Stan</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Dutch</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Media Design</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Dec 8, 2025</div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Responsive layouts</h3>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Eyck, Anke</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>English</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Media Design</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Dec 8, 2025</div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Responsive layouts</h3>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Eyck, Anke</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>English</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Media Design</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Dec 8, 2025</div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Responsive layouts</h3>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Eyck, Anke</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>English</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+                  <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+                    <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+                  </div>
+                  <span class="font-medium">Media Design</span>
+                </div>
+                <div class="text-[12px] text-[#94A3B8] font-medium">Dec 8, 2025</div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="text-[18px] font-semibold text-[#0B1B3A]">Responsive layouts</h3>
+              </div>
+
+              <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">
+                Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
+              </p>
+
+              <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>Eyck, Anke</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+                  <span>English</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- RIGHT: LEADERBOARD -->
+        <aside>
+          <div class="bg-white rounded-[18px] w-full px-6 py-5 shadow-[var(--shadow)]
+            flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+            <h2 class="text-[18px] font-semibold text-[#0B1B3A]">Leaderboard</h2>
+          </div>
+
+          <div class="mt-7 space-y-7 pb-6">
+
+  <!-- 1 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[16px] bg-white shadow-[var(--shadow)]
+            grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">1#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        Business plan definition
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">40</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[16px] bg-white shadow-[var(--shadow)]
+            grid place-items-center shrink-0">
+
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">2#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        Computational Thinking
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">35</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[14px] bg-white shadow-[var(--shadow)]
+                grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">3#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        Responsive Layouts
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">30</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[14px] bg-white shadow-[var(--shadow)]
+                grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">4#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        SQL Injection
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">25</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[14px] bg-white shadow-[var(--shadow)]
+                grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">5#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        HTML structure basics
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">20</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[14px] bg-white shadow-[var(--shadow)]
+                grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">6#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-5 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        Python classes
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">15</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[14px] bg-white shadow-[var(--shadow)]
+                grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">7#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        Gen AI Fundamentals
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">10</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="flex items-stretch gap-3 w-full">
+    <div class="w-16 h-17 rounded-[14px] bg-white shadow-[var(--shadow)]
+                grid place-items-center shrink-0">
+      <span class="text-[14px] font-semibold text-[#0B1B3A]">8#</span>
+    </div>
+
+    <div class="bg-white rounded-[18px] w-full px-6 py-6 shadow-[var(--shadow)]
+                flex items-center justify-between hover:bg-[#FBFBFD] transition cursor-pointer">
+      <div class="text-[15px] font-semibold text-[#0B1B3A]">
+        JSON Parsing
+      </div>
+      <div class="flex items-center gap-2 text-[#94A3B8] text-[13px]">
+        <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+        <span class="font-medium">5</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </aside>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

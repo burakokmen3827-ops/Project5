@@ -1,0 +1,246 @@
+<!-- recentlyattendedworkshopstudentdetails.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standalone Workshop – Student</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+
+  <style>
+    * { font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  </style>
+</head>
+
+<body class="bg-white text-[16px] font-normal text-[#111827]">
+  <div class="min-h-screen w-full">
+    <!-- Overlay area (same structure as teacher popup wrapper) -->
+    <aside class="fixed inset-0 p-3 sm:p-4 flex justify-end">
+      <!-- You can darken the background from the parent page;
+           keeping this popup identical to your teacher popup container. -->
+
+      <div
+        class="h-full w-full sm:w-[92%] md:w-[38%] lg:w-[44%] max-w-[720px]
+               rounded-[20px] bg-white border border-[#E9ECF5] shadow-[0_12px_40px_rgba(17,24,39,0.12)]
+               overflow-hidden flex flex-col"
+      >
+        <!-- TOP BAR (same sizing/padding/borders as teacher popup) -->
+        <div class="px-5 sm:px-6 py-4 flex items-center gap-4 border-b border-[#EEF1F7]">
+          <div class="h-9 w-9 rounded-xl bg-[#F3F5FF] flex items-center justify-center">
+            <!-- icon placeholder -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#111827]">
+              <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M2 16l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="flex-1 flex items-center gap-2 min-w-0">
+            <span class="text-[#6B7280] whitespace-nowrap">Week Jan 12 - 16</span>
+            <span class="text-[#D1D5DB]">/</span>
+            <span class="font-semibold text-[#111827] whitespace-nowrap">Thursday</span>
+          </div>
+
+          <!-- Right action (student version: Request like your screenshot) -->
+          <button class="flex items-center gap-2 text-[#111827] font-semibold">
+            <span class="inline-flex items-center justify-center h-8 w-8 rounded-full border border-[#EEF1F7]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M21 12a9 9 0 1 1-2.64-6.36" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M21 4v6h-6" stroke="#111827" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Request
+          </button>
+
+          <button id="closeBtn" class="h-9 w-9 rounded-full border border-[#EEF1F7] flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M6 6l12 12M18 6 6 18" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- HEADER CARD (same layout as teacher popup header) -->
+        <div class="px-5 sm:px-6 py-5 border-b border-[#EEF1F7]">
+          <div class="flex items-center gap-5">
+            <div class="h-20 w-20 rounded-2xl bg-[#E7E9FF] flex items-center justify-center">
+              <!-- placeholder icon -->
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2 20 5.5V12c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V5.5L12 2Z"
+                      stroke="#2F62E9" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="flex-1 min-w-0">
+              <div class="text-[22px] sm:text-[24px] font-semibold text-[#111827] leading-tight">
+                SQL Injection
+              </div>
+
+              <div class="mt-2 flex flex-col gap-2 text-[#6B7280]">
+                <div class="flex items-center gap-2">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke="#6B7280" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M2 12l10 5 10-5" stroke="#6B7280" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                  <span>Deckers, Paul</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke="#6B7280" stroke-width="1.6"/>
+                    <path d="M2 12h20" stroke="#6B7280" stroke-width="1.6"/>
+                    <path d="M12 2c3 3 3 17 0 20" stroke="#6B7280" stroke-width="1.6"/>
+                  </svg>
+                  <span>English</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="hidden sm:flex items-center gap-2 text-[#6B7280]">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#6B7280" stroke-width="1.6"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                <span>21</span>
+              </div>
+
+              <button class="h-11 px-6 rounded-xl bg-[#1F2D4B] text-white font-semibold shadow-sm">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT (no tabs, same general grid spacing/typography as teacher's General panel) -->
+        <div class="flex-1">
+          <div class="px-5 sm:px-6 pt-5 pb-3">
+            <div class="grid grid-cols-[56px_1fr] gap-x-4 gap-y-6">
+
+              <!-- Topic -->
+              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z" stroke="#6B7280" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="w-[90px] text-[#9CA3AF]">Topic</span>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-3 py-2 rounded-lg bg-[#E8EEFF] text-[#2F62E9] font-semibold text-[14px]">
+                    Cyber Security - (CS)
+                  </span>
+                  <span class="px-3 py-2 rounded-lg bg-[#E8EEFF] text-[#2F62E9] font-semibold text-[14px]">
+                    Software Engineering - (SWE)
+                  </span>
+                </div>
+              </div>
+
+              <!-- Room -->
+              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="#6B7280" stroke-width="1.6"/>
+                  <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="#6B7280" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="w-[90px] text-[#9CA3AF]">Room</span>
+                <span class="text-[#111827] text-[18px]">Fontys R10, OIL 4.30</span>
+              </div>
+
+              <!-- Date -->
+              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 3v2M16 3v2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M3 9h18" stroke="#6B7280" stroke-width="1.6"/>
+                  <path d="M5 5h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
+                        stroke="#6B7280" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="w-[90px] text-[#9CA3AF]">Date</span>
+                <span class="text-[#111827] text-[18px]">Jan 15, 2026</span>
+              </div>
+
+              <!-- Time -->
+              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke="#6B7280" stroke-width="1.6"/>
+                  <path d="M12 6v6l4 2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="w-[90px] text-[#9CA3AF]">Time</span>
+                <span class="text-[#111827] text-[18px]">01:30 AM</span>
+              </div>
+
+              <!-- Duration -->
+              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke="#6B7280" stroke-width="1.6"/>
+                  <path d="M12 7v5" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 12h4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="w-[90px] text-[#9CA3AF]">Duration</span>
+                <span class="text-[#111827] text-[18px]">30 min</span>
+              </div>
+
+              <!-- Description -->
+              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 6h13M8 12h13M8 18h13" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M3 6h.01M3 12h.01M3 18h.01" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="w-[90px] text-[#9CA3AF]">Description</span>
+                <div class="text-[#111827] leading-relaxed text-[18px]">
+                  <div>Learn to identify and exploit SQL injection</div>
+                  <div>vulnerabilities in this hands-on workshop.</div>
+                  <div>
+                    Discover how attackers manipulate database queries
+                    <a href="#" class="text-[#2F62E9] font-semibold">see more</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- bottom separator like teacher popup -->
+          <div class="h-px bg-[#EEF1F7]"></div>
+        </div>
+
+        <!-- FOOTER (same visual style as teacher popup footer) -->
+        <div class="mt-auto flex items-center justify-center h-full w-full">
+          <div class="px-5 sm:px-6 py-5 flex items-center gap-3 text-[#9CA3AF]">
+            <!-- placeholder icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M7 12a5 5 0 0 1 10 0v1a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4v-1Z" stroke="#9CA3AF" stroke-width="1.6"/>
+              <path d="M12 17v3" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8 21h8" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M4 7c0 3 2 5 5 5" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M20 7c0 3-2 5-5 5" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <span class="text-[18px] sm:text-[20px] font-medium">Standalone Workshop</span>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const closeBtn = document.getElementById("closeBtn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        window.parent.postMessage({ type: "CLOSE_WS_POPUP" }, "*");
+      });
+    }
+  </script>
+</body>
+</html>

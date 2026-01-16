@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workshop Forge – Sign Up</title>
+  <title>Workshop anew – Sign Up</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,13 +11,12 @@
   <!-- Font -->
   <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
 
-    <style>
+  <style>
     * {
-     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-     pointer-events: none; 
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+      pointer-events: none;
     }
-    </style>
-
+  </style>
 </head>
 
 <body class="w-screen h-screen bg-[#F6F6F6] overflow-hidden">
@@ -29,16 +28,20 @@
 
       <!-- ÜST -->
       <div class="flex justify-between items-center">
-        <div class="flex items-center gap-3 font-semibold text-[#111111]">
+        <div class="flex items-center gap-3 text-[#111111]">
           <img src="../assets/images/logo.svg" alt="Logo" class="w-6 h-6">
-          <span>Workshop Forge</span>
+
+          <div class="flex gap-1">
+            <span class="font-semibold">Workshop</span>
+            <span class="font-light">anew</span>
+          </div>
         </div>
 
         <div class="text-[16px] leading-[19px]">
           <span class="font-normal text-[#111111]">
             Already have an account?
           </span>
-          <span class="font-semibold text-[#B8B9E8] ml-1">
+          <span id="loginLink" class="font-semibold text-[#B8B9E8] ml-1">
             Login
           </span>
         </div>
@@ -55,8 +58,6 @@
           <p class="text-[16px] text-[#7A7A7A] leading-[1.5] mb-10">
             Please enter your information to access your account.
           </p>
-
-          <!-- FORM -->
 
           <!-- NAME -->
           <label class="block text-[14px] font-semibold text-[#111111] mb-2">
@@ -80,10 +81,7 @@
           </label>
           <div class="relative h-[52px] border border-[#E5E5E5] rounded-[16px] px-4 mb-6 flex items-center text-[#B5B5B5] text-[14px]">
             <span>Enter your password</span>
-            <img
-              src="../assets/images/eye.svg"
-              alt="Show password"
-              class="w-4 h-4 absolute right-4 opacity-60">
+            <img src="../assets/images/eye.svg" class="w-4 h-4 absolute right-4 opacity-60">
           </div>
 
           <!-- CONFIRM PASSWORD -->
@@ -92,14 +90,12 @@
           </label>
           <div class="relative h-[52px] border border-[#E5E5E5] rounded-[16px] px-4 mb-8 flex items-center text-[#B5B5B5] text-[14px]">
             <span>Confirm your password</span>
-            <img
-              src="../assets/images/eye.svg"
-              alt="Show password"
-              class="w-4 h-4 absolute right-4 opacity-60">
+            <img src="../assets/images/eye.svg" class="w-4 h-4 absolute right-4 opacity-60">
           </div>
 
           <!-- BUTTON -->
-          <div class="h-[52px] bg-[#1F2D4B] rounded-[16px] flex items-center justify-center text-white text-[16px] font-semibold">
+          <div id="signupBtn"
+            class="h-[52px] bg-[#1F2D4B] rounded-[16px] flex items-center justify-center text-white text-[16px] font-semibold">
             Sign up
           </div>
 
@@ -112,21 +108,49 @@
       </div>
     </div>
 
-   <!-- SAĞ PANEL -->
-<div class="hidden lg:block lg:w-1/2 self-stretch">
-  <div class="relative h-full rounded-[20px] overflow-hidden bg-[#1F2D4B]">
-    <img
-  src="../assets/images/sidebanner.svg"
-  alt="Side Banner"
-  class="absolute inset-0 w-full h-full object-cover block"
-  style="transform: scale(1);"
-  style="
-    object-position: 100% 100%;
-    transform: translateX(40px);
-  "
-/>
+    <!-- SAĞ PANEL -->
+    <div class="hidden lg:block lg:w-1/2 self-stretch">
+      <div class="relative h-full rounded-[20px] overflow-hidden bg-[#1F2D4B]">
+        <img src="../assets/images/sidebanner.svg"
+          class="absolute inset-0 w-full h-full object-cover block"
+          style="transform: translateX(40px);" />
+      </div>
+    </div>
 
   </div>
 
+  <!-- ================= SCRIPT ================= -->
+  <script>
+    const loginLink = document.getElementById('loginLink');
+    const signupBtn = document.getElementById('signupBtn');
+
+    // pointer-events'i sadece bunlar için aç
+    [loginLink, signupBtn].forEach(el => {
+      el.style.pointerEvents = 'auto';
+      el.style.cursor = 'pointer';
+      el.style.transition = 'transform 150ms, opacity 150ms';
+
+      el.addEventListener('mousedown', () => {
+        el.style.transform = 'scale(0.97)';
+      });
+
+      el.addEventListener('mouseup', () => {
+        el.style.transform = 'scale(1)';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'scale(1)';
+      });
+    });
+
+    // Login → login.html
+    loginLink.addEventListener('click', () => {
+      window.location.href = 'login.html';
+    });
+    signupBtn.addEventListener('click', () => {
+      console.log('Sign up clicked');
+      alert('Sign up clicked (backend need)');
+    });
+  </script>
 </body>
 </html>

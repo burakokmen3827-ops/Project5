@@ -1,0 +1,891 @@
+<!-- myworkshopsteacher.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Workshops – Teacher</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font: SF Pro Display -->
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+
+    <style>
+      * {
+        font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Arial, sans-serif;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <!-- POPUP OVERLAY + RIGHT PANEL -->
+<div id="wsOverlay" class="fixed inset-0 z-[999] hidden">
+  <!-- dark background -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- right popup panel -->
+  <div class="absolute inset-0 flex justify-end p-3 sm:p-4">
+    <div
+  id="wsPanel"
+  class="h-full w-full sm:w-[92%] md:w-[38%] lg:w-[44%] max-w-[720px] overflow-hidden"
+>
+      <!-- iframe  -->
+      <iframe
+  id="wsFrame"
+  src=""
+  class="h-full w-full bg-transparent"
+  frameborder="0"
+></iframe>
+    </div>
+  </div>
+</div>
+
+  <body class="bg-[#F6F6F6] text-[#111827]">
+    <div class="min-h-screen w-full">
+      <!-- LEFT SIDEBAR -->
+      <aside class="fixed left-0 top-0 h-screen w-[84px] bg-transparent">
+        <div class="flex h-full flex-col items-center justify-between py-6">
+          <!-- top -->
+          <div class="flex flex-col items-center gap-6">
+            <!-- logo -->
+            <div
+              class="grid h-10 w-10 place-items-center rounded-[12px] bg-[#1F2D4B]"
+              title="Logo"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L20 6.5V17.5L12 22L4 17.5V6.5L12 2Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 7L16 9.2V14.8L12 17L8 14.8V9.2L12 7Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <!-- nav icons (placeholders) -->
+            <div class="flex flex-col items-center gap-5 text-[#1F2D4B]/70">
+              <!-- grid -->
+              <button
+                class="grid h-10 w-10 place-items-center rounded-[12px] hover:bg-black/5"
+                title="Dashboard"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+
+              <!-- workshops (active look) -->
+              <button
+                class="grid h-10 w-10 place-items-center rounded-[12px] bg-black/5 text-[#1F2D4B]"
+                title="Workshops"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 6H20M4 12H20M4 18H20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- time -->
+              <button
+                class="grid h-10 w-10 place-items-center rounded-[12px] hover:bg-black/5"
+                title="History"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 8V12L15 14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M21 12A9 9 0 1 1 6.3 5.3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- user -->
+              <button
+                class="grid h-10 w-10 place-items-center rounded-[12px] hover:bg-black/5"
+                title="Profile"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 21C20 17.134 16.866 14 13 14H11C7.134 14 4 17.134 4 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M12 12A4 4 0 1 0 12 4A4 4 0 0 0 12 12Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- bottom -->
+          <div class="flex flex-col items-center gap-4">
+            <button
+              class="grid h-10 w-10 place-items-center rounded-[12px] hover:bg-black/5 text-[#1F2D4B]/70"
+              title="Logout"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M10 17L15 12L10 7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15 12H3"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M21 4V20"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="grid h-10 w-10 place-items-center rounded-full bg-[#1F2D4B] text-white"
+              title="Account"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20 21C20 17.134 16.866 14 13 14H11C7.134 14 4 17.134 4 21"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12 12A4 4 0 1 0 12 4A4 4 0 0 0 12 12Z"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="pl-[84px]">
+        <div class="mx-auto max-w-[1700px] px-[20px] py-7">
+          <!-- TOP BAR -->
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <!-- Title pill -->
+            <div
+              class="flex w-full items-center gap-2 rounded-[16px] bg-white px-5 py-4 shadow-[0_1px_0_rgba(0,0,0,0.04)]"
+            >
+              <span class="text-[18px] font-semibold text-[#1F2D4B]">My Workshops</span>
+              <span class="text-[15px] text-[#6B7280]">• never lose track of your work</span>
+            </div>
+
+            <!-- Right controls -->
+            <div class="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:justify-end">
+              <!-- Search -->
+              <div
+                class="flex h-[56px] w-full items-center gap-3 rounded-[16px] bg-white px-4 shadow-[0_1px_0_rgba(0,0,0,0.04)] sm:w-[420px]"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#9CA3AF]">
+                  <path
+                    d="M21 21L16.65 16.65"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M11 18A7 7 0 1 1 11 4A7 7 0 0 1 11 18Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                <input
+                  class="w-full bg-transparent text-[15px] outline-none placeholder:text-[#9CA3AF]"
+                  placeholder="Search"
+                />
+              </div>
+
+              <!-- Filter -->
+              <button
+                class="flex h-[56px] items-center justify-center gap-3 rounded-[16px] bg-white px-6 text-[15px] font-semibold text-[#1F2D4B] shadow-[0_1px_0_rgba(0,0,0,0.04)] hover:bg-black/5"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 6H20M7 12H17M10 18H14"
+                    stroke="#1F2D4B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                Filter
+              </button>
+
+              <!-- New -->
+              <button
+                class="flex h-[56px] items-center justify-center gap-3 rounded-[16px] bg-[#1F2D4B] px-7 text-[15px] font-semibold text-white shadow-[0_8px_22px_rgba(31,45,75,0.18)] hover:opacity-95"
+              >
+                <span
+                  class="grid h-7 w-7 place-items-center rounded-full bg-white/10"
+                  aria-hidden="true"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 5V19M5 12H19"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                New
+              </button>
+            </div>
+          </div>
+
+          <!-- GRID -->
+          <section class="mt-6 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(340px,1fr))]">
+
+            <!-- CARD TEMPLATE: Card 1 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 3C8.13 3 5 6.13 5 10C5 14.25 12 21 12 21C12 21 19 14.25 19 10C19 6.13 15.87 3 12 3Z"
+                      stroke="#2F62E8"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M12 10.5A1.5 1.5 0 1 0 12 7.5A1.5 1.5 0 0 0 12 10.5Z"
+                      fill="#2F62E8"
+                    />
+                  </svg>
+                  AI
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M4 20H8L19 9L15 5L4 16V20Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">ML Deployment</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 20, 10:30 AM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Learn how to deploy machine learning models into production environments. This workshop
+                covers containerization, API development, and monitoring...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">
+                    B
+                  </div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">
+                    A
+                  </div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">
+                    C
+                  </div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">
+                    D
+                  </div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 24 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 17A5 5 0 1 0 12 7A5 5 0 0 0 12 17Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M2 12H4M20 12H22"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Public
+                </span>
+
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M3 12H21"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M12 3C14.5 5.5 16 8.6 16 12C16 15.4 14.5 18.5 12 21C9.5 18.5 8 15.4 8 12C8 8.6 9.5 5.5 12 3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  English
+                </span>
+
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 2V6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6H16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M6 10V20H18V10"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  LAB 2.15
+                </span>
+
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M12 7V12L15 14"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  40 min
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 19V5M8 19V10M12 19V7M16 19V12M20 19V9" stroke="#2F62E8" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Business Data
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 20H8L19 9L15 5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">SQL Optimization</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 22, 14:15 PM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Ontdek geavanceerde technieken voor het optimaliseren van SQL-databases. We behandelen indexering,
+                query-optimalisatie, en performance t...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">B</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">A</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">C</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">D</div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 12 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 17A5 5 0 1 0 12 7A5 5 0 0 0 12 17Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Public
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Dutch
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 10V20H18V10" stroke="currentColor" stroke-width="2"/></svg>
+                  OIL 1.20
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  50 min
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7" stroke="#2F62E8" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 7H17V16" stroke="#2F62E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  IT Management
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 20H8L19 9L15 5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">Agile &amp; Scrum</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 16, 9:15 AM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Master the fundamentals of Agile and Scrum methodology. This interactive workshop explores sprint planning,
+                daily standups, retrospectives, an...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">B</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">A</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">C</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">D</div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 30 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 17A5 5 0 1 0 12 7A5 5 0 0 0 12 17Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Public
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z" stroke="currentColor" stroke-width="2"/></svg>
+                  English
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 10V20H18V10" stroke="currentColor" stroke-width="2"/></svg>
+                  OIL 3.10
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  60 min
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 7H20M4 12H14M4 17H20" stroke="#2F62E8" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Media Design
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 20H8L19 9L15 5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">Adobe After Effects</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 19, 13:15 PM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Explore motion graphics and animation using Adobe After Effects. Students will learn keyframe animation,
+                effects compositing, and creating prof...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">B</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">A</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">C</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">D</div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 20 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 17A5 5 0 1 0 12 7A5 5 0 0 0 12 17Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Public
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z" stroke="currentColor" stroke-width="2"/></svg>
+                  English
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 10V20H18V10" stroke="currentColor" stroke-width="2"/></svg>
+                  OIL 4.30
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  30 min
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 8H17M7 12H17M7 16H13" stroke="#2F62E8" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Software
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 20H8L19 9L15 5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">React Components</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 23, 10:00 AM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Leer hoe je schaalbare React applicaties bouwt met moderne component architectuur. We behandelen hooks,
+                state management, en best practices voor...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">B</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">A</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">C</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">D</div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 42 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 17A5 5 0 1 0 12 7A5 5 0 0 0 12 17Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Public
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Dutch
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 10V20H18V10" stroke="currentColor" stroke-width="2"/></svg>
+                  OIL 1.45
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  50 min
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3V21M3 12H21" stroke="#2F62E8" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Game Design
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 20H8L19 9L15 5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">Unity Physics</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 21, 14:45 PM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Dive into Unity's physics engine and learn to create realistic game mechanics. This workshop covers rigidbody physics,
+                collision detection, and force s...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">B</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">A</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">C</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">D</div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 8 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 17A5 5 0 1 0 12 7A5 5 0 0 0 12 17Z" stroke="currentColor" stroke-width="2"/></svg>
+                  Public
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z" stroke="currentColor" stroke-width="2"/></svg>
+                  English
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 10V20H18V10" stroke="currentColor" stroke-width="2"/></svg>
+                  OIL 4.30
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  40 min
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 7 -->
+            <article
+              class="workshop-card cursor-pointer group rounded-[18px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition hover:bg-[#EFEFEF]"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span
+                  class="inline-flex items-center gap-2 rounded-[10px] bg-[rgba(47,98,232,0.20)] px-3 py-2 text-[12px] font-semibold text-[#2F62E8]"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 8H18M6 12H18M6 16H18" stroke="#2F62E8" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Game Design
+                </span>
+
+                <div class="flex items-center gap-3 text-[#1F2D4B]/60">
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 20H8L19 9L15 5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="grid h-9 w-9 place-items-center rounded-[12px] hover:bg-black/5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18M9 7V5H15V7M8 7L9 20H15L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="mt-4 text-[18px] font-semibold text-[#1F2D4B]">IoT with Raspberry Pi</h3>
+              <p class="mt-1 text-[13px] text-[#6B7280]">Jan 24, 9:45 AM</p>
+
+              <p class="mt-4 line-clamp-4 text-[13px] leading-6 text-[#9CA3AF]">
+                Build Internet of Things applications using Raspberry Pi. This hands-on workshop covers GPIO programming,
+                sensor integration, and netw...
+              </p>
+
+              <div class="mt-5 flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="grid h-7 w-7 place-items-center rounded-full bg-[#1F2D4B] text-[11px] font-semibold text-white">B</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">A</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">C</div>
+                  <div class="grid h-7 w-7 place-items-center rounded-full border border-white bg-[#E5E7EB] text-[11px] font-semibold text-[#6B7280]">D</div>
+                </div>
+                <span class="text-[13px] text-[#9CA3AF]">+ 16 people</span>
+              </div>
+
+              <div class="mt-5 border-t border-black/10 pt-4 flex items-center justify-between gap-3 text-[12px] text-[#9CA3AF]">
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 13C7.5 14.8 9.6 16 12 16C14.4 16 16.5 14.8 18 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Hidden
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21Z" stroke="currentColor" stroke-width="2"/></svg>
+                  English
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 10V20H18V10" stroke="currentColor" stroke-width="2"/></svg>
+                  OIL 2.10
+                </span>
+                <span class="inline-flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21A9 9 0 1 0 12 3A9 9 0 0 0 12 21Z" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  60 min
+                </span>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<script>
+  const overlay = document.getElementById("wsOverlay");
+  const panel = document.getElementById("wsPanel");
+  const frame = document.getElementById("wsFrame");
+
+  function openPopup() {
+    // iframe içine detay sayfasını yükle
+    frame.src = "./myworkshopsteacherdetails.html";
+
+    overlay.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closePopup() {
+    overlay.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+
+    // istersen kapatınca iframe'i boşalt (hafifletir)
+    frame.src = "";
+  }
+
+  // kart tıklanınca popup aç
+  document.querySelectorAll(".workshop-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      // edit/delete ikonlarına basınca açılmasın
+      if (e.target.closest("button")) return;
+      openPopup();
+    });
+  });
+
+  // overlay'e tıklayınca kapat (panelin dışı)
+  overlay.addEventListener("click", (e) => {
+    if (!e.target.closest("#wsPanel")) closePopup();
+  });
+
+  // ESC ile kapat
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !overlay.classList.contains("hidden")) closePopup();
+  });
+
+window.addEventListener("message", (event) => {
+  if (event.data?.type === "CLOSE_WS_POPUP") {
+    // closePopup fonksiyonunu çağır
+    overlay.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+    frame.src = "";
+  }
+});
+</script>

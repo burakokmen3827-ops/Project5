@@ -11,7 +11,7 @@
   <style>
     * { font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
     :root{
-      --page-bg:#F6F7FB;
+      --page-bg:#F6F6F6;
       --navy:#1F2D4B;
       --muted:rgba(0,0,0,.55);
       --line:rgba(0,0,0,.06);
@@ -27,72 +27,46 @@
   <div class="h-screen w-full flex overflow-hidden">
 
     <!-- LEFT SIDEBAR (md+) -->
-    <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-6 flex-col items-center">
-      <div class="h-12 w-12 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
-        <img src="logo.svg" alt="Logo" class="h-7 w-7" />
+    <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-7 flex-col items-center">
+      <div class="h-8 w-8 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
+        <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
       </div>
 
       <nav class="mt-8 flex flex-col gap-3">
-        <div class="h-11 w-11 rounded-2xl bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M4 10.5L12 4l8 6.5V20a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 20v-9.5Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/>
-            <path d="M9 21v-7h6v7" stroke="white" stroke-width="1.7" stroke-linejoin="round"/>
-          </svg>
+        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+          <img src="../assets/images/Dashboard.svg" alt="Dashboard" class="h-6 w-6 object-contain"/>
         </div>
 
-        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
-          </svg>
+        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+          <img src="../assets/images/workshopoverview.svg" alt="Workshop overview" class="h-6 w-6 object-contain" />
         </div>
 
-        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
-            <path d="M3 12l9 5 9-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
-            <path d="M3 16l9 5 9-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
-          </svg>
+        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+          <img src="../assets/images/recentlyattended.svg" alt="Recently attended" class="h-6 w-6 object-contain" />
         </div>
 
-        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#1F2D4B" stroke-width="1.7"/>
-            <path d="M12 6v6l4 2" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M20 21a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z" stroke="#1F2D4B" stroke-width="1.7"/>
-          </svg>
-        </div>
-
-        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M3.5 7.5A2.5 2.5 0 0 1 6 5h4l2 2h6A2.5 2.5 0 0 1 20.5 9.5v9A2.5 2.5 0 0 1 18 21H6a2.5 2.5 0 0 1-2.5-2.5v-11Z" stroke="#1F2D4B" stroke-width="1.7" stroke-linejoin="round"/>
-          </svg>
+        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+          <img src="../assets/images/studentsuggestions.svg" alt="Recently attended" class="h-6 w-6 object-contain" />
         </div>
       </nav>
 
       <div class="mt-auto flex flex-col gap-3">
-        <div class="h-11 w-11 rounded-2xl bg-white flex items-center justify-center shadow-[var(--shadow)]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M10 17l-5-5 5-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 12h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+        <!-- Logout -->
+        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+          <img src="../assets/images/logout.svg" alt="Logout" class="h-6 w-6 object-contain" />
         </div>
 
-        <div class="h-12 w-12 rounded-2xl bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
-          <div class="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">
-            <div class="h-7 w-7 rounded-full bg-white/30 flex items-center justify-center">
-              <div class="h-6 w-6 rounded-full bg-white"></div>
-            </div>
-          </div>
+        <!-- Notifications -->
+        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+          <img src="../assets/images/notifications.svg" alt="Notifications" class="h-6 w-6 object-contain" />
+        </div>
+
+        <!-- User -->
+        <div class="h-7 w-7 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)] overflow-hidden">
+          <img src="../assets/images/User.svg" alt="User" class="h-6 w-6 object-contain" />
         </div>
       </div>
     </aside>
-
     <!-- MAIN -->
     <main class="flex-1 h-screen overflow-hidden py-6 px-4 md:px-6 lg:pr-6">
       <div class="w-full 2xl:max-w-[1680px] 2xl:mx-auto h-full">
@@ -100,7 +74,7 @@
 
           <!-- LEFT COLUMN -->
           <section class="col-span-12 lg:col-span-1 min-w-0 flex flex-col gap-4">
-            <!-- Header card  -->
+            <!-- Header card -->
             <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
               <div class="flex items-center justify-between gap-4">
                 <div class="flex items-center gap-3 min-w-0">
@@ -118,6 +92,7 @@
                 <div class="text-[13px] text-[rgba(0,0,0,.45)] font-medium shrink-0">30 min</div>
               </div>
 
+              <!-- EN | time | teacher -->
               <div class="mt-3 grid grid-cols-[auto_auto_1fr_auto_1fr] items-center gap-4">
                 <div class="shrink-0">
                   <div class="text-[20px] font-medium text-[#3B4CCA] leading-none">EN</div>
@@ -127,39 +102,49 @@
                   <div class="w-px h-10 bg-black/10"></div>
                 </div>
 
-                <div class="flex items-center gap-2 text-[13px] text-[var(--muted)] shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                  </svg>
-                  <span class="leading-4">
-                    OIL 4.30<br>
-                    <span class="text-[rgba(0,0,0,.35)] font-medium">01:30 PM</span>
-                  </span>
-                </div>
+                <div class="grid grid-cols-[16px_1fr] grid-rows-2 gap-x-2 gap-y-1 text-[13px] text-[var(--muted)]">
+  <!-- Row 1: clock + OIL -->
+  <img
+    src="../assets/images/clockcircle.svg"
+    alt="Time"
+    class="h-4 w-4 self-center object-contain"
+  />
+  <div class="leading-4">OIL 4.30</div>
+
+  <!-- Row 2: people + time -->
+  <img
+    src="../assets/images/peoplenearby.svg"
+    alt="Room"
+    class="h-4 w-4 self-center object-contain"
+  />
+  <div class="leading-4 text-[rgba(0,0,0,.35)] font-medium">01:30 PM</div>
+</div>
 
                 <div class="flex justify-center">
                   <div class="w-px h-10 bg-black/10"></div>
                 </div>
 
                 <div class="min-w-0">
-                  <div class="flex flex-col gap-2 text-[13px] text-[var(--muted)] min-w-0">
-                    <div class="flex items-center gap-2 min-w-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                        <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                        <path d="M7 9h10M7 13h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
-                      <span class="truncate">Avetyan, Rafayel</span>
-                    </div>
-                    <div class="flex items-center gap-2 min-w-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                        <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                        <path d="M8 10h8M8 14h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
-                      <span class="truncate">Software</span>
-                    </div>
-                  </div>
-                </div>
+  <div class="grid grid-cols-[16px_1fr] grid-rows-2 gap-x-2 gap-y-1 text-[13px] text-[var(--muted)] min-w-0">
+
+    <!-- Row 1: teacher -->
+    <img
+      src="../assets/images/squareacademiccap.svg"
+      alt="Teacher"
+      class="h-4 w-4 self-center object-contain"
+    />
+    <span class="truncate">Avetyan, Rafayel</span>
+
+    <!-- Row 2: topic -->
+    <img
+      src="../assets/images/Bookmark.svg"
+      alt="Topic"
+      class="h-4 w-4 self-center object-contain"
+    />
+    <span class="truncate">Software</span>
+
+  </div>
+</div>
               </div>
 
               <div class="mt-4 grid grid-cols-2 gap-4">
@@ -168,7 +153,7 @@
               </div>
             </div>
 
-            <!-- HTML structure basics -->
+            <!-- HTML structure basics  -->
             <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
               <div class="flex items-start justify-between gap-3">
                 <div class="text-[18px] font-medium truncate">HTML structure basics</div>
@@ -184,39 +169,49 @@
                   <div class="w-px h-10 bg-black/10"></div>
                 </div>
 
-                <div class="flex items-center gap-2 text-[13px] text-[var(--muted)] shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                  </svg>
-                  <span class="leading-4">
-                    OIL 4.30<br>
-                    <span class="text-[rgba(0,0,0,.35)] font-medium">01:30 PM</span>
-                  </span>
-                </div>
+                <div class="grid grid-cols-[16px_1fr] grid-rows-2 gap-x-2 gap-y-1 text-[13px] text-[var(--muted)]">
+  <!-- Row 1: clock + OIL -->
+  <img
+    src="../assets/images/clockcircle.svg"
+    alt="Time"
+    class="h-4 w-4 self-center object-contain"
+  />
+  <div class="leading-4">OIL 4.30</div>
+
+  <!-- Row 2: people + time -->
+  <img
+    src="../assets/images/peoplenearby.svg"
+    alt="Room"
+    class="h-4 w-4 self-center object-contain"
+  />
+  <div class="leading-4 text-[rgba(0,0,0,.35)] font-medium">01:30 PM</div>
+</div>
 
                 <div class="flex justify-center">
                   <div class="w-px h-10 bg-black/10"></div>
                 </div>
 
                 <div class="min-w-0">
-                  <div class="flex flex-col gap-2 text-[13px] text-[var(--muted)] min-w-0">
-                    <div class="flex items-center gap-2 min-w-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                        <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                        <path d="M7 9h10M7 13h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
-                      <span class="truncate">Eyck, Anke</span>
-                    </div>
-                    <div class="flex items-center gap-2 min-w-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                        <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                        <path d="M8 10h8M8 14h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
-                      <span class="truncate">Media Design</span>
-                    </div>
-                  </div>
-                </div>
+  <div class="grid grid-cols-[16px_1fr] grid-rows-2 gap-x-2 gap-y-1 text-[13px] text-[var(--muted)] min-w-0">
+
+    <!-- Row 1: teacher -->
+    <img
+      src="../assets/images/squareacademiccap.svg"
+      alt="Teacher"
+      class="h-4 w-4 self-center object-contain"
+    />
+    <span class="truncate">Eyck, Anke</span>
+
+    <!-- Row 2: topic -->
+    <img
+      src="../assets/images/Bookmark.svg"
+      alt="Topic"
+      class="h-4 w-4 self-center object-contain"
+    />
+    <span class="truncate">Media Design</span>
+
+  </div>
+</div>
               </div>
 
               <div class="mt-4 grid grid-cols-2 gap-4">
@@ -225,7 +220,7 @@
               </div>
             </div>
 
-            <!-- Computational Thinking (own card) -->
+            <!-- Computational Thinking  -->
             <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
               <div class="flex items-start justify-between gap-3">
                 <div class="text-[18px] font-medium truncate">Computational Thinking</div>
@@ -234,46 +229,56 @@
 
               <div class="mt-3 grid grid-cols-[auto_auto_1fr_auto_1fr] items-center gap-4">
                 <div class="shrink-0">
-                  <div class="text-[20px] font-medium text-[#2B2F3A] leading-none">NL</div>
+                  <div class="text-[20px] font-medium text-[#3B4CCA] leading-none">NL</div>
                 </div>
 
                 <div class="flex justify-center">
                   <div class="w-px h-10 bg-black/10"></div>
                 </div>
 
-                <div class="flex items-center gap-2 text-[13px] text-[var(--muted)] shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    <path d="M20 20a8 8 0 1 0-16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                  </svg>
-                  <span class="leading-4">
-                    OIL 4.30<br>
-                    <span class="text-[rgba(0,0,0,.35)] font-medium">01:30 PM</span>
-                  </span>
-                </div>
+                <div class="grid grid-cols-[16px_1fr] grid-rows-2 gap-x-2 gap-y-1 text-[13px] text-[var(--muted)]">
+  <!-- Row 1: clock + OIL -->
+  <img
+    src="../assets/images/clockcircle.svg"
+    alt="Time"
+    class="h-4 w-4 self-center object-contain"
+  />
+  <div class="leading-4">OIL 4.30</div>
+
+  <!-- Row 2: people + time -->
+  <img
+    src="../assets/images/peoplenearby.svg"
+    alt="Room"
+    class="h-4 w-4 self-center object-contain"
+  />
+  <div class="leading-4 text-[rgba(0,0,0,.35)] font-medium">01:30 PM</div>
+</div>
 
                 <div class="flex justify-center">
                   <div class="w-px h-10 bg-black/10"></div>
                 </div>
 
-                <div class="min-w-0">
-                  <div class="flex flex-col gap-2 text-[13px] text-[var(--muted)] min-w-0">
-                    <div class="flex items-center gap-2 min-w-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                        <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                        <path d="M7 9h10M7 13h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
-                      <span class="truncate">Wijnen, John</span>
-                    </div>
-                    <div class="flex items-center gap-2 min-w-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                        <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                        <path d="M8 10h8M8 14h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
-                      <span class="truncate">IT Management</span>
-                    </div>
-                  </div>
-                </div>
+                 <div class="min-w-0">
+  <div class="grid grid-cols-[16px_1fr] grid-rows-2 gap-x-2 gap-y-1 text-[13px] text-[var(--muted)] min-w-0">
+
+    <!-- Row 1: teacher -->
+    <img
+      src="../assets/images/squareacademiccap.svg"
+      alt="Teacher"
+      class="h-4 w-4 self-center object-contain"
+    />
+    <span class="truncate">Wijnen, John</span>
+
+    <!-- Row 2: topic -->
+    <img
+      src="../assets/images/Bookmark.svg"
+      alt="Topic"
+      class="h-4 w-4 self-center object-contain"
+    />
+    <span class="truncate">IT Management</span>
+
+  </div>
+</div>
               </div>
 
               <div class="mt-4 grid grid-cols-2 gap-4">
@@ -285,8 +290,8 @@
 
           <!-- MIDDLE COLUMN -->
           <section class="col-span-12 lg:col-span-1 min-w-0 flex flex-col gap-4">
-            <!-- Header card (separate) -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+            <!-- Header card -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 px-5 py-4">
               <div class="flex items-center justify-between gap-4">
                 <div class="flex items-center gap-3 min-w-0">
                   <div class="text-[18px] font-medium truncate">Student suggestions</div>
@@ -296,15 +301,13 @@
               </div>
             </div>
 
-            <!-- Business plan definition (own card, arrows outside) -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-4 flex gap-4">
+            <!-- Business plan definition -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-4 flex gap-4">
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between gap-3">
                   <div class="flex items-center gap-2 text-[12px] text-[rgba(0,0,0,.45)] font-medium min-w-0">
-                    <span class="inline-flex h-7 w-7 rounded-xl bg-[#EEF0F6] items-center justify-center shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 3v18M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
+                    <span class="inline-flex h-10 w-10 rounded-2xl bg-[#E9ECF4] items-center justify-center shrink-0">
+                      <img src="../assets/images/Chart.svg" alt="Business Data" class="h-5 w-5 object-contain" />
                     </span>
                     <span class="truncate">Business Data</span>
                   </div>
@@ -320,20 +323,26 @@
                   Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
                 </p>
 
-                <div class="mt-3 flex items-center gap-4 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
-                  <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
-                    <span class="truncate">Deckers, Paul</span>
-                  </div>
-                  <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    </svg>
-                    <span class="truncate">English</span>
-                  </div>
-                </div>
+                <div class="mt-3 flex items-center gap-6 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
+  <div class="flex items-center gap-2 min-w-0">
+    <img
+      src="../assets/images/squareacademiccap.svg"
+      alt="Teacher"
+      class="h-4 w-4 shrink-0 object-contain"
+    />
+    <span class="truncate">Deckers, Paul</span>
+  </div>
+
+  <div class="flex items-center gap-2 min-w-0">
+    <img
+      src="../assets/images/Global.svg"
+      alt="Language"
+      class="h-4 w-4 shrink-0 object-contain"
+    />
+    <span class="truncate">English</span>
+  </div>
+</div>
+
               </div>
 
               <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
@@ -352,15 +361,12 @@
             </div>
 
             <!-- Unreal Engine Camera -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-4 flex gap-4">
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-4 flex gap-4">
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between gap-3">
                   <div class="flex items-center gap-2 text-[12px] text-[rgba(0,0,0,.45)] font-medium min-w-0">
-                    <span class="inline-flex h-8 w-7 rounded-xl bg-[#EEF0F6] items-center justify-center shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 17l7-7 4 4 5-5" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20 20H4" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
+                    <span class="inline-flex h-10 w-10 rounded-2xl bg-[#E9ECF4] items-center justify-center shrink-0">
+                      <img src="../assets/images/gamepadcharge.svg" alt="Game Design" class="h-5 w-5 object-contain" />
                     </span>
                     <span class="truncate">Game Design</span>
                   </div>
@@ -373,20 +379,25 @@
                   Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
                 </p>
 
-                <div class="mt-3 flex items-center gap-4 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
-                  <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
-                    <span class="truncate">Hartingsveldt, Stan</span>
-                  </div>
-                  <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    </svg>
-                    <span class="truncate">Dutch</span>
-                  </div>
-                </div>
+                <div class="mt-3 flex items-center gap-6 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
+  <div class="flex items-center gap-2 min-w-0">
+    <img
+      src="../assets/images/squareacademiccap.svg"
+      alt="Teacher"
+      class="h-4 w-4 shrink-0 object-contain"
+    />
+    <span class="truncate">Hartingsveldt, Stan</span>
+  </div>
+
+  <div class="flex items-center gap-2 min-w-0">
+    <img
+      src="../assets/images/Global.svg"
+      alt="Language"
+      class="h-4 w-4 shrink-0 object-contain"
+    />
+    <span class="truncate">Dutch</span>
+  </div>
+</div>
               </div>
 
               <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
@@ -405,15 +416,12 @@
             </div>
 
             <!-- Responsive layouts -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-4 flex gap-4">
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-4 flex gap-4">
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between gap-3">
                   <div class="flex items-center gap-2 text-[12px] text-[rgba(0,0,0,.45)] font-medium min-w-0">
-                    <span class="inline-flex h-9 w-7 rounded-xl bg-[#EEF0F6] items-center justify-center shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 12h18" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                        <path d="M7 8h10M7 16h10" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                      </svg>
+                    <span class="inline-flex h-10 w-10 rounded-2xl bg-[#E9ECF4] items-center justify-center shrink-0">
+                      <img src="../assets/images/paintroller.svg" alt="Media Design" class="h-5 w-5 object-contain" />
                     </span>
                     <span class="truncate">Media Design</span>
                   </div>
@@ -426,20 +434,25 @@
                   Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in 02:00 PM.
                 </p>
 
-                <div class="mt-3 flex items-center gap-4 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
-                  <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
-                    <span class="truncate">Eyck, Anke</span>
-                  </div>
-                  <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    </svg>
-                    <span class="truncate">English</span>
-                  </div>
-                </div>
+                <div class="mt-3 flex items-center gap-6 text-[12px] text-[rgba(0,0,0,.45)] font-medium">
+  <div class="flex items-center gap-2 min-w-0">
+    <img
+      src="../assets/images/squareacademiccap.svg"
+      alt="Teacher"
+      class="h-4 w-4 shrink-0 object-contain"
+    />
+    <span class="truncate">Eyck, Anke</span>
+  </div>
+
+  <div class="flex items-center gap-2 min-w-0">
+    <img
+      src="../assets/images/Global.svg"
+      alt="Language"
+      class="h-4 w-4 shrink-0 object-contain"
+    />
+    <span class="truncate">English</span>
+  </div>
+</div>
               </div>
 
               <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
@@ -460,15 +473,14 @@
 
           <!-- RIGHT COLUMN -->
           <section class="col-span-12 lg:col-span-1 lg:row-span-2 flex flex-col gap-4 min-w-0">
-            <!-- Workshop composition (REPLACES Attendance breakdown) -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5">
+            <!-- Workshop composition -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-5">
               <div class="flex items-center justify-between gap-4">
                 <div class="text-[18px] font-medium truncate">Workshop composition</div>
                 <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">Revert</a>
               </div>
 
               <div class="mt-6 grid grid-cols-3 gap-x-10 gap-y-8">
-                <!-- item -->
                 <div class="flex items-start gap-3">
                   <span class="mt-1 h-10 w-[3px] rounded-full bg-[var(--navy)]"></span>
                   <div class="min-w-0">
@@ -544,99 +556,135 @@
             </div>
 
             <!-- Notifications -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 flex-1 min-w-0 flex flex-col">
-              <div class="flex items-center justify-between gap-4">
-                <div class="flex items-center gap-3 min-w-0">
-                  <div class="text-[18px] font-medium truncate">Notifications</div>
-                  <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">5</span>
-                </div>
-                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
-              </div>
+<div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-5 flex-1 min-w-0 flex flex-col">
+  <div class="flex items-center justify-between gap-4">
+    <div class="flex gap-3 min-w-0 items-baseline">
+      <div class="text-[18px] font-medium truncate">Notifications</div>
+      <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">5</span>
+    </div>
+    <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+  </div>
 
-              <div class="mt-4 space-y-5 min-w-0">
-                <div class="flex gap-3 min-w-0">
-                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
-                    <span class="text-[14px] font-medium text-[#5A5BE7]">?</span>
-                  </div>
-                  <div class="flex-1 min-w-0">
-                    <div class="flex items-center justify-between gap-3 min-w-0">
-                      <div class="text-[16px] font-medium text-[#5A5BE7] truncate">Any ideas for future workshops?</div>
-                      <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
-                    </div>
-                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
-                      Share your ideas and interests in the suggestions tab to let teachers know.
-                    </div>
-                  </div>
-                </div>
+  <div class="mt-4 space-y-5 min-w-0">
 
-                <div class="flex gap-3 min-w-0">
-                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
-                    <span class="text-[14px] font-medium text-[#1F2D4B]">i</span>
-                  </div>
-                  <div class="flex-1 min-w-0">
-                    <div class="flex items-center justify-between gap-3 min-w-0">
-                      <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
-                        Computational Thinking: <span class="font-medium">Changed time</span>
-                      </div>
-                      <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
-                    </div>
-                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
-                      Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in <span class="font-medium">02:00 PM</span>.
-                    </div>
-                  </div>
-                </div>
+    <!-- 1) Question -->
+    <div class="flex gap-3 min-w-0">
+      <div class="h-9 w-9 flex items-start justify-center shrink-0">
+        <img
+          src="../assets/images/Questioncircle.svg"
+          alt="Question"
+          class="h-8 w-8 mt-[1px] object-contain"
+        />
+      </div>
 
-                <div class="flex gap-3 min-w-0">
-                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
-                    <span class="text-[14px] font-medium text-[#1F2D4B]">×</span>
-                  </div>
-                  <div class="flex-1 min-w-0">
-                    <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
-                      Computational Thinking: <span class="font-medium">Cancelled</span>
-                    </div>
-                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
-                      I have to attend an emergency teacher conference. The workshop will be rescheduled in due time.
-                    </div>
-                  </div>
-                </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center justify-between gap-3 min-w-0">
+          <div class="text-[16px] font-medium text-[#2F62E8] truncate">Any ideas for future workshops?</div>
+          <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
+        </div>
+        <div class="mt-2 text-[15px] leading-6 text-[#2F62E9]/50">
+          Share your ideas and interests in the suggestions tab to let teachers know.
+        </div>
+      </div>
+    </div>
 
-                <div class="flex gap-3 min-w-0">
-                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
-                    <span class="text-[14px] font-medium text-[#1F2D4B]">i</span>
-                  </div>
-                  <div class="flex-1 min-w-0">
-                    <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
-                      HTML structure basics: <span class="font-medium">Message</span>
-                    </div>
-                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
-                      To minimize repetition and configurational delays make you have Visual Studio installed. Check the following...
-                    </div>
-                  </div>
-                </div>
+    <!-- 2) Info -->
+    <div class="flex gap-3 min-w-0">
+      <div class="h-9 w-9 flex items-start justify-center shrink-0">
+        <img
+          src="../assets/images/Infocircle.svg"
+          alt="Info"
+          class="h-8 w-8 mt-[1px] object-contain"
+        />
+      </div>
 
-                <div class="flex gap-3 min-w-0">
-                  <div class="h-9 w-9 rounded-xl bg-[#EEF0F6] flex items-center justify-center shrink-0">
-                    <span class="text-[14px] font-medium text-[#1F2D4B]">i</span>
-                  </div>
-                  <div class="flex-1 min-w-0">
-                    <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
-                      Python functions: <span class="font-medium">Changed room</span>
-                    </div>
-                    <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
-                      The assigned students exceed the capacity of LAB <span class="font-medium">4.44</span> so we will moving to OIL <span class="font-medium">4.30</span>.
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center justify-between gap-3 min-w-0">
+          <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+            Computational Thinking: <span class="font-medium">Changed time</span>
+          </div>
+          <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
+        </div>
+        <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+          Due to heavy traffic, I will be running later so the workshop will start 30 minutes later in
+          <span class="font-medium">02:00 PM</span>.
+        </div>
+      </div>
+    </div>
 
-              <div class="flex-1"></div>
-            </div>
+    <!-- 3) Cancelled (color updated) -->
+    <div class="flex gap-3 min-w-0">
+      <div class="h-9 w-9 flex items-start justify-center shrink-0">
+        <img
+          src="../assets/images/Closecircle.svg"
+          alt="Cancelled"
+          class="h-8 w-8 mt-[1px] object-contain"
+        />
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <div class="text-[16px] font-medium text-[#5259FF] truncate">
+          Computational Thinking: <span class="font-medium">Cancelled</span>
+        </div>
+        <div class="mt-2 text-[15px] leading-6 text-[#5259FF]/50">
+          I have to attend an emergency teacher conference. The workshop will be rescheduled in due time.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4) Info -->
+    <div class="flex gap-3 min-w-0">
+      <div class="h-9 w-9 flex items-start justify-center shrink-0">
+        <img
+          src="../assets/images/Infocircle.svg"
+          alt="Info"
+          class="h-8 w-8 mt-[1px] object-contain"
+        />
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+          HTML structure basics: <span class="font-medium">Message</span>
+        </div>
+        <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+          To minimize repetition and configurational delays make you have Visual Studio installed. Check the following...
+        </div>
+      </div>
+    </div>
+
+    <!-- 5) Info -->
+    <div class="flex gap-3 min-w-0">
+      <div class="h-9 w-9 flex items-start justify-center shrink-0">
+        <img
+          src="../assets/images/Infocircle.svg"
+          alt="Info"
+          class="h-8 w-8 mt-[1px] object-contain"
+        />
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <div class="text-[16px] font-medium text-[#1F2D4B] truncate">
+          Python functions: <span class="font-medium">Changed room</span>
+        </div>
+        <div class="mt-2 text-[15px] leading-6 text-[rgba(0,0,0,.45)]">
+          The assigned students exceed the capacity of LAB <span class="font-medium">4.44</span> so we will moving to OIL
+          <span class="font-medium">4.30</span>.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex-1"></div>
+</div>
+
+
           </section>
 
           <!-- BOTTOM LEFT+MIDDLE (Recently attended) -->
           <section class="col-span-12 lg:col-span-2 min-w-0 flex flex-col gap-4">
-            <!-- Header card (separate) -->
-            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] px-5 py-4">
+            <!-- Header card -->
+            <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 px-5 py-4">
               <div class="flex items-center justify-between gap-4">
                 <div class="flex items-center gap-2 min-w-0">
                   <div class="text-[18px] font-medium truncate">Recently attended workshops</div>
@@ -647,7 +695,7 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch min-h-0">
-              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 h-full flex flex-col">
+              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-5 h-full flex flex-col">
                 <div class="flex items-start justify-between gap-3">
                   <div class="text-[16px] font-medium truncate">Computational Thinking</div>
                   <span class="h-5 px-2 rounded-lg bg-[#EEF0F6] text-[11px] font-medium text-[#111827] shrink-0">new</span>
@@ -655,59 +703,53 @@
                 <p class="mt-3 text-[12.5px] leading-5 text-[rgba(0,0,0,.45)]">
                   This workshop showcases the fundamental problem breakdown behind each software solution and helps students to better understand and implement it.
                 </p>
-                <div class="mt-auto pt-4 flex items-center justify-between text-[12px] font-medium text-[rgba(0,0,0,.45)] gap-4">
+
+                <div class="mt-auto pt-4 flex items-center justify-start gap-6 text-[12px] font-medium text-[rgba(0,0,0,.45)]">
                   <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
+                    <img src="../assets/images/squareacademiccap.svg" alt="Teacher" class="h-4 w-4 shrink-0 object-contain" />
                     <span class="truncate">Wijnen, John</span>
                   </div>
+
                   <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    </svg>
+                    <img src="../assets/images/Bookmark.svg" alt="Topic" class="h-4 w-4 shrink-0 object-contain" />
                     <span class="truncate">IT Management</span>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 h-full flex flex-col">
+              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-5 h-full flex flex-col">
                 <div class="text-[16px] font-medium truncate">HTML structure basics</div>
                 <p class="mt-3 text-[12.5px] leading-5 text-[rgba(0,0,0,.45)]">
                   This workshop showcases the fundamental problem breakdown behind each software solution and helps students to better understand and implement it.
                 </p>
-                <div class="mt-auto pt-4 flex items-center justify-between text-[12px] font-medium text-[rgba(0,0,0,.45)] gap-4">
+
+                <div class="mt-auto pt-4 flex items-center justify-start gap-6 text-[12px] font-medium text-[rgba(0,0,0,.45)]">
                   <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
+                    <img src="../assets/images/squareacademiccap.svg" alt="Teacher" class="h-4 w-4 shrink-0 object-contain" />
                     <span class="truncate">Wijnen, John</span>
                   </div>
+
                   <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    </svg>
+                    <img src="../assets/images/Bookmark.svg" alt="Topic" class="h-4 w-4 shrink-0 object-contain" />
                     <span class="truncate">IT Management</span>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5 h-full flex flex-col">
+              <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] border border-black/5 p-5 h-full flex flex-col">
                 <div class="text-[16px] font-medium truncate">Python functions</div>
                 <p class="mt-3 text-[12.5px] leading-5 text-[rgba(0,0,0,.45)]">
                   This workshop showcases the fundamental problem breakdown behind each software solution and helps students to better understand and implement it.
                 </p>
-                <div class="mt-auto pt-4 flex items-center justify-between text-[12px] font-medium text-[rgba(0,0,0,.45)] gap-4">
+
+                <div class="mt-auto pt-4 flex items-center justify-start gap-6 text-[12px] font-medium text-[rgba(0,0,0,.45)]">
                   <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M20 21V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
+                    <img src="../assets/images/squareacademiccap.svg" alt="Teacher" class="h-4 w-4 shrink-0 object-contain" />
                     <span class="truncate">Wijnen, John</span>
                   </div>
+
                   <div class="flex items-center gap-2 min-w-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
-                      <path d="M4 6h16v12H4V6Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                    </svg>
+                    <img src="../assets/images/Bookmark.svg" alt="Topic" class="h-4 w-4 shrink-0 object-contain" />
                     <span class="truncate">IT Management</span>
                   </div>
                 </div>
