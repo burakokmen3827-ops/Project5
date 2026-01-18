@@ -14,7 +14,7 @@
   </style>
 </head>
 
-<body class="bg-white text-[16px] font-normal text-[#111827]">
+<body class="bg-transparent text-[16px] font-normal text-[#111827]">
   <div class="min-h-screen w-full">
     <aside class="fixed inset-0 p-3 sm:p-4 flex justify-end">
       <div
@@ -23,88 +23,80 @@
                overflow-hidden flex flex-col"
       >
         <!-- TOP BAR -->
-        <div class="px-5 sm:px-6 py-4 flex items-center gap-4 border-b border-[#EEF1F7]">
-          <div class="h-9 w-9 rounded-xl bg-[#F3F5FF] flex items-center justify-center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#111827]">
-              <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M2 16l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            </svg>
-          </div>
+<div class="px-5 sm:px-6 py-4 flex items-center gap-4 border-b border-[#EEF1F7]">
+  <div class="h-9 w-9 rounded-xl bg-[#F3F5FF] flex items-center justify-center">
+    <img src="../assets/images/workshopoverview.svg" width="18" height="18" alt="">
+  </div>
 
-          <div class="flex-1 flex items-center gap-2 min-w-0">
-            <span class="text-[#6B7280] whitespace-nowrap">Week Jan 12 - 16</span>
-            <span class="text-[#D1D5DB]">/</span>
-            <span class="font-semibold text-[#111827] whitespace-nowrap">Thursday</span>
-          </div>
+  <div class="flex-1 flex items-center gap-2 min-w-0">
+    <span class="text-[#6B7280] whitespace-nowrap">Week Jan 12 - 16</span>
+    <span class="text-[#D1D5DB]">/</span>
+    <span class="font-semibold text-[#111827] whitespace-nowrap">Thursday</span>
+  </div>
 
-          <div class="flex items-center gap-2 text-[#111827] font-semibold">
-            <span class="inline-flex items-center justify-center h-8 w-8 rounded-full border border-[#EEF1F7]">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" stroke="#111827" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="#111827" stroke-width="1.8"/>
-              </svg>
-            </span>
-            Public
-          </div>
+  <div class="flex items-center gap-2 text-[#111827] font-semibold">
+    <span class="inline-flex items-center justify-center h-8 w-8 rounded-full border border-[#EEF1F7]">
+      <img src="../assets/images/eye.svg" width="16" height="16" alt="">
+    </span>
+    Public
+  </div>
+  <button 
+  id="closeBtn"
+  class="h-9 w-9 rounded-full flex items-center justify-center overflow-hidden opacity-70">
+  <img
+    src="../assets/images/Close Circle.svg"
+    class="w-full h-full object-contain"
+    alt=""
+  >
+</button>
+</div>
 
-          <button 
-          id="closeBtn" class="h-9 w-9 rounded-full border border-[#EEF1F7] flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 6l12 12M18 6 6 18" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </button>
+       <!-- HEADER CARD -->
+<div class="px-5 sm:px-6 py-5 border-b border-[#EEF1F7]">
+  <div class="flex items-center gap-5">
+   <div class="h-20 w-20 rounded-2xl bg-[#E7E9FF] flex items-center justify-center overflow-hidden">
+  <img
+    src="../assets/images/sqlinjection.svg"
+    class="w-full h-full object-cover"
+    alt=""
+  >
+</div>
+
+    <div class="flex-1 min-w-0">
+      <div class="text-[22px] sm:text-[24px] font-semibold text-[#111827] leading-tight">SQL Injection</div>
+
+      <div class="mt-2 flex flex-col gap-2 text-[#6B7280]">
+        <div class="flex items-center gap-2">
+          <img src="../assets/images/squareacademiccap.svg" width="18" height="18" alt="">
+          <span>Deckers, Paul</span>
         </div>
-
-        <!-- HEADER CARD -->
-        <div class="px-5 sm:px-6 py-5 border-b border-[#EEF1F7]">
-          <div class="flex items-center gap-5">
-            <div class="h-20 w-20 rounded-2xl bg-[#E7E9FF] flex items-center justify-center">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2 20 5.5V12c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V5.5L12 2Z"
-                      stroke="#2F62E9" stroke-width="1.8" stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-            <div class="flex-1 min-w-0">
-              <div class="text-[22px] sm:text-[24px] font-semibold text-[#111827] leading-tight">SQL Injection</div>
-
-              <div class="mt-2 flex flex-col gap-2 text-[#6B7280]">
-                <div class="flex items-center gap-2">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke="#6B7280" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M2 12l10 5 10-5" stroke="#6B7280" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                  <span>Deckers, Paul</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke="#6B7280" stroke-width="1.6"/>
-                    <path d="M2 12h20" stroke="#6B7280" stroke-width="1.6"/>
-                    <path d="M12 2c3 3 3 17 0 20" stroke="#6B7280" stroke-width="1.6"/>
-                  </svg>
-                  <span>English</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <div class="hidden sm:flex items-center gap-2 text-[#6B7280]">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#6B7280" stroke-width="1.6"/>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-                <span>21</span>
-              </div>
-
-              <button class="h-11 px-6 rounded-xl bg-[#1F2D4B] text-white font-semibold shadow-sm">
-                Edit
-              </button>
-            </div>
-          </div>
+        <div class="flex items-center gap-2">
+          <img src="../assets/images/Global.svg" width="18" height="18" alt="">
+          <span>English</span>
         </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center gap-2 text-[#6B7280]">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#6B7280" stroke-width="1.6"/>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span>21</span>
+      </div>
+
+      <button
+        id="editBtn"
+        class="h-11 px-6 rounded-xl bg-[#1F2D4B] text-white font-semibold shadow-sm"
+      >
+        Edit
+      </button>
+    </div>
+  </div>
+</div>
 
         <!-- TABS -->
         <div class="px-5 sm:px-6 pt-3 border-b border-[#EEF1F7]">
@@ -161,12 +153,10 @@
           <div id="panel-general" class="tab-panel px-5 sm:px-6 pt-5 pb-3">
             <div class="grid grid-cols-[56px_1fr] gap-x-4 gap-y-6">
 
-              <div class="flex items-start justify-center pt-1 text-[#6B7280]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z" stroke="#6B7280" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="flex items-start gap-4">
+              <div class="flex items-center justify-center pt-1 text-[#6B7280]">
+  <img src="../assets/images/Bookmark.svg" width="20" height="20" alt="">
+</div>
+              <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Topic</span>
                 <div class="flex flex-wrap gap-3">
                   <span class="px-3 py-2 rounded-lg bg-[#E8EEFF] text-[#2F62E9] font-semibold text-[14px]">
@@ -179,58 +169,40 @@
               </div>
 
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="#6B7280" stroke-width="1.6"/>
-                  <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="#6B7280" stroke-width="1.6"/>
-                </svg>
-              </div>
+  <img src="../assets/images/peoplenearby.svg" width="20" height="20" alt="">
+</div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Room</span>
                 <span class="text-[#111827] text-[18px] font-mixed">Fontys R10, OIL 4.30</span>
               </div>
 
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 3v2M16 3v2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M3 9h18" stroke="#6B7280" stroke-width="1.6"/>
-                  <path d="M5 5h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
-                        stroke="#6B7280" stroke-width="1.6"/>
-                </svg>
-              </div>
+  <img src="../assets/images/calendarmark.svg" width="20" height="20" alt="">
+</div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Date</span>
                 <span class="text-[#111827] text-[18px] font-mixed">Jan 15, 2026</span>
               </div>
 
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke="#6B7280" stroke-width="1.6"/>
-                  <path d="M12 6v6l4 2" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
+  <img src="../assets/images/clockcircle.svg" width="20" height="20" alt="">
+</div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Time</span>
                 <span class="text-[#111827] text-[18px] font-mixed">01:30 AM</span>
               </div>
 
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke="#6B7280" stroke-width="1.6"/>
-                  <path d="M12 7v5" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M12 12h4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-              </div>
+  <img src="../assets/images/Stopwatch.svg" width="20" height="20" alt="">
+</div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Duration</span>
                 <span class="text-[#111827] text-[18px] font-mixed">30 min</span>
               </div>
 
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 6h13M8 12h13M8 18h13" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M3 6h.01M3 12h.01M3 18h.01" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/>
-                </svg>
-              </div>
+  <img src="../assets/images/documenttext.svg" width="20" height="20" alt="">
+</div>
               <div class="flex items-start gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Description</span>
                 <div class="text-[#111827] leading-relaxed text-[18px] font-mixed">
@@ -255,18 +227,23 @@
                     <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                     <path d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z" stroke="currentColor" stroke-width="1.8"/>
                   </svg>
-                  <span class="text-[#9CA3AF] text-[16px]">Search</span>
+                  <input
+  id="participantsSearch"
+  type="text"
+  placeholder="Search"
+  class="w-full bg-transparent outline-none text-[#111827] text-[16px] placeholder:text-[#9CA3AF]"
+/>
                 </div>
               </div>
 
               <div class="flex items-center gap-4">
-                <button class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]">
+                <button id="participantsPrev" class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M15 18 9 12l6-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
-                <span class="text-[#111827] font-semibold text-[18px] w-6 text-center">1</span>
-                <button class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]">
+                <span id="participantsPage" class="text-[#111827] font-semibold text-[18px] w-6 text-center">1</span>
+                <button id="participantsNext" class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -274,279 +251,563 @@
               </div>
             </div>
 
-            <div class="mt-10 grid grid-cols-2 gap-x-20 gap-y-10">
-              <!-- (same list as before) -->
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#1F2D4B] flex items-center justify-center">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-white">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Avetyan, Rafayel</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#1F2D4B] flex items-center justify-center">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-white">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Bakx, René</span>
-              </div>
+<div id="participantsGrid" class="mt-8 grid grid-cols-2 gap-x-20 gap-y-7 pb-10">
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Berkvens, Stijn</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Boom, Robin</span>
-              </div>
+  <!-- Row 1 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#1F2D4B] flex items-center justify-center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-white">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Avetyan, Rafayel</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Borzyszkowski, Patryk</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Bosgoed, Jasper</span>
-              </div>
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#1F2D4B] flex items-center justify-center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-white">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Bakx, René</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Brils, Max</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Chen, Zinan</span>
-              </div>
+  <!-- Row 2 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Berkvens, Stijn</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Daoud, Salmaan</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Derkaoui, Aymane</span>
-              </div>
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Boom, Robin</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Derksen, Cas</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Hoppenbrouwers, Ruben</span>
-              </div>
+  <!-- Row 3 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Borzyszkowski, Patryk</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-medium">Does, Darian</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Gerits, Danny</span>
-              </div>
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Bosgoed, Jasper</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Ghanem, Gamal</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Hamd, Obida</span>
-              </div>
+  <!-- Row 4 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Brils, Max</span>
+  </div>
 
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Heijs, Kian</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </div>
-                <span class="text-[#111827] text-[20px] font-mixed">Heusschen, Jur</span>
-              </div>
-            </div>
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Chen, Zinan</span>
+  </div>
+
+  <!-- Row 5 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Daoud, Salmaan</span>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Derkaoui, Aymane</span>
+  </div>
+
+  <!-- Row 6 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Derksen, Cas</span>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Hoppenbrouwers, Ruben</span>
+  </div>
+
+  <!-- Row 7 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-medium">Does, Darian</span>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Gerits, Danny</span>
+  </div>
+
+  <!-- Row 8 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Ghanem, Gamal</span>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Hamd, Obida</span>
+  </div>
+
+  <!-- Row 9 -->
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Heijs, Kian</span>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="h-9 w-9 rounded-full bg-[#EEF1F7] flex items-center justify-center text-[#6B7280]">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+      </svg>
+    </div>
+    <span class="text-[#111827] text-[16px] font-mixed">Heusschen, Jur</span>
+  </div>
+
+</div>
           </div>
 
-          <!-- HISTORY -->
-          <div id="panel-history" class="tab-panel hidden px-5 sm:px-6 pt-5 pb-3">
-            <div class="flex items-center gap-4">
-              <div class="flex-1">
-                <div class="h-14 rounded-2xl border border-[#EEF1F7] bg-white px-5 flex items-center gap-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-[#9CA3AF]">
-                    <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    <path d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z" stroke="currentColor" stroke-width="1.8"/>
-                  </svg>
-                  <span class="text-[#9CA3AF] text-[16px]">Search</span>
-                </div>
-              </div>
+        <!-- HISTORY -->
+<div id="panel-history" class="tab-panel hidden px-5 sm:px-6 pt-5 pb-3">
+  <!-- Top row: Search + Pagination -->
+  <div class="flex items-center gap-4">
+    <div class="flex-1">
+      <div class="h-14 rounded-2xl border border-[#EEF1F7] bg-white px-5 flex items-center gap-3">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-[#9CA3AF]">
+          <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
 
-              <div class="flex items-center gap-4">
-                <button class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18 9 12l6-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-                <span class="text-[#111827] font-semibold text-[18px] w-6 text-center">1</span>
-                <button class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="h-[520px]"></div>
-          </div>
-          <div id="bottom-line" class="h-px bg-[#EEF1F7]"></div>
+        <input
+          id="historySearch"
+          type="text"
+          placeholder="Search"
+          class="w-full bg-transparent outline-none text-[#111827] text-[16px] placeholder:text-[#9CA3AF]"
+        />
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button
+        id="historyPrev"
+        class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18 9 12l6-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <span id="historyPage" class="text-[#111827] font-semibold text-[18px] w-6 text-center">1</span>
+
+      <button
+        id="historyNext"
+        class="h-14 w-14 rounded-2xl border border-[#EEF1F7] bg-white flex items-center justify-center text-[#6B7280]"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom white area: only this scrolls -->
+  <div id="historyScroll" class="mt-8 pb-6">
+    <div id="historyList" class="flex flex-col gap-6">
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 12, 2026 13:38</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Does, Darian</span> verified their attendance
         </div>
-        
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 12, 2026 13:37</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Does, Darian</span> verified their attendance
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 12, 2026 13:36</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Daoud, Salmaan</span> verified their attendance
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 12, 2026 13:35</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Hoppenbrouwers, Ruben</span> verified their attendance
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 12, 2026 13:35</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Chen, Zinan</span> verified their attendance
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 12, 2026 13:35</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Bosgoed, Jasper</span> verified their attendance
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 11, 2026 12:32</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Does, Darian</span> signed up
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 11, 2026 11:54</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Daoud, Salmaan</span> signed up
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 11, 2026 10:30</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Hoppenbrouwers, Ruben</span> signed up
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 11, 2026 09:40</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Chen, Zinan</span> signed up
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 10, 2026 09:30</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          <span class="font-semibold">Bosgoed, Jasper</span> signed up
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[200px_1fr] items-start">
+        <div class="text-[#9CA3AF] text-[15px]">Jan 10, 2026 06:40</div>
+        <div class="text-[#111827] text-[15px] font-mixed">
+          Workshop created
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+             <div id="bottom-line" class="h-px bg-[#EEF1F7]"></div>
+        </div>
+        <!-- /CONTENT -->
 
         <!-- FOOTER -->
         <div id="footer" class="mt-auto flex items-center justify-center h-full w-full">
           <div class="px-5 sm:px-6 py-5 flex items-center gap-3 text-[#9CA3AF]">
-            <img src="../assets/images/linkbroken.svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M7 12a5 5 0 0 1 10 0v1a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4v-1Z" stroke="#9CA3AF" stroke-width="1.6"/>
-              <path d="M12 17v3" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M8 21h8" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M4 7c0 3 2 5 5 5" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M20 7c0 3-2 5-5 5" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round"/>
+            <img src="../assets/images/linkbroken.svg" width="24" height="24" alt="">
             <span class="text-[18px] sm:text-[20px] font-medium">Standalone Workshop</span>
           </div>
         </div>
-
       </div>
     </aside>
   </div>
 
   <script>
-    const closeBtn = document.getElementById("closeBtn");
-
+  // ------------------------------
+  // CLOSE + EDIT
+  // ------------------------------
+  const closeBtn = document.getElementById("closeBtn");
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
-      // iframe içindeysek parent sayfaya mesaj gönder
-      window.parent.postMessage(
-        { type: "CLOSE_WS_POPUP" },
-        "*"
-      );
+      window.parent.postMessage({ type: "CLOSE_WS_POPUP" }, "*");
     });
   }
-    const tabs = Array.from(document.querySelectorAll(".tab-btn"));
-    const panels = {
-      general: document.getElementById("panel-general"),
-      participants: document.getElementById("panel-participants"),
-      history: document.getElementById("panel-history"),
-    };
 
-    const u = {
-      general: document.getElementById("u-general"),
-      participants: document.getElementById("u-participants"),
-      history: document.getElementById("u-history"),
-    };
+  const editBtn = document.getElementById("editBtn");
+  if (editBtn) {
+    editBtn.addEventListener("click", () => {
+      const targetUrl = "workshopcreationinput.html";
 
-    const bottomLine = document.getElementById("bottom-line");
-    const footer = document.getElementById("footer");
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: "CLOSE_WS_POPUP" }, "*");
+        window.parent.location.href = targetUrl;
+        return;
+      }
 
-    function setActive(tabName) {
-      Object.values(panels).forEach(p => p.classList.add("hidden"));
-      panels[tabName].classList.remove("hidden");
+      window.location.href = targetUrl;
+    });
+  }
 
-      tabs.forEach(btn => {
-        const isActive = btn.dataset.tab === tabName;
-        btn.classList.toggle("text-[#111827]", isActive);
-        btn.classList.toggle("text-[#9CA3AF]", !isActive);
+  // ------------------------------
+  // TABS
+  // ------------------------------
+  const tabs = Array.from(document.querySelectorAll(".tab-btn"));
+  const panels = {
+    general: document.getElementById("panel-general"),
+    participants: document.getElementById("panel-participants"),
+    history: document.getElementById("panel-history"),
+  };
+
+  const u = {
+    general: document.getElementById("u-general"),
+    participants: document.getElementById("u-participants"),
+    history: document.getElementById("u-history"),
+  };
+
+  const bottomLine = document.getElementById("bottom-line");
+  const footer = document.getElementById("footer");
+
+  // ------------------------------
+  // HELPERS
+  // ------------------------------
+  function normalize(s) {
+    return (s || "").toLowerCase().trim();
+  }
+
+  function setDisabled(btn, disabled) {
+    if (!btn) return;
+    btn.disabled = disabled;
+    btn.classList.toggle("opacity-40", disabled);
+    btn.classList.toggle("pointer-events-none", disabled);
+  }
+
+  // ------------------------------
+  // PARTICIPANTS (filter + pagination)
+  // ------------------------------
+  const participants = {
+    searchEl: document.getElementById("participantsSearch"),
+    gridEl: document.getElementById("participantsGrid"),
+    prevBtn: document.getElementById("participantsPrev"),
+    nextBtn: document.getElementById("participantsNext"),
+    pageEl: document.getElementById("participantsPage"),
+    allItems: [],
+    PAGE_SIZE: 18,
+    currentPage: 1,
+    query: "",
+  };
+
+  if (participants.gridEl) {
+    participants.allItems = Array.from(participants.gridEl.children);
+  }
+
+  function applyParticipantsView() {
+    if (!participants.gridEl || !participants.pageEl) return;
+
+    const filtered = participants.allItems.filter((item) => {
+      const nameEl = item.querySelector("span");
+      const name = nameEl ? nameEl.textContent : "";
+      return normalize(name).includes(normalize(participants.query));
+    });
+
+    const totalPages = Math.max(
+      1,
+      Math.ceil(filtered.length / participants.PAGE_SIZE)
+    );
+
+    if (participants.currentPage > totalPages) participants.currentPage = totalPages;
+    if (participants.currentPage < 1) participants.currentPage = 1;
+
+    // hide all
+    participants.allItems.forEach((el) => (el.style.display = "none"));
+
+    // show current page
+    const start = (participants.currentPage - 1) * participants.PAGE_SIZE;
+    const pageItems = filtered.slice(start, start + participants.PAGE_SIZE);
+    pageItems.forEach((el) => (el.style.display = ""));
+
+    participants.pageEl.textContent = String(participants.currentPage);
+
+    setDisabled(participants.prevBtn, participants.currentPage === 1);
+    setDisabled(participants.nextBtn, participants.currentPage === totalPages);
+  }
+
+  function bindParticipants() {
+    if (participants.searchEl) {
+      // input kesin yazılabilir olsun (overlay/pointer issue varsa bile)
+      participants.searchEl.classList.add("pointer-events-auto");
+
+      participants.searchEl.addEventListener("input", (e) => {
+        participants.query = e.target.value || "";
+        participants.currentPage = 1;
+        applyParticipantsView();
       });
-
-      Object.values(u).forEach(el => el.classList.add("hidden"));
-      u[tabName].classList.remove("hidden");
-
-      const showBottom = (tabName === "general");
-      bottomLine.classList.toggle("hidden", !showBottom);
-      footer.classList.toggle("hidden", !showBottom);
     }
 
-    tabs.forEach(btn => btn.addEventListener("click", () => setActive(btn.dataset.tab)));
-    setActive("general");
-  </script>
+    if (participants.prevBtn) {
+      participants.prevBtn.addEventListener("click", () => {
+        participants.currentPage--;
+        applyParticipantsView();
+      });
+    }
+
+    if (participants.nextBtn) {
+      participants.nextBtn.addEventListener("click", () => {
+        participants.currentPage++;
+        applyParticipantsView();
+      });
+    }
+  }
+
+  // ------------------------------
+  // HISTORY (filter only)
+  // ------------------------------
+  const history = {
+    searchEl: document.getElementById("historySearch"),
+    listEl: document.getElementById("historyList"),
+    rows: [],
+  };
+
+  if (history.listEl) {
+    history.rows = Array.from(history.listEl.children);
+  }
+
+  function applyHistoryFilter() {
+    if (!history.searchEl || !history.listEl) return;
+
+    const q = normalize(history.searchEl.value);
+
+    history.rows.forEach((row) => {
+      const text = normalize(row.textContent);
+      row.style.display = text.includes(q) ? "" : "none";
+    });
+  }
+
+  function bindHistory() {
+    if (history.searchEl) {
+      history.searchEl.classList.add("pointer-events-auto");
+
+      history.searchEl.addEventListener("input", applyHistoryFilter);
+    }
+  }
+
+  // ------------------------------
+  // SET ACTIVE TAB
+  // ------------------------------
+  function setActive(tabName) {
+    Object.values(panels).forEach((p) => p && p.classList.add("hidden"));
+    panels[tabName] && panels[tabName].classList.remove("hidden");
+
+    tabs.forEach((btn) => {
+      const isActive = btn.dataset.tab === tabName;
+      btn.classList.toggle("text-[#111827]", isActive);
+      btn.classList.toggle("text-[#9CA3AF]", !isActive);
+    });
+
+    Object.values(u).forEach((el) => el && el.classList.add("hidden"));
+    u[tabName] && u[tabName].classList.remove("hidden");
+
+    const showBottom = tabName === "general";
+    bottomLine && bottomLine.classList.toggle("hidden", !showBottom);
+    footer && footer.classList.toggle("hidden", !showBottom);
+    if (tabName === "general") {
+  bottomLine && bottomLine.classList.remove("hidden");
+  footer && footer.classList.remove("hidden");
+}
+
+    // ✅ Tab açılınca görünümü tazele
+    if (tabName === "participants") applyParticipantsView();
+    if (tabName === "history") applyHistoryFilter();
+  }
+
+  // ------------------------------
+  // INIT (bind first, then setActive)
+  // ------------------------------
+  bindParticipants();
+  bindHistory();
+
+  tabs.forEach((btn) => {
+    btn.addEventListener("click", () => setActive(btn.dataset.tab));
+  });
+
+  setActive("general");
+
+  // güvenlik: initial apply 
+  applyParticipantsView();
+  applyHistoryFilter();
+</script>
+
 </body>
 </html>

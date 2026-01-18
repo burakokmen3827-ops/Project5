@@ -32,51 +32,73 @@
       </div>
 
       <nav class="mt-8 flex flex-col gap-3">
-        <div class="h-7 w-7 rounded-2xl overflow-hidden
-         bg-[#F6F6F6]
-         hover:bg-black/5
-         transition-colors duration-200
-         flex items-center justify-center">
-  <img src="../assets/images/Dashboard.svg"
-    alt="Dashboard"
-    class="h-6 w-6 object-contain"/>
+
+  <!-- 1) Dashboard -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="dashboardpiechartteacher.html"
+  >
+    <img
+      src="../assets/images/Dashboard.svg"
+      alt="Dashboard"
+      class="h-6 w-6 object-contain"
+    />
   </div>
-     <div class="h-7 w-7 rounded-2xl overflow-hidden
-         bg-[#F6F6F6]
-         hover:bg-black/5
-         transition-colors duration-200
-         flex items-center justify-center">
-  <img
-    src="../assets/images/workshopoverview.svg"
-    alt="Workshop overview"
-    class="h-6 w-6 object-contain" />
-</div>
 
-        <div
-  class="h-7 w-7 rounded-2xl overflow-hidden
-         bg-[#F6F6F6]
-         hover:bg-black/5
-         transition-colors duration-200
-         flex items-center justify-center">
-  <img
-    src="../assets/images/filesharing.svg"
-    alt="Recently attended"
-    class="h-6 w-6 object-contain" />
-</div>
+  <!-- 2) Workshop overview -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="workshopoverviewteacher.html"
+  >
+    <img
+      src="../assets/images/workshopoverview.svg"
+      alt="Workshop overview"
+      class="h-6 w-6 object-contain"
+    />
+  </div>
 
-        <div
-  class="h-7 w-7 rounded-2xl overflow-hidden
-         bg-[#F6F6F6]
-         hover:bg-black/5
-         transition-colors duration-200
-         flex items-center justify-center">
-  <img
-    src="../assets/images/studentsuggestions.svg"
-    alt="Recently attended"
-    class="h-6 w-6 object-contain" />
-</div>
+  <!-- 3) My workshops  -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="myworkshopsteacher.html"
+  >
+    <img
+      src="../assets/images/filesharing.svg"
+      alt="My workshops"
+      class="h-6 w-6 object-contain"
+    />
+  </div>
 
-      </nav>
+  <!-- 4) Student suggestions -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="studentsuggestionsteacher.html"
+  >
+    <img
+      src="../assets/images/studentsuggestions.svg"
+      alt="Student suggestions"
+      class="h-6 w-6 object-contain"
+    />
+  </div>
+
+</nav>
+
 
      <div class="mt-auto flex flex-col gap-3">
 
@@ -86,7 +108,8 @@
            bg-[#F6F6F6]
            hover:bg-black/5
            transition-colors duration-200
-           flex items-center justify-center">
+           flex items-center justify-center"
+           data-link="login.html">
     <img
       src="../assets/images/logout.svg"
       alt="Logout"
@@ -99,7 +122,9 @@
            bg-[#F6F6F6]
            hover:bg-black/5
            transition-colors duration-200
-           flex items-center justify-center">
+           flex items-center justify-center"
+           data-link="notificationsteacher.html">
+
     <img
       src="../assets/images/notifications.svg"
       alt="Notifications"
@@ -136,7 +161,12 @@
                   <div class="text-[18px] font-medium truncate">Today's workshops</div>
                   <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">3</span>
                 </div>
-                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+                <a
+  class="text-[14px] font-medium text-[var(--link)] shrink-0"
+  href="workshopoverviewteacher.html"
+>
+  See All
+</a>
               </div>
             </div>
 
@@ -203,9 +233,19 @@
               </div>
 
               <div class="mt-4 grid grid-cols-2 gap-4">
-                <button class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]">View Details</button>
-                <button class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium">Sign up</button>
-              </div>
+  <button
+  class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]"
+  data-action="view-details"
+  data-workshop-id="python-functions"
+  data-modal-src="myworkshopsteacherdetails.html"
+>View Details</button>
+
+  <button
+    class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium"
+    data-action="signup-toggle"
+    data-workshop-id="python-functions"
+  >Sign up</button>
+</div>
             </div>
 
             <!-- HTML structure basics  -->
@@ -269,10 +309,21 @@
 </div>
               </div>
 
-              <div class="mt-4 grid grid-cols-2 gap-4">
-                <button class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]">View Details</button>
-                <button class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium">Sign up</button>
-              </div>
+             <div class="mt-4 grid grid-cols-2 gap-4">
+  <button
+  class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]"
+  data-action="view-details"
+  data-workshop-id="python-functions"
+  data-modal-src="myworkshopsteacherdetails.html"
+>View Details</button>
+
+  <button
+    class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium"
+    data-action="signup-toggle"
+    data-workshop-id="html-structure-basics"
+  >Sign up</button>
+</div>
+
             </div>
 
             <!-- Computational Thinking  -->
@@ -337,9 +388,20 @@
               </div>
 
               <div class="mt-4 grid grid-cols-2 gap-4">
-                <button class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]">View Details</button>
-                <button class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium">Sign up</button>
-              </div>
+  <button
+  class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]"
+  data-action="view-details"
+  data-workshop-id="python-functions"
+  data-modal-src="myworkshopsteacherdetails.html"
+>View Details</button>
+
+  <button
+    class="h-11 rounded-xl bg-[var(--navy)] text-white text-[14px] font-medium"
+    data-action="signup-toggle"
+    data-workshop-id="computational-thinking"
+  >Sign up</button>
+</div>
+
             </div>
           </section>
 
@@ -352,7 +414,12 @@
                   <div class="text-[18px] font-medium truncate">Student suggestions</div>
                   <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">16</span>
                 </div>
-                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+                <a
+  class="text-[14px] font-medium text-[var(--link)] shrink-0"
+  href="studentsuggestionsteacher.html"
+>
+  See All
+</a>
               </div>
             </div>
 
@@ -436,18 +503,28 @@
                   </div>
 
                   <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
-                    <button class="h-10 w-10 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 5l6 7H6l6-7Z" fill="white"/>
-                      </svg>
-                    </button>
-                    <div class="text-[18px] font-medium text-[#1F2D4B]">31</div>
-                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
-                      </svg>
-                    </button>
-                  </div>
+  <button
+    class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center"
+    data-counter-btn="inc"
+    data-counter-target="vote-1"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
+    </svg>
+  </button>
+
+  <div id="vote-1" class="text-[18px] font-medium text-[#1F2D4B]">31</div>
+
+  <button
+    class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center"
+    data-counter-btn="dec"
+    data-counter-target="vote-1"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
+    </svg>
+  </button>
+</div>
                 </div>
 
                 <!-- Unreal Engine Camera -->
@@ -494,18 +571,28 @@
                   </div>
 
                   <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
-                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
-                      </svg>
-                    </button>
-                    <div class="text-[18px] font-medium text-[#1F2D4B]">12</div>
-                    <button class="h-10 w-10 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)]">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 19l-6-7h12l-6 7Z" fill="white"/>
-                      </svg>
-                    </button>
-                  </div>
+  <button
+    class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center"
+    data-counter-btn="inc"
+    data-counter-target="vote-2"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
+    </svg>
+  </button>
+
+  <div id="vote-2" class="text-[18px] font-medium text-[#1F2D4B]">12</div>
+
+  <button
+    class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center"
+    data-counter-btn="dec"
+    data-counter-target="vote-2"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
+    </svg>
+  </button>
+</div>
                 </div>
 
                 <!-- Responsive layouts -->
@@ -552,18 +639,28 @@
                   </div>
 
                   <div class="w-[62px] shrink-0 flex flex-col items-center justify-center gap-3">
-                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
-                      </svg>
-                    </button>
-                    <div class="text-[18px] font-medium text-[#1F2D4B]">5</div>
-                    <button class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
-                      </svg>
-                    </button>
-                  </div>
+  <button
+    class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center"
+    data-counter-btn="inc"
+    data-counter-target="vote-3"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5l6 7H6l6-7Z" fill="#1F2D4B"/>
+    </svg>
+  </button>
+
+  <div id="vote-3" class="text-[18px] font-medium text-[#1F2D4B]">5</div>
+
+  <button
+    class="h-10 w-10 rounded-full bg-transparent border border-black/20 flex items-center justify-center"
+    data-counter-btn="dec"
+    data-counter-target="vote-3"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 19l-6-7h12l-6 7Z" fill="#1F2D4B"/>
+    </svg>
+  </button>
+</div>
                 </div>
               </div>
             </div>
@@ -575,7 +672,6 @@
             <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] p-5">
               <div class="flex items-center justify-between gap-4">
                 <div class="text-[18px] font-medium truncate">Workshop composition</div>
-                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">Expand</a>
               </div>
 
               <div class="mt-6 grid grid-cols-3 gap-x-10 gap-y-8">
@@ -660,7 +756,12 @@
       <div class="text-[18px] font-medium truncate">Notifications</div>
       <span class="h-6 px-2 rounded-lg bg-[var(--chip)] text-[12px] font-medium text-[#111827] flex items-center shrink-0">5</span>
     </div>
-    <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+    <a
+  class="text-[14px] font-medium text-[var(--link)] shrink-0"
+  href="notificationsteacher.html"
+>
+  See All
+</a>
   </div>
 
   <div class="mt-4 space-y-5 min-w-0">
@@ -787,7 +888,7 @@
                   <div class="text-[18px] font-medium truncate">My workshops</div>
                   <span class="text-[14px] font-medium text-[rgba(0,0,0,.35)] shrink-0">· storage directory</span>
                 </div>
-                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="javascript:void(0)">See All</a>
+                <a class="text-[14px] font-medium text-[var(--link)] shrink-0" href="myworkshopsteacher.html">See All</a>
               </div>
             </div>
 
@@ -876,5 +977,246 @@
       </div>
     </main>
   </div>
+  <!-- POPUP OVERLAY + RIGHT PANEL -->
+<div id="wfOverlay" class="fixed inset-0 z-[999] hidden">
+  <!-- dark background -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- right popup panel -->
+  <div class="absolute inset-0 flex justify-end p-3 sm:p-4">
+    <div
+      id="wfPanel"
+      class="h-full w-full sm:w-[92%] md:w-[38%] lg:w-[44%] max-w-[720px] overflow-hidden"
+    >
+      <iframe
+        id="wfFrame"
+        src=""
+        class="h-full w-full bg-transparent"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+  <script>
+  // =========================
+  // 1) Sidebar navigation
+  // =========================
+  document.querySelectorAll("[data-link]").forEach((el) => {
+    el.style.cursor = "pointer";
+    el.style.pointerEvents = "auto";
+    el.addEventListener("click", () => {
+      const href = el.getAttribute("data-link");
+      if (href) window.location.href = href;
+    });
+  });
+
+  // =========================
+  // 2) Counter arrows (suggestions)
+  // =========================
+  function setActiveInGroup(groupEl, state) {
+    const incBtn = groupEl.querySelector('[data-counter-btn="inc"]');
+    const decBtn = groupEl.querySelector('[data-counter-btn="dec"]');
+
+    [incBtn, decBtn].forEach(b => b && b.classList.remove('is-active'));
+
+    function setArrowColor(btn, isActive) {
+      if (!btn) return;
+      btn.querySelectorAll('path').forEach(p =>
+        p.setAttribute('fill', isActive ? '#FFFFFF' : '#1F2D4B')
+      );
+    }
+
+    if (state === +1 && incBtn) incBtn.classList.add('is-active');
+    if (state === -1 && decBtn) decBtn.classList.add('is-active');
+
+    setArrowColor(incBtn, incBtn?.classList.contains('is-active'));
+    setArrowColor(decBtn, decBtn?.classList.contains('is-active'));
+  }
+
+  document.querySelectorAll('[data-counter-btn]').forEach((btn) => {
+    btn.style.pointerEvents = 'auto';
+    btn.style.cursor = 'pointer';
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const type = btn.getAttribute('data-counter-btn');          // inc / dec
+      const targetId = btn.getAttribute('data-counter-target');   // vote-1
+      const valueEl = document.getElementById(targetId);
+      if (!valueEl) return;
+
+      const group = btn.parentElement;
+      if (!group) return;
+
+      // base value + state init
+      if (group.dataset.baseValue == null) {
+        const baseNow = parseInt((valueEl.textContent || '').trim(), 10);
+        group.dataset.baseValue = String(Number.isFinite(baseNow) ? baseNow : 0);
+        group.dataset.state = "0";
+        setActiveInGroup(group, 0);
+      }
+
+      const base = parseInt(group.dataset.baseValue, 10);
+      let state = parseInt(group.dataset.state || "0", 10);
+
+      // toggle logic: 0 -> +1, +1 stays; opposite arrow brings back to 0, etc.
+      if (type === 'inc') {
+        if (state === 0) state = +1;
+        else if (state === -1) state = 0;
+        else state = +1;
+      } else if (type === 'dec') {
+        if (state === 0) state = -1;
+        else if (state === +1) state = 0;
+        else state = -1;
+      }
+
+      valueEl.textContent = String(base + state);
+      group.dataset.state = String(state);
+      setActiveInGroup(group, state);
+    });
+  });
+
+  // active style for arrows (filled navy)
+  const style = document.createElement("style");
+  style.textContent = `
+    [data-counter-btn].is-active{
+      background:#1F2D4B !important;
+      border-color:#1F2D4B !important;
+    }
+    [data-counter-btn]{ transition:transform 150ms, background-color 150ms, border-color 150ms; }
+    [data-counter-btn]:active{ transform:scale(0.97); }
+  `;
+  document.head.appendChild(style);
+
+  // =========================
+  // 3) Sign up toggle (3 workshops)
+  // =========================
+  const SIGN_KEY = "wf_teacher_signed_workshops_v1";
+
+  function loadSigned() {
+    try { return JSON.parse(localStorage.getItem(SIGN_KEY) || "{}"); }
+    catch { return {}; }
+  }
+  function saveSigned(map) {
+    localStorage.setItem(SIGN_KEY, JSON.stringify(map));
+  }
+  function isSigned(id) {
+    return !!loadSigned()[id];
+  }
+  function setSigned(id, value) {
+    const map = loadSigned();
+    map[id] = !!value;
+    saveSigned(map);
+  }
+
+  function updateSignupUI(workshopId) {
+    const signed = isSigned(workshopId);
+    document
+      .querySelectorAll(`[data-action="signup-toggle"][data-workshop-id="${workshopId}"]`)
+      .forEach(btn => { btn.textContent = signed ? "Signed up" : "Sign up"; });
+  }
+
+  function toggleSignup(workshopId) {
+    setSigned(workshopId, !isSigned(workshopId));
+    updateSignupUI(workshopId);
+  }
+
+  // Event delegation (garantili)
+  document.addEventListener("click", (e) => {
+    const signBtn = e.target.closest('[data-action="signup-toggle"][data-workshop-id]');
+    if (signBtn) {
+      e.preventDefault();
+      const wid = signBtn.getAttribute("data-workshop-id");
+      if (wid) toggleSignup(wid);
+      return;
+    }
+
+    // şimdilik sadece placeholder: popup'a sonra döneceğiz
+    const viewBtn = e.target.closest('[data-action="view-details"][data-workshop-id]');
+    if (viewBtn) {
+      e.preventDefault();
+      // ileride: openModal(...)
+      console.log("View Details clicked:", viewBtn.getAttribute("data-workshop-id"));
+    }
+  }, true);
+
+  // initial sync
+  document
+    .querySelectorAll('[data-action="signup-toggle"][data-workshop-id]')
+    .forEach(btn => updateSignupUI(btn.getAttribute("data-workshop-id")));
+
+    // ==========================================
+// ✅ POPUP (Teacher) - Right-side iframe modal
+// ==========================================
+const wfOverlay = document.getElementById("wfOverlay");
+const wfPanel = document.getElementById("wfPanel");
+const wfFrame = document.getElementById("wfFrame");
+
+function openPopup(src) {
+  if (!wfOverlay || !wfFrame) return;
+
+  wfFrame.src = src || "myworkshopsteacherdetails.html";
+
+  // ✅ force visible
+  wfOverlay.classList.remove("hidden");
+  wfOverlay.style.display = "block";
+  wfOverlay.style.visibility = "visible";
+  wfOverlay.style.opacity = "1";
+  wfOverlay.style.pointerEvents = "auto";
+  wfOverlay.style.zIndex = "2147483647";
+
+  document.body.classList.add("overflow-hidden");
+}
+
+function closePopup() {
+  if (!wfOverlay || !wfFrame) return;
+
+  wfOverlay.classList.add("hidden");
+  wfOverlay.style.display = "none";
+  wfOverlay.style.visibility = "hidden";
+  wfOverlay.style.opacity = "0";
+
+  document.body.classList.remove("overflow-hidden");
+  wfFrame.src = "";
+}
+
+// overlay click -> close (panel disi)
+if (wfOverlay) {
+  wfOverlay.addEventListener("click", (e) => {
+    if (!e.target.closest("#wfPanel")) closePopup();
+  });
+}
+
+// ESC -> close
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && wfOverlay && !wfOverlay.classList.contains("hidden")) {
+    closePopup();
+  }
+});
+
+// iframe icinden close mesajı (opsiyonel)
+window.addEventListener("message", (event) => {
+  if (event.data?.type === "CLOSE_WS_POPUP") closePopup();
+});
+
+// ==========================================
+// ✅ Bind View Details buttons (Teacher)
+// ==========================================
+document.querySelectorAll('[data-action="view-details"][data-workshop-id]').forEach((btn) => {
+  btn.style.pointerEvents = "auto";
+  btn.style.cursor = "pointer";
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const src = btn.getAttribute("data-modal-src") || "myworkshopsteacherdetails.html";
+    openPopup(src);
+  });
+});
+
+</script>
+
 </body>
 </html>

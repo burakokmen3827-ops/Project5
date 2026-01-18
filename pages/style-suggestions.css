@@ -1,0 +1,727 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #F6F6F6;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1920px;
+  min-height: 1080px;
+  background-color: #F6F6F6;
+}
+
+/* Sidebar */
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5.2vw;
+  height: 100%;
+  background-color: #F6F6F6;
+}
+
+.logo {
+  position: absolute;
+  left: 1.85vw;
+  top: 3.5vh;
+  width: 1.6vw;
+  height: 3.5vh;
+  background-color: transparent;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-icon {
+  position: absolute;
+  left: 1.98vw;
+  width: 1.25vw;
+  height: 2.22vh;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.nav-icon:hover {
+  opacity: 0.8;
+}
+
+.nav-icon.nav-active {
+  background-color: rgba(255, 255, 255, 0.1)!important;
+  border-radius: 8px;
+  padding: 4px;
+  left: 34px;
+  width: 32px;
+  height: 32px;
+}
+
+.profile-btn {
+    background-color: #1F2D4B;
+    border-radius: 50px;
+    width: 32px;  
+    height: 32px;
+}
+
+/* 当背景是深色时，强制让里面的图标变白 */
+.profile-btn
+ svg circle,
+.profile-btn
+ svg path {
+    stroke: 
+#FFFFFF !important
+; 
+}
+
+/* Main Content */
+.main-content {
+  position: absolute;
+  left: 5.2vw;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  left: 0;
+  top: 3vh;
+  width: 56vw;
+  height: 6.85vh;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.header-title {
+  font-size: clamp(18px, 22px, 2vw);
+  line-height: 24px;
+  display: flex;
+  align-items: center; 
+  gap: 8px;        
+}
+
+.title-bold {
+  font-weight: bold;
+  color: black;
+}
+
+.title-dot {
+  font-weight: normal;
+  color: rgba(31, 45, 75, 0.5);
+}
+
+.title-light {
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.5);
+}
+
+/* Search Bar */
+.search-bar-student {
+  position: absolute;
+  left: 46.6vw;
+  top: 3vh;
+  width: 27vw;
+  height: 6.85vh;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  cursor: text;
+}
+
+.search-icon {
+  margin-right: 15px;
+}
+
+.search-text {
+  font-size: clamp(16px, 22px, 1.5vw);
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.5);
+}
+
+.new-btn-new {
+  position: absolute;
+  left:57vw;
+  top: 3vh;
+  width: 7.85vw;
+  height: 6.85vh;
+  background-color: #1F2D4B;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-btn-new:hover {
+  background-color: #16213e;
+}
+
+.new-btn-new span {
+  font-size: clamp(16px, 22px, 1.5vw);
+  font-weight: bold;
+  color: white;
+}
+
+/* 主要内容包装器 */
+.content-wrapper {
+  position: absolute;
+  left: 0;
+  top: 12.78vh;
+  width: 100%;
+  height: calc(100% - 12.78vh);
+  display: flex;
+  gap: 2.08vw;
+  padding-right: 2.08vw;
+  padding-bottom: 1.85vh;
+  overflow: hidden;
+}
+
+/* 建议容器 */
+.suggestions-container {
+  flex: 1;
+  background-color: transparent;
+  border-radius: 20px;
+  overflow-y: auto;
+  padding-left: 5.08vw; 
+  margin-left: 0;
+}
+
+.suggestions-list.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 45%); /* 减少列宽百分比 */
+  gap: 1.2vw;
+  justify-content: flex-start;
+  margin-left: 0; 
+}
+
+.suggestion-row
+ {
+  display: flex;         /* 开启弹性布局，让子元素横向排列 */
+  align-items: center;   /* 让按钮和卡片垂直居中对齐 */
+  gap: 
+16px;             /* 按钮和卡片之间的间距 */
+  width: 100%;           /* 占据容器宽度 */
+  margin-bottom: 20px;   /* 每行之间的间距 */
+}
+
+.suggestion-card {
+background-color: white;
+  flex:1;
+  border-radius: 20px;
+  padding: 1.5vh 1.5vw;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: auto;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+ box-sizing: border-box;
+ position: relative; 
+}
+
+.vote-section
+ {
+  display
+: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center;    /* 水平居中 */
+  justify-content: center;/* 垂直居中 */
+  
+  /* 重点：增加间距 */
+  gap: 
+20px !important;   /* 使用 !important 强制生效，20px 会有很明显的拉开感 */
+  
+  flex-shrink: 0
+;
+  width: 60px;            /* 容器宽度 */
+}
+
+.vote-rail{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.vote-rail .vote-btn{
+background
+: transparent;
+  border
+: none;
+  color: #A0AEC0; /* 默认浅灰色 */
+  cursor
+: pointer;
+  font-size: 16px
+;
+  transition: color 0.2s
+;
+}
+
+.vote-rail .vote-btn:hover{
+  color: #1F2D4B
+;
+  background: transparent;
+}
+
+.vote-count
+ {
+  display
+: flex;
+  align-items
+: center;
+  justify-content
+: center;
+  
+  /* 字体设置 */
+  font-size: 32px !important; 
+  font-weight: 500 !important; 
+  color: #1F2D4B
+;
+  
+  /* 确保占据足够的空间 */
+  height: 40px
+; 
+  min-width: 40px
+;
+  
+  /* 清除可能干扰的行高 */
+  line-height: 1
+;
+  margin: 0
+; 
+}
+
+.circular-vote-btn
+ {
+  width: 45px;            /* 两个按钮时，尺寸稍微缩小一点更精致 */
+  height: 45px
+;
+  border-radius: 50%;     /* 圆形 */
+  background-color: #FFFFFF
+;
+  border: 1px solid rgba(0,0,0,0.06
+);
+  display
+: flex;
+  align-items
+: center;
+  justify-content
+: center;
+  cursor
+: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04
+);
+  transition: all 0.2s
+ ease;
+  color: #1F2D4B
+;
+}
+
+.circular-vote-btn:hover
+ {
+  background-color: #F8F9FA
+;
+border-color: #1F2D4B
+;
+  transform: translateY(-2px
+);
+}
+
+.vote-count
+ {
+  font-size: 14px
+;
+  font-weight: 700
+;
+  color: #1F2D4B
+;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 卡片头部 */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.suggestion-topic {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.topic-tag {
+  font-size: clamp(13px, 16px, 1vw);
+  font-weight: 600;
+  color: #1F2D4B;
+}
+
+.date {
+  font-size: clamp(12px, 14px, 0.9vw);
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.5);
+}
+
+.new-badge {
+  background-color: rgba(31, 45, 75, 0.1);
+  border-radius: 5px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #1F2D4B;
+}
+
+/* 建议标题 */
+.suggestion-title {
+  font-size: clamp(16px, 18px, 1.2vw);
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  flex-grow: 0;
+}
+
+/* 建议描述 */
+.suggestion-description {
+font-size: clamp(13px, 16px, 1vw); /* 保持原有大小 */
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.7);
+  line-height: 1.4; /* 保持原有行高 */
+  margin-bottom: 10px; /* 减少间距 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制显示2行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+/* 建议页脚 */
+.suggestion-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px; /* 减少内边距 */
+  border-top: 1px solid rgba(31, 45, 75, 0.1);
+  margin-top: auto; /* 确保页脚在底部 */
+}
+
+.instructor-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-small {
+  width: 16px;
+  height: 16px;
+}
+
+.instructor-name {
+  font-size: clamp(12px, 14px, 0.9vw);
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.7);
+}
+
+.language-tag {
+  font-size: clamp(12px, 14px, 0.9vw);
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.7);
+}
+
+/* 排行榜容器 */
+.leaderboard {
+  position: absolute;
+  right: 2.08vw;
+  top: calc(3vh + 6.85vh + 1.2vh); /* header高度 + 间距 */
+  width: 25vw;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+
+.leaderboard-header {
+  position: absolute;
+  right: 2.08vw;
+  top: 3vh;
+  width: 27vw;
+  height: 6.85vh;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5vw;
+}
+
+
+
+.leaderboard-content {
+  background-color: transparent; 
+  right: 2.08vw;
+  top: 13.05vh;
+  padding: 0; 
+  width: 27vw;
+  max-height: 75vh;
+}
+
+
+.leaderboard-title {
+  font-size: clamp(18px, 22px, 1.5vw);
+  font-weight: bold;
+  color: black;
+  margin:0;
+}
+
+/* 排行榜列表 */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8vh;
+}
+
+/* 排行榜项 */
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;      
+  margin-bottom: 15px; 
+  width: 100%;
+}
+
+
+.leaderboard-item:hover {
+  background-color: #F0F0F0; /* 悬停效果 */
+  transform: translateY(-1px); /* 轻微上浮 */
+  transition: all 0.2s ease;
+}
+
+.leaderboard-card {
+  flex-grow: 1;       
+  height: 65px;        
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rank {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.rank-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1F2D4B;
+}
+
+.rank-box {
+width: 65px;   
+  height: 65px
+;
+  min-width: 65px
+;
+  background-color: #FFFFFF;
+  color: #1F2D4B
+;
+  border-radius: 12px
+;
+  display
+: flex;
+  align-items
+: center;
+  justify-content
+: center;
+  font-weight: 700
+;
+  box-shadow: none;
+}
+
+
+.item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.item-rank {
+  font-size: clamp(14px, 16px, 1.1vw);
+  font-weight: bold;
+  color: #1F2D4B;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(31, 45, 75, 0.1); /* 排名背景 */
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  margin-right: 0.5vw;
+}
+
+.item-title {
+font-size: 15px
+;
+  font-weight: 600
+;
+  color: #1F2D4B
+;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(13px, 15px, 0.9vw);
+  font-weight: 300;
+  color: rgba(31, 45, 75, 0.7);
+}
+
+.item-count svg {
+  width: 16px;
+  height: 16px;
+}
+
+.item-number {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 4px 10px;
+  font-weight: 700;
+  color: #1F2D4B;
+}
+
+.item-number svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* 确保每个项目看起来像独立卡片 */
+.leaderboard-item:last-child {
+  margin-bottom: 0; /* 最后一个项目没有底部间距 */
+}
+
+/* Number Box */
+.number-box {
+    width: 44px;
+  background-color: rgba(31,45,75,0.1);
+  color: #1F2D4B;
+  width: 40px;     
+  height: 30px;      
+  border-radius: 8px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Vote Box */
+.vote-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1F2D4B;
+}
+
+.vote-btn {
+    width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.vote-btn:hover {
+  background-color: rgba(31,45,75,0.08);
+}
+
+.vote-btn:active {
+  transform: scale(0.95);
+}
+
+.vote-count {
+  min-width: 24px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1F2D4B;
+}
+
+
+/* 响应式调整 */
+@media screen and (max-width: 1920px) {
+  .container {
+    transform-origin: top left;
+    transform: scale(0.8);
+  }
+}
+
+/* 针对较小屏幕的调整 */
+@media screen and (max-width: 1600px) {
+  .suggestions-list.two-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .leaderboard {
+    width: 100%;
+    min-width: 100%;
+  }
+}

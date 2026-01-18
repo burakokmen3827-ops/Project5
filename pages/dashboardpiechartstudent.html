@@ -238,7 +238,7 @@
   class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]"
   data-action="view-details"
   data-workshop-id="python-functions"
-  data-modal-src="workshopoverviewstudent.html"
+  data-modal-src="workshopoverviewdetailsstudent.html"
 >View Details</button>
 
   <button
@@ -315,7 +315,7 @@
   class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]"
   data-action="view-details"
   data-workshop-id="html-structure-basics"
-  data-modal-src="workshopoverviewstudent.html"
+  data-modal-src="workshopoverviewdetailsstudent.html"
 >View Details</button>
 
   <button
@@ -392,7 +392,7 @@
   class="h-11 rounded-xl bg-[#EEF0F6] text-[14px] font-medium text-[#374151]"
   data-action="view-details"
   data-workshop-id="computational-thinking"
-  data-modal-src="workshopoverviewstudent.html"
+  data-modal-src="workshopoverviewdetailsstudent.html"
 >View Details</button>
 
   <button
@@ -954,10 +954,7 @@
     </main>
   </div>
   <!-- ✅ Right-side popup (hidden by default) -->
-<!-- ✅ Right-side popup (hidden by default) -->
-<div id="wfModalOverlay" class="fixed inset-0 z-[999999] hidden">
-  <!-- backdrop -->
-  <div id="wfModalBackdrop" class="absolute inset-0 bg-black/40"></div>
+
 
   <!-- POPUP OVERLAY + RIGHT PANEL (same as teacher) -->
 <div id="wfOverlay" class="fixed inset-0 z-[999] hidden">
@@ -1178,7 +1175,7 @@ const wfFrame = document.getElementById("wfFrame");
 function openPopup(src) {
   if (!wfOverlay || !wfFrame) return;
 
-  wfFrame.src = src || "workshopoverviewstudent.html";
+  wfFrame.src = src || "workshopoverviewdetailsstudent.html";
 
   // ✅ GARANTI GORUNURLUK
   wfOverlay.classList.remove("hidden");

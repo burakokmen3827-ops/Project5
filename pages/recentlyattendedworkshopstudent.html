@@ -11,90 +11,86 @@
 
   <style>
     * { font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    :root{
+      --page-bg:#F6F6F6;
+      --navy:#1F2D4B;
+      --shadow:0 10px 30px rgba(16,24,40,0.06);
+      --radius:20px;
+    }
   </style>
 </head>
 
-<body class="bg-[#F6F6F6] text-[#111827]">
-  <div class="min-h-screen w-full flex bg-[#F6F6F6]">
+<body class="bg-[var(--page-bg)] text-[#111827] overflow-hidden font-medium">
+  <div class="h-screen w-full flex overflow-hidden bg-[var(--page-bg)]">
 
-    <!-- LEFT SIDEBAR -->
-    <aside class="w-[88px] bg-[#F6F6F6] flex flex-col items-center py-5">
-      <!-- top logo -->
-      <div class="w-12 h-12 rounded-2xl bg-[#1F2D4B] flex items-center justify-center mb-6">
-        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
-          <path d="M12 3l7 4v10l-7 4-7-4V7l7-4Z" stroke="white" stroke-width="1.7" />
-          <path d="M8.2 9.2 12 7l3.8 2.2V13L12 15l-3.8-2V9.2Z" stroke="white" stroke-width="1.7"/>
-        </svg>
+    <!-- LEFT SIDEBAR (md+) -->
+    <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-7 flex-col items-center">
+      <div class="h-8 w-8 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
+        <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
       </div>
 
-      <nav class="flex flex-col gap-3 items-center">
-        <button class="w-11 h-11 rounded-2xl bg-[#F3F4F6] flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" stroke="#1F2D4B" stroke-width="1.7"/>
-          </svg>
-        </button>
+      <nav class="mt-8 flex flex-col gap-3">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="dashboardpiechartstudent.html"
+        >
+          <img src="../assets/images/Dashboard.svg" alt="Dashboard" class="h-6 w-6 object-contain" />
+        </div>
 
-        <button class="w-11 h-11 rounded-2xl bg-[#F3F4F6] flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="#1F2D4B" stroke-width="1.7"/>
-            <path d="M3 12l9 5 9-5" stroke="#1F2D4B" stroke-width="1.7" opacity="0.9"/>
-            <path d="M3 16l9 5 9-5" stroke="#1F2D4B" stroke-width="1.7" opacity="0.7"/>
-          </svg>
-        </button>
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="workshopoverviewstudent.html.html"
+        >
+          <img src="../assets/images/workshopoverview.svg" alt="Workshop overview" class="h-6 w-6 object-contain" />
+        </div>
 
-        <button class="w-11 h-11 rounded-2xl bg-[#EDEBFF] flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M12 7v6l4 2" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M21 12a9 9 0 1 1-3.1-6.7" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
-        </button>
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="recentlyattendedworkshopstudent.html"
+        >
+          <img src="../assets/images/recentlyattended.svg" alt="Recently attended" class="h-6 w-6 object-contain" />
+        </div>
 
-        <button class="w-11 h-11 rounded-2xl bg-[#F3F4F6] flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="#1F2D4B" stroke-width="1.7"/>
-            <path d="M4 21a8 8 0 0 1 16 0" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
-        </button>
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="studentsuggestions.html"
+        >
+          <img src="../assets/images/studentsuggestions.svg" alt="Student suggestions" class="h-6 w-6 object-contain" />
+        </div>
       </nav>
 
-      <div class="flex-1"></div>
+      <div class="mt-auto flex flex-col gap-3">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="login.html"
+        >
+          <img src="../assets/images/logout.svg" alt="Logout" class="h-6 w-6 object-contain" />
+        </div>
 
-      <div class="flex flex-col gap-3 items-center mb-4">
-        <button class="w-11 h-11 rounded-2xl bg-[#F3F4F6] flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M10 7V6a2 2 0 0 1 2-2h7v16h-7a2 2 0 0 1-2-2v-1" stroke="#1F2D4B" stroke-width="1.7"/>
-            <path d="M4 12h9" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M7 9l-3 3 3 3" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="notifications.html"
+        >
+          <img src="../assets/images/notifications.svg" alt="Notifications" class="h-6 w-6 object-contain" />
+        </div>
 
-        <button class="w-11 h-11 rounded-2xl bg-[#F3F4F6] flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M12 15.5a3.5 3.5 0 1 0-3.5-3.5 3.5 3.5 0 0 0 3.5 3.5Z" stroke="#1F2D4B" stroke-width="1.7"/>
-            <path d="M19.4 15a8.3 8.3 0 0 0 .1-6l-2.1.3a6.9 6.9 0 0 0-1.2-1.9l1.3-1.7a8.2 8.2 0 0 0-5.2-2.1l-.7 2a6.8 6.8 0 0 0-2.2.6L7.1 4.7A8.2 8.2 0 0 0 3.6 9l2 .6a6.8 6.8 0 0 0 0 2.8l-2 .6a8.2 8.2 0 0 0 3.5 4.3l1.6-1.4a6.8 6.8 0 0 0 2.2.6l.7 2a8.2 8.2 0 0 0 5.2-2.1l-1.3-1.7a6.9 6.9 0 0 0 1.2-1.9l2.1.3Z" stroke="#1F2D4B" stroke-width="1.2" opacity="0.6"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="w-12 h-12 rounded-full bg-[#1F2D4B] flex items-center justify-center">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-          <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="white" stroke-width="1.7"/>
-          <path d="M4 21a8 8 0 0 1 16 0" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
-        </svg>
+        <div class="h-7 w-7 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)] overflow-hidden">
+          <img src="../assets/images/User.svg" alt="User" class="h-6 w-6 object-contain" />
+        </div>
       </div>
     </aside>
 
     <!-- MAIN -->
-    <main class="flex-1 px-8 py-6 bg-[#F6F6F6]">
+    <main class="flex-1 h-screen overflow-hidden py-6 px-8">
       <!-- TOP BAR -->
       <div class="flex items-center gap-6">
-        <div class="flex-1 bg-white border border-black/10 rounded-2xl px-6 py-4 flex items-center gap-2">
+        <div class="flex-1 bg-white rounded-2xl px-5 py-4 flex items-center gap-2 shadow-[var(--shadow)]">
           <span class="text-[18px] font-semibold text-[#1F2D4B]">Recently attended workshops</span>
           <span class="text-[18px] text-black/35">•</span>
           <span class="text-[18px] text-black/40">reflection materials</span>
         </div>
 
-        <div class="w-[520px] bg-white border border-black/10 rounded-2xl px-5 py-4 flex items-center gap-3">
+        <div class="w-[520px] bg-white rounded-2xl px-4 py-4 flex items-center gap-3 shadow-[var(--shadow)]">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
             <path d="M10.5 18a7.5 7.5 0 1 1 7.5-7.5A7.5 7.5 0 0 1 10.5 18Z" stroke="#1F2D4B" stroke-width="1.7"/>
             <path d="M16.5 16.5 21 21" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
@@ -102,7 +98,7 @@
           <input class="w-full outline-none text-[16px] placeholder:text-black/40" placeholder="Search" value="" />
         </div>
 
-        <button class="bg-white border border-black/10 rounded-2xl px-6 py-4 flex items-center gap-3">
+        <button class="bg-white rounded-2xl px-5 py-4 flex items-center gap-3 shadow-[var(--shadow)]">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
             <path d="M4 6h16M7 12h10M10 18h4" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
             <path d="M9 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0ZM17 12a1 1 0 1 0-2 0 1 1 0 0 0 2 0ZM15 18a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z" fill="#1F2D4B"/>
@@ -111,11 +107,12 @@
         </button>
       </div>
 
-      <!-- LIST -->
-      <div class="mt-6 md:mt-7 space-y-8 md:space-y-10 lg:space-y-12 pb-8 md:pb-10">
+      <!-- LIST (scroll inside main) -->
+      <div class="mt-6 h-[calc(100vh-120px)] overflow-auto pr-2 space-y-8 md:space-y-10 lg:space-y-12 pb-10">
+
         <!-- WEDNESDAY -->
         <section class="space-y-4 md:space-y-5">
-          <div class="bg-[#ECEEF1] border border-black/5 rounded-2xl h-[74px] px-6 flex items-center justify-between">
+          <div class="bg-[#ECEEF1] rounded-2xl h-[74px] px-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
               <span class="text-[18px] font-semibold text-[#1F2D4B]">Wednesday</span>
               <span class="px-3 py-1 rounded-xl bg-[#1F2D4B] text-white text-[14px] font-semibold">2</span>
@@ -124,21 +121,26 @@
           </div>
 
           <div class="space-y-4 md:space-y-5">
-            <article class="workshop-card bg-white border border-black/10 rounded-2xl px-5 py-4 flex items-center gap-5
-                cursor-pointer transition hover:bg-black/[0.03] hover:border-black/20">
-              <div class="w-[6px] h-12 rounded-full bg-[#1F2D4B]"></div>
+            <!-- Computational Thinking -->
+            <article
+              class="workshop-card bg-white rounded-2xl px-4 py-4 flex items-center gap-5 cursor-pointer transition hover:bg-black/[0.03] shadow-[var(--shadow)]"
+              data-modal-src="recentlyattendedworkshopstudentdetails.html"
+              data-workshop-id="computational-thinking"
+              data-workshop-title="Computational Thinking"
+            >
+              <div class="w-[6px] h-12 rounded-full bg-[#2F62E8]"></div>
+
               <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 7h10v10H7V7Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                  <path d="M9 10h6M9 13h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                </svg>
+                <img src="../assets/images/computationalthinking.svg" alt="Computational Thinking" class="h-6 w-6 object-contain" />
               </div>
+
               <div class="flex-1 min-w-0">
                 <div class="text-[16px] font-semibold text-[#1F2D4B]">Computational Thinking</div>
                 <div class="mt-1 text-[14px] text-black/45 truncate">
                   This workshop showcases the fundamental problem breakdown behind each software s...
                 </div>
               </div>
+
               <div class="flex items-center gap-6 text-[14px] text-black/45">
                 <div class="flex items-center gap-2">
                   <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
@@ -167,7 +169,9 @@
                   </svg>
                   <span>01:30 AM</span>
                 </div>
-                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer">
+
+                <!-- Bu buton var diye popup engellenecek -->
+                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer" type="button">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
                     <path d="M12 6.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 13.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 19.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z" fill="#1F2D4B"/>
                   </svg>
@@ -175,20 +179,26 @@
               </div>
             </article>
 
-            <article class="workshop-card bg-white border border-black/10 rounded-2xl px-5 py-4 flex items-center gap-5
-                cursor-pointer transition hover:bg-black/[0.03] hover:border-black/20">
-              <div class="w-[6px] h-12 rounded-full bg-[#1F2D4B]"></div>
+            <!-- SQL Injection -->
+            <article
+              class="workshop-card bg-white rounded-2xl px-4 py-4 flex items-center gap-5 cursor-pointer transition hover:bg-black/[0.03] shadow-[var(--shadow)]"
+              data-modal-src="recentlyattendedworkshopstudentdetails.html"
+              data-workshop-id="sql-injection"
+              data-workshop-title="SQL Injection"
+            >
+              <div class="w-[6px] h-12 rounded-full bg-[#2F62E8]"></div>
+
               <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3 4 7v6c0 5 8 8 8 8s8-3 8-8V7l-8-4Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                </svg>
+                <img src="../assets/images/sqlinjection.svg" alt="SQL Injection" class="h-6 w-6 object-contain" />
               </div>
+
               <div class="flex-1 min-w-0">
                 <div class="text-[16px] font-semibold text-[#1F2D4B]">SQL Injection</div>
                 <div class="mt-1 text-[14px] text-black/45 truncate">
                   Learn to identify and exploit SQL injection vulnerabilities in this hands-on workshop. Di...
                 </div>
               </div>
+
               <div class="flex items-center gap-6 text-[14px] text-black/45">
                 <div class="flex items-center gap-2">
                   <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
@@ -217,7 +227,8 @@
                   </svg>
                   <span>01:30 AM</span>
                 </div>
-                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer">
+
+                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer" type="button">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
                     <path d="M12 6.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 13.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 19.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z" fill="#1F2D4B"/>
                   </svg>
@@ -229,7 +240,7 @@
 
         <!-- TUESDAY -->
         <section class="space-y-4 md:space-y-5">
-          <div class="bg-[#ECEEF1] border border-black/5 rounded-2xl h-[74px] px-6 flex items-center justify-between">
+          <div class="bg-[#ECEEF1] rounded-2xl h-[74px] px-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
               <span class="text-[18px] font-semibold text-[#1F2D4B]">Tuesday</span>
               <span class="px-3 py-1 rounded-xl bg-[#1F2D4B] text-white text-[14px] font-semibold">2</span>
@@ -238,14 +249,15 @@
           </div>
 
           <div class="space-y-4 md:space-y-5">
-            <article class="workshop-card bg-white border border-black/10 rounded-2xl px-5 py-4 flex items-center gap-5
-                cursor-pointer transition hover:bg-black/[0.03] hover:border-black/20">
-              <div class="w-[6px] h-12 rounded-full bg-[#1F2D4B]"></div>
+            <article
+              class="workshop-card bg-white rounded-2xl px-4 py-4 flex items-center gap-5 cursor-pointer transition hover:bg-black/[0.03] shadow-[var(--shadow)]"
+              data-modal-src="recentlyattendedworkshopstudentdetails.html"
+              data-workshop-id="computational-thinking-2"
+              data-workshop-title="Computational Thinking"
+            >
+              <div class="w-[6px] h-12 rounded-full bg-[#2F62E8]"></div>
               <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 7h10v10H7V7Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                  <path d="M9 10h6M9 13h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                </svg>
+                <img src="../assets/images/computationalthinking.svg" alt="Computational Thinking" class="h-6 w-6 object-contain" />
               </div>
               <div class="flex-1 min-w-0">
                 <div class="text-[16px] font-semibold text-[#1F2D4B]">Computational Thinking</div>
@@ -281,7 +293,7 @@
                   </svg>
                   <span>01:30 AM</span>
                 </div>
-                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer">
+                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer" type="button">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
                     <path d="M12 6.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 13.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 19.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z" fill="#1F2D4B"/>
                   </svg>
@@ -289,13 +301,15 @@
               </div>
             </article>
 
-            <article class="workshop-card bg-white border border-black/10 rounded-2xl px-5 py-4 flex items-center gap-5
-                cursor-pointer transition hover:bg-black/[0.03] hover:border-black/20">
-              <div class="w-[6px] h-12 rounded-full bg-[#1F2D4B]"></div>
+            <article
+              class="workshop-card bg-white rounded-2xl px-4 py-4 flex items-center gap-5 cursor-pointer transition hover:bg-black/[0.03] shadow-[var(--shadow)]"
+              data-modal-src="recentlyattendedworkshopstudentdetails.html"
+              data-workshop-id="sql-injection-2"
+              data-workshop-title="SQL Injection"
+            >
+              <div class="w-[6px] h-12 rounded-full bg-[#2F62E8]"></div>
               <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3 4 7v6c0 5 8 8 8 8s8-3 8-8V7l-8-4Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                </svg>
+                <img src="../assets/images/sqlinjection.svg" alt="SQL Injection" class="h-6 w-6 object-contain" />
               </div>
               <div class="flex-1 min-w-0">
                 <div class="text-[16px] font-semibold text-[#1F2D4B]">SQL Injection</div>
@@ -331,7 +345,7 @@
                   </svg>
                   <span>01:30 AM</span>
                 </div>
-                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer">
+                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer" type="button">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
                     <path d="M12 6.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 13.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 19.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z" fill="#1F2D4B"/>
                   </svg>
@@ -343,7 +357,7 @@
 
         <!-- MONDAY -->
         <section class="space-y-4 md:space-y-5">
-          <div class="bg-[#ECEEF1] border border-black/5 rounded-2xl h-[74px] px-6 flex items-center justify-between">
+          <div class="bg-[#ECEEF1] rounded-2xl h-[74px] px-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
               <span class="text-[18px] font-semibold text-[#1F2D4B]">Monday</span>
               <span class="px-3 py-1 rounded-xl bg-[#1F2D4B] text-white text-[14px] font-semibold">1</span>
@@ -352,14 +366,15 @@
           </div>
 
           <div class="space-y-4 md:space-y-5">
-            <article class="workshop-card bg-white border border-black/10 rounded-2xl px-5 py-4 flex items-center gap-5
-                cursor-pointer transition hover:bg-black/[0.03] hover:border-black/20">
-              <div class="w-[6px] h-12 rounded-full bg-[#1F2D4B]"></div>
+            <article
+              class="workshop-card bg-white rounded-2xl px-4 py-4 flex items-center gap-5 cursor-pointer transition hover:bg-black/[0.03] shadow-[var(--shadow)]"
+              data-modal-src="recentlyattendedworkshopstudentdetails.html"
+              data-workshop-id="computational-thinking-3"
+              data-workshop-title="Computational Thinking"
+            >
+              <div class="w-[6px] h-12 rounded-full bg-[#2F62E8]"></div>
               <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 7h10v10H7V7Z" stroke="#1F2D4B" stroke-width="1.7"/>
-                  <path d="M9 10h6M9 13h6" stroke="#1F2D4B" stroke-width="1.7" stroke-linecap="round"/>
-                </svg>
+                <img src="../assets/images/computationalthinking.svg" alt="Computational Thinking" class="h-6 w-6 object-contain" />
               </div>
               <div class="flex-1 min-w-0">
                 <div class="text-[16px] font-semibold text-[#1F2D4B]">Computational Thinking</div>
@@ -395,7 +410,7 @@
                   </svg>
                   <span>01:30 AM</span>
                 </div>
-                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer">
+                <button class="w-10 h-10 rounded-xl hover:bg-black/5 flex items-center justify-center cursor-pointer" type="button">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
                     <path d="M12 6.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 13.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM12 19.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z" fill="#1F2D4B"/>
                   </svg>
@@ -404,76 +419,122 @@
             </article>
           </div>
         </section>
+
       </div>
     </main>
-  </div>
+    <!-- ✅ POPUP OVERLAY + RIGHT PANEL (transparent, no white frame) -->
+<div id="wfOverlay" class="fixed inset-0 z-[999] hidden">
+  <!-- dark background -->
+  <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- POPUP OVERLAY (only once) -->
-  <div id="wsOverlay" class="fixed inset-0 z-[999] hidden">
-    <div id="wsBackdrop" class="absolute inset-0 bg-black/40"></div>
-
-    <div class="absolute inset-0 p-3 sm:p-4 flex justify-end">
-      <div
-        id="wsPanel"
-        class="h-full w-full sm:w-[92%] md:w-[38%] lg:w-[44%] max-w-[720px]
-               rounded-[20px] bg-white border border-[#E9ECF5]
-               shadow-[0_12px_40px_rgba(17,24,39,0.12)]
-               overflow-hidden"
-      >
-        <iframe
-          id="wsFrame"
-          src="recentlyattendedworkshopstudentdetails.html"
-          class="w-full h-full"
-          frameborder="0"
-        ></iframe>
-      </div>
+  <!-- right popup panel -->
+  <div class="absolute inset-0 flex justify-end p-3 sm:p-4">
+    <div
+      id="wfPanel"
+      class="h-full w-full sm:w-[92%] md:w-[38%] lg:w-[44%] max-w-[720px]
+             overflow-hidden bg-transparent"
+    >
+      <iframe
+        id="wfFrame"
+        src=""
+        class="h-full w-full bg-transparent"
+        frameborder="0"
+        allowtransparency="true"
+      ></iframe>
     </div>
   </div>
+</div>
 
-  <!-- SCRIPT (bottom, single, working) -->
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const overlay = document.getElementById("wsOverlay");
-      const backdrop = document.getElementById("wsBackdrop");
-      const frame = document.getElementById("wsFrame");
+      // ================================
+      // 1) Sidebar navigation
+      // ================================
+      document.querySelectorAll("[data-link]").forEach((el) => {
+        el.style.cursor = "pointer";
+        el.style.pointerEvents = "auto";
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = el.getAttribute("data-link");
+          if (href) window.location.href = href;
+        });
+      });
 
-      if (!overlay || !backdrop || !frame) {
-        console.log("Popup elements missing:", { overlay, backdrop, frame });
-        return;
-      }
+      // ================================
+      // 2) Popup (right-side iframe)
+      // ================================
+      const wfOverlay = document.getElementById("wfOverlay");
+      const wfPanel = document.getElementById("wfPanel");
+      const wfFrame = document.getElementById("wfFrame");
 
-      function openPopup() {
-        overlay.classList.remove("hidden");
+      function openPopup(src) {
+        if (!wfOverlay || !wfFrame) return;
+
+        wfFrame.src = src || "recentlyattendedworkshopstudentdetails.html";
+
+        wfOverlay.classList.remove("hidden");
+        wfOverlay.style.display = "block";
+        wfOverlay.style.visibility = "visible";
+        wfOverlay.style.opacity = "1";
+        wfOverlay.style.pointerEvents = "auto";
+        wfOverlay.style.zIndex = "2147483647";
+
         document.body.classList.add("overflow-hidden");
       }
 
       function closePopup() {
-        overlay.classList.add("hidden");
+        if (!wfOverlay || !wfFrame) return;
+
+        wfOverlay.classList.add("hidden");
+        wfOverlay.style.display = "none";
+        wfOverlay.style.visibility = "hidden";
+        wfOverlay.style.opacity = "0";
+
         document.body.classList.remove("overflow-hidden");
+        wfFrame.src = "";
       }
 
-      document.addEventListener("click", (e) => {
-  const card = e.target.closest(".workshop-card");
-  if (!card) return;
+      // overlay click -> close (panel dışı)
+      if (wfOverlay) {
+        wfOverlay.addEventListener("click", (e) => {
+          if (!e.target.closest("#wfPanel")) closePopup();
+        });
+      }
 
-  // kart içindeki butonlara basınca popup açılmasın ( ... gibi )
-  if (e.target.closest("button")) return;
-
-  frame.src = "recentlyattendedworkshopstudentdetails.html";
-  openPopup();
-});
-      // close when clicking outside
-      backdrop.addEventListener("click", closePopup);
-
-      // close with ESC
+      // ESC -> close
       window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && !overlay.classList.contains("hidden")) closePopup();
+        if (e.key === "Escape" && wfOverlay && !wfOverlay.classList.contains("hidden")) {
+          closePopup();
+        }
       });
 
-      // close when iframe sends message (X button inside popup)
-      window.addEventListener("message", (e) => {
-        if (e?.data?.type === "CLOSE_WS_POPUP") closePopup();
+      // iframe içinden kapatma (opsiyonel)
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "CLOSE_WS_POPUP") closePopup();
       });
+
+      // ================================
+      // 3) workshop-card click -> open details popup
+      //    (Day bar'lar workshop-card değil -> etkilenmez)
+      // ================================
+      document.addEventListener("click", (e) => {
+        const card = e.target.closest(".workshop-card");
+        if (!card) return;
+
+        // kart içindeki butonlara basınca popup açılmasın ( ... gibi )
+        if (e.target.closest("button")) return;
+
+        const baseSrc = card.getAttribute("data-modal-src") || "recentlyattendedworkshopstudentdetails.html";
+        const wid = card.getAttribute("data-workshop-id") || "";
+        const title = card.getAttribute("data-workshop-title") || "";
+
+        // backend gelince: bu query ile doğru workshop'u çekebilirsin
+        const src = baseSrc + `?id=${encodeURIComponent(wid)}&title=${encodeURIComponent(title)}`;
+
+        openPopup(src);
+      }, true);
     });
   </script>
 </body>

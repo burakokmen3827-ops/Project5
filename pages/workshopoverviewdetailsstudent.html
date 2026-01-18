@@ -1,4 +1,4 @@
-<!-- recentlyattendedworkshopstudentdetails.html -->
+<!-- workshopoverviewdetailsstudent.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,6 @@
 
   <style>
     * { font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-    html, body { background: transparent !important; }
   </style>
 </head>
 
@@ -26,7 +25,6 @@
         <!-- TOP BAR -->
         <div class="px-5 sm:px-6 py-4 flex items-center gap-4 border-b border-[#EEF1F7]">
           <div class="h-9 w-9 rounded-xl bg-[#F3F5FF] flex items-center justify-center">
-            <!-- ✅ same as your example -->
             <img src="../assets/images/workshopoverview.svg" width="18" height="18" alt="">
           </div>
 
@@ -36,7 +34,7 @@
             <span class="font-semibold text-[#111827] whitespace-nowrap">Thursday</span>
           </div>
 
-          <!-- Student: Request (same style) -->
+          <!-- Student: Request -->
           <div class="flex items-center gap-2 text-[#111827] font-semibold">
             <span class="inline-flex items-center justify-center h-8 w-8 rounded-full border border-[#EEF1F7]">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -47,11 +45,9 @@
             Request
           </div>
 
-          <!-- ✅ close icon as image -->
           <button
             id="closeBtn"
             class="h-9 w-9 rounded-full flex items-center justify-center overflow-hidden opacity-70"
-            type="button"
           >
             <img
               src="../assets/images/Close Circle.svg"
@@ -65,23 +61,22 @@
         <div class="px-5 sm:px-6 py-5 border-b border-[#EEF1F7]">
           <div class="flex items-center gap-5">
             <div class="h-20 w-20 rounded-2xl bg-[#E7E9FF] flex items-center justify-center overflow-hidden">
-              <!-- ✅ icon as image (same as example) -->
-              <img src="../assets/images/sqlinjection.svg" class="w-full h-full object-cover" alt="">
+              <img
+                src="../assets/images/sqlinjection.svg"
+                class="w-full h-full object-cover"
+                alt=""
+              >
             </div>
 
             <div class="flex-1 min-w-0">
-              <div class="text-[22px] sm:text-[24px] font-semibold text-[#111827] leading-tight">
-                SQL Injection
-              </div>
+              <div class="text-[22px] sm:text-[24px] font-semibold text-[#111827] leading-tight">SQL Injection</div>
 
               <div class="mt-2 flex flex-col gap-2 text-[#6B7280]">
                 <div class="flex items-center gap-2">
-                  <!-- ✅ teacher icon as image -->
                   <img src="../assets/images/squareacademiccap.svg" width="18" height="18" alt="">
                   <span>Deckers, Paul</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <!-- ✅ language icon as image -->
                   <img src="../assets/images/Global.svg" width="18" height="18" alt="">
                   <span>English</span>
                 </div>
@@ -99,10 +94,10 @@
                 <span>21</span>
               </div>
 
+              <!-- Student: Sign Up -->
               <button
                 id="signUpBtn"
                 class="h-11 px-6 rounded-xl bg-[#1F2D4B] text-white font-semibold shadow-sm"
-                type="button"
               >
                 Sign Up
               </button>
@@ -110,12 +105,11 @@
           </div>
         </div>
 
-        <!-- CONTENT -->
+        <!-- CONTENT (Only General) -->
         <div class="flex-1">
           <div class="px-5 sm:px-6 pt-5 pb-3">
             <div class="grid grid-cols-[56px_1fr] gap-x-4 gap-y-6">
 
-              <!-- Topic -->
               <div class="flex items-center justify-center pt-1 text-[#6B7280]">
                 <img src="../assets/images/Bookmark.svg" width="20" height="20" alt="">
               </div>
@@ -131,49 +125,44 @@
                 </div>
               </div>
 
-              <!-- Room -->
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
                 <img src="../assets/images/peoplenearby.svg" width="20" height="20" alt="">
               </div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Room</span>
-                <span class="text-[#111827] text-[18px]">Fontys R10, OIL 4.30</span>
+                <span class="text-[#111827] text-[18px] font-mixed">Fontys R10, OIL 4.30</span>
               </div>
 
-              <!-- Date -->
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
                 <img src="../assets/images/calendarmark.svg" width="20" height="20" alt="">
               </div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Date</span>
-                <span class="text-[#111827] text-[18px]">Jan 15, 2026</span>
+                <span class="text-[#111827] text-[18px] font-mixed">Jan 15, 2026</span>
               </div>
 
-              <!-- Time -->
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
                 <img src="../assets/images/clockcircle.svg" width="20" height="20" alt="">
               </div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Time</span>
-                <span class="text-[#111827] text-[18px]">01:30 AM</span>
+                <span class="text-[#111827] text-[18px] font-mixed">01:30 AM</span>
               </div>
 
-              <!-- Duration -->
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
                 <img src="../assets/images/Stopwatch.svg" width="20" height="20" alt="">
               </div>
               <div class="flex items-center gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Duration</span>
-                <span class="text-[#111827] text-[18px]">30 min</span>
+                <span class="text-[#111827] text-[18px] font-mixed">30 min</span>
               </div>
 
-              <!-- Description -->
               <div class="flex items-start justify-center pt-1 text-[#6B7280]">
                 <img src="../assets/images/documenttext.svg" width="20" height="20" alt="">
               </div>
               <div class="flex items-start gap-4">
                 <span class="w-[90px] text-[#9CA3AF]">Description</span>
-                <div class="text-[#111827] leading-relaxed text-[18px]">
+                <div class="text-[#111827] leading-relaxed text-[18px] font-mixed">
                   <div>Learn to identify and exploit SQL injection</div>
                   <div>vulnerabilities in this hands-on workshop.</div>
                   <div>
@@ -202,7 +191,7 @@
   </div>
 
   <script>
-    // Close
+    // Close (same behavior)
     const closeBtn = document.getElementById("closeBtn");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
@@ -210,20 +199,24 @@
       });
     }
 
-    // Sign Up -> Requested
+    // Student: Sign Up -> Requested (UI toggle)
     const signUpBtn = document.getElementById("signUpBtn");
     if (signUpBtn) {
       signUpBtn.addEventListener("click", () => {
         const isRequested = signUpBtn.dataset.state === "requested";
+
         if (!isRequested) {
           signUpBtn.dataset.state = "requested";
           signUpBtn.textContent = "Requested";
           signUpBtn.classList.remove("bg-[#1F2D4B]");
           signUpBtn.classList.add("bg-[#6B7280]");
           signUpBtn.disabled = true;
+
+      
         }
       });
     }
   </script>
+
 </body>
 </html>

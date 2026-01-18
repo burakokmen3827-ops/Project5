@@ -20,22 +20,26 @@
   </style>
 </head>
 
+<!-- ✅ was: overflow-hidden -->
 <body class="text-[#111827] overflow-hidden">
-  <!-- Backdrop -->
-  <div class="fixed inset-0 bg-black/20 backdrop-blur-md"></div>
+  <!-- ✅ Backdrop (no darkening now) -->
+  <div class="fixed inset-0 bg-transparent"></div>
+ <div id="fitViewport" class="fixed inset-0 overflow-hidden">
+    <div id="fitStage" class="absolute left-1/2 top-0 -translate-x-1/2 origin-top">
+  <!-- ✅ was: h-screen + overflow-hidden -->
+  <main class="relative min-h-screen w-full flex items-start justify-center px-4 sm:px-6 py-8 sm:py-10 overflow-y-auto">
+    <!-- ✅ was: overflow-hidden -->
+    <div class="relative translate-x-4 w-full flex justify-center">
 
-  <!-- Popup (marginler aynen) -->
-  <main class="relative h-screen w-full flex items-center justify-center px-4 sm:px-6 py-8 sm:py-10 overflow-hidden">
-    <div class="relative w-full flex justify-center overflow-hidden">
-
-      <!-- ✅ LG'de 2 kolon: kartlar + buton kolonu (taşma yok, kesilme yok) -->
-      <div class="w-full max-w-[1040px] grid grid-cols-1 lg:grid-cols-[760px_248px] gap-y-5 sm:gap-y-6 lg:gap-x-7 overflow-hidden">
+      <!-- ✅ was: overflow-hidden -->
+      <div class="w-full max-w-[1040px] grid grid-cols-1 lg:grid-cols-[760px_248px] gap-y-5 sm:gap-y-6 lg:gap-x-7">
 
         <!-- LEFT: Cards column -->
-        <div class="w-full max-w-[760px] flex flex-col gap-5 sm:gap-6 overflow-hidden">
+        <!-- ✅ was: overflow-hidden -->
+        <div class="w-full max-w-[760px] flex flex-col gap-5 sm:gap-6">
 
           <!-- Card 1 -->
-          <div class="rounded-[22px] bg-white border border-black/10 px-6 sm:px-8 py-4 sm:py-5 shadow-[var(--shadow)]">
+          <div class="rounded-[22px] bg-white border border-black/10 px-5 sm:px-8 py-4 sm:py-5 shadow-[var(--shadow)]">
             <div class="flex items-center gap-2 text-[18px] sm:text-[20px]">
               <span class="font-semibold">Preview</span>
               <span class="text-black/25">•</span>
@@ -44,7 +48,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="rounded-[22px] bg-white border border-black/10 px-6 sm:px-8 py-5 sm:py-6 shadow-[var(--shadow)]">
+          <div class="rounded-[22px] bg-white border border-black/10 px-5 sm:px-8 py-5 sm:py-5 shadow-[var(--shadow)]">
             <div class="flex items-center justify-between">
               <div class="text-[18px] sm:text-[20px] font-semibold">Python functions</div>
               <div class="text-[13px] sm:text-[14px] text-black/45">30 min</div>
@@ -98,9 +102,7 @@
                 <button class="h-[52px] rounded-[14px] bg-black/5 text-black/60 font-medium">
                   View Details
                 </button>
-                <button class="h-[52px] rounded-[14px] bg-[var(--navy)] text-white font-medium">
-                  Sign up
-                </button>
+                <button id="btnSignUpTop" class="h-[52px] rounded-[14px] bg-[var(--navy)] text-white font-medium">Sign up</button>
               </div>
             </div>
           </div>
@@ -108,7 +110,7 @@
           <!-- Card 3 -->
           <div class="relative rounded-[22px] bg-white border border-black/10 shadow-[var(--shadow)] overflow-hidden">
             <!-- header -->
-            <div class="px-6 sm:px-8 py-4 sm:py-5 border-b border-black/10 flex items-center justify-between gap-4 text-[14px] sm:text-[15px] text-black/45">
+            <div class="px-5 sm:px-8 py-4 sm:py-5 border-b border-black/10 flex items-center justify-between gap-4 text-[14px] sm:text-[15px] text-black/45">
               <div class="flex items-center gap-4 min-w-0">
                 <svg class="w-6 h-6 text-black/55 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                   <path d="M12 4 3 8l9 4 9-4-9-4Z"></path>
@@ -133,7 +135,8 @@
 
                 <span class="hidden sm:block h-6 w-px bg-black/10"></span>
 
-                <button class="h-7 w-7 rounded-full border border-black/20 flex items-center justify-center text-black/60">
+                <!-- ✅ added id -->
+                <button id="btnClosePreview" class="h-7 w-7 rounded-full border border-black/20 flex items-center justify-center text-black/60">
                   <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 6l12 12M18 6 6 18"></path>
                   </svg>
@@ -177,18 +180,20 @@
 
                 <div class="flex items-center justify-end gap-6 shrink-0">
                   <div class="flex items-center gap-2 text-black/60">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="9" cy="7" r="3"></circle>
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                    <span class="font-medium">12</span>
-                  </div>
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+    <circle cx="9" cy="7" r="3"></circle>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
 
-                  <button class="h-[46px] px-7 rounded-[14px] bg-[var(--navy)] text-white font-medium">
-                    Sign Up
-                  </button>
+  <!-- ✅ sayı id -->
+  <span id="signupCount" class="font-medium">12</span>
+</div>
+
+<button id="btnSignUpBottom" class="h-[46px] px-7 rounded-[14px] bg-[var(--navy)] text-white font-medium">
+  Sign Up
+</button>
                 </div>
               </div>
             </div>
@@ -198,6 +203,7 @@
             <!-- details -->
             <div class="px-6 sm:px-8 py-6 sm:py-7">
               <div class="grid grid-cols-[200px_1fr] sm:grid-cols-[220px_1fr] gap-y-7 text-[15px] sm:text-[16px]">
+                <!-- (same content...) -->
                 <div class="flex items-center gap-4 text-black/55">
                   <svg class="w-6 h-6 text-black/45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="M7 4h10a1 1 0 0 1 1 1v16l-6-3-6 3V5a1 1 0 0 1 1-1Z"></path>
@@ -267,24 +273,26 @@
           </div>
         </div>
 
-        <!-- RIGHT: Buttons column (only lg+) aligned with Card 3 row -->
-       <div class="hidden lg:flex h-full flex-col justify-end">
-  <div class="flex flex-col gap-4 self-start">
-    <button class="w-[248px] h-[48px] rounded-[12px] bg-[var(--navy)] text-white font-semibold shadow-[0_12px_26px_rgba(0,0,0,0.18)]">
-      Schedule Workshop
-    </button>
-    <button class="w-[248px] h-[48px] rounded-[12px] bg-white border border-black/15 text-[#94A3B8] font-semibold shadow-[0_10px_20px_rgba(0,0,0,0.10)]">
-      Cancel
-    </button>
-  </div>
-</div>
+        <!-- RIGHT: Buttons column -->
+        <div class="hidden lg:flex h-full flex-col justify-end">
+          <div class="flex flex-col gap-4 self-start">
+            <button id="btnScheduleWorkshop" class="w-[248px] h-[48px] rounded-[12px] bg-[var(--navy)] text-white font-semibold shadow-[0_12px_26px_rgba(0,0,0,0.18)]">
+  Schedule Workshop
+</button>
+            <!-- ✅ added id -->
+            <button id="btnCancelPreviewLg" class="w-[248px] h-[48px] rounded-[12px] bg-white border border-black/15 text-[#94A3B8] font-semibold]">
+              Cancel
+            </button>
+          </div>
+        </div>
 
         <!-- mobile fallback -->
         <div class="lg:hidden flex flex-col gap-4">
           <button class="h-[48px] rounded-[12px] bg-[var(--navy)] text-white font-semibold shadow-[0_12px_26px_rgba(0,0,0,0.18)]">
             Schedule Workshop
           </button>
-          <button class="h-[48px] rounded-[12px] bg-white border border-black/15 text-[#94A3B8] font-semibold shadow-[0_10px_20px_rgba(0,0,0,0.10)]">
+          <!-- ✅ added id -->
+          <button id="btnCancelPreviewSm" class="h-[48px] rounded-[12px] bg-white border border-black/15 text-[#94A3B8] font-semibold shadow-[0_10px_20px_rgba(0,0,0,0.10)]">
             Cancel
           </button>
         </div>
@@ -292,5 +300,158 @@
       </div>
     </div>
   </main>
+
+  <script>
+    // Close (X) -> close popup in parent
+    document.getElementById("btnClosePreview")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.parent.postMessage({ type: "CLOSE_PREVIEW_POPUP" }, "*");
+    });
+
+    // Cancel -> go back to myworkshopsteacher.html (via parent)
+    function cancelToMyWorkshops(e){
+      e.preventDefault();
+      window.parent.postMessage({ type: "CANCEL_TO_MYWORKSHOPS" }, "*");
+    }
+    document.getElementById("btnCancelPreviewLg")?.addEventListener("click", cancelToMyWorkshops);
+    document.getElementById("btnCancelPreviewSm")?.addEventListener("click", cancelToMyWorkshops);
+
+  function fitPreviewToViewport() {
+    const stage = document.getElementById("fitStage");
+    const viewport = document.getElementById("fitViewport");
+    if (!stage || !viewport) return;
+
+    // reset scale for correct measurement
+    stage.style.transform = "translateX(-50%) scale(1)";
+
+    // measure
+    const vh = viewport.clientHeight;
+    const vw = viewport.clientWidth;
+
+    // stage content size
+    const rect = stage.getBoundingClientRect();
+    const contentW = rect.width;
+    const contentH = rect.height;
+
+    // calculate scale to fit (no scroll)
+    const scaleH = vh / contentH;
+    const scaleW = vw / contentW;
+    const scale = Math.min(1, scaleH, scaleW);
+
+    stage.style.transform = `translateX(-50%) scale(${scale})`;
+  }
+
+  window.addEventListener("load", () => {
+    // small delay to ensure fonts/layout done
+    setTimeout(fitPreviewToViewport, 60);
+  });
+
+  window.addEventListener("resize", () => {
+    fitPreviewToViewport();
+  });
+
+  // ---------- Helpers ----------
+  const $ = (id) => document.getElementById(id);
+
+  function setBtnState(btn, signed) {
+    if (!btn) return;
+
+    if (signed) {
+      btn.textContent = "Signed up";
+      btn.classList.remove("bg-[var(--navy)]", "text-white");
+      btn.classList.add("bg-black/5", "text-black/60");
+    } else {
+      btn.textContent = "Sign Up";
+      btn.classList.remove("bg-black/5", "text-black/60");
+      btn.classList.add("bg-[var(--navy)]", "text-white");
+    }
+  }
+
+  function parseCount() {
+    const el = $("signupCount");
+    const n = parseInt(el?.textContent || "0", 10);
+    return Number.isFinite(n) ? n : 0;
+  }
+
+  function setCount(n) {
+    const el = $("signupCount");
+    if (el) el.textContent = String(n);
+  }
+
+  // ---------- State ----------
+  let topSigned = false;
+  let bottomSigned = false;
+
+  // ---------- Buttons ----------
+  const btnTop = $("btnSignUpTop");
+  const btnBottom = $("btnSignUpBottom");
+  const btnSchedule = $("btnScheduleWorkshop");
+
+  // initial UI (keep original texts)
+  // Top button: your html starts as "Sign up" (lowercase). We normalize on first click.
+  // Bottom button: your html starts as "Sign Up".
+
+  // ---------- Top Sign Up (no count change) ----------
+  btnTop?.addEventListener("click", (e) => {
+    e.preventDefault();
+    topSigned = !topSigned;
+
+    // For top we want Sign up <-> Signed up (you said: "signed up olmali")
+    if (topSigned) {
+      btnTop.textContent = "Signed up";
+      btnTop.classList.remove("bg-[var(--navy)]", "text-white");
+      btnTop.classList.add("bg-black/5", "text-black/60");
+    } else {
+      btnTop.textContent = "Sign up";
+      btnTop.classList.remove("bg-black/5", "text-black/60");
+      btnTop.classList.add("bg-[var(--navy)]", "text-white");
+    }
+  });
+
+  // ---------- Bottom Sign Up (count change) ----------
+  btnBottom?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const current = parseCount();
+
+    bottomSigned = !bottomSigned;
+    if (bottomSigned) {
+      setBtnState(btnBottom, true);
+      setCount(current + 1);
+    } else {
+      setBtnState(btnBottom, false);
+      setCount(Math.max(0, current - 1));
+    }
+  });
+
+  // ---------- Schedule Workshop ----------
+  // Backend gelince: parent bu message'ı yakalayıp data'yı kaydedip
+  // workshopoverviewstudents.html + workshopoverviewteacher.html sayfalarında card oluşturacak.
+  btnSchedule?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // şimdilik örnek payload
+    const payload = {
+      title: "SQL Injection",
+      language: "English",
+      topic: "Cyber Security - (CS)",
+      duration: "30 min",
+      room: "OIL 4.30",
+      time: "01:30 PM",
+      date: "Jan 15, 2026",
+      teacher: "Deckers, Paul",
+      visibility: "Hidden",
+      description: "Learn to identify and exploit SQL injection vulnerabilities..."
+    };
+
+    window.parent.postMessage(
+      { type: "SCHEDULE_WORKSHOP", payload },
+      "*"
+    );
+
+    window.parent.postMessage({ type: "CLOSE_PREVIEW_POPUP" }, "*");
+  });
+
+  </script>
 </body>
 </html>

@@ -29,68 +29,125 @@
 
     <!-- LEFT SIDEBAR (md+) -->
 <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-7 flex-col items-center">
-  <div class="h-8 w-8 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
-    <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
+      <div class="h-8 w-8 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
+        <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
+      </div>
+
+      <nav class="mt-8 flex flex-col gap-3">
+
+  <!-- 1) Dashboard -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="dashboardpiechartteacher.html"
+  >
+    <img
+      src="../assets/images/Dashboard.svg"
+      alt="Dashboard"
+      class="h-6 w-6 object-contain"
+    />
   </div>
 
-  <nav class="mt-8 flex flex-col gap-3">
-    <!-- 1) Dashboard -->
-    <div
-      class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
-      data-link="dashboardpiechartstudent.html"
-    >
-      <img src="../assets/images/Dashboard.svg" alt="Dashboard" class="h-6 w-6 object-contain"/>
-    </div>
-
-    <!-- 2) Workshop overview -->
-    <div
-      class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
-      data-link="workshopoverviewstudent.html"
-    >
-      <img src="../assets/images/workshopoverview.svg" alt="Workshop overview" class="h-6 w-6 object-contain" />
-    </div>
-
-    <!-- 3) Recently attended -->
-    <div
-      class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
-      data-link="recentlyattendedworkshopstudent.html"
-    >
-      <img src="../assets/images/recentlyattended.svg" alt="Recently attended" class="h-6 w-6 object-contain" />
-    </div>
-
-    <!-- 4) Student suggestions -->
-    <div
-      class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
-      data-link="studentsuggestions.html"
-    >
-      <img src="../assets/images/studentsuggestions.svg" alt="Student suggestions" class="h-6 w-6 object-contain" />
-    </div>
-  </nav>
-
-  <div class="mt-auto flex flex-col gap-3">
-    <!-- 5) Logout -->
-    <div
-      class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
-      data-link="login.html"
-      data-action="logout"
-    >
-      <img src="../assets/images/logout.svg" alt="Logout" class="h-6 w-6 object-contain" />
-    </div>
-
-    <!-- 6) Notifications (active look) -->
-    <div
-      class="h-7 w-7 rounded-2xl overflow-hidden bg-black/5 flex items-center justify-center"
-      data-link="notifications.html"
-    >
-      <img src="../assets/images/notifications.svg" alt="Notifications" class="h-6 w-6 object-contain" />
-    </div>
-
-    <!-- User -->
-    <div class="h-7 w-7 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)] overflow-hidden">
-      <img src="../assets/images/User.svg" alt="User" class="h-6 w-6 object-contain" />
-    </div>
+  <!-- 2) Workshop overview -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="workshopoverviewteacher.html"
+  >
+    <img
+      src="../assets/images/workshopoverview.svg"
+      alt="Workshop overview"
+      class="h-6 w-6 object-contain"
+    />
   </div>
-</aside>
+
+  <!-- 3) My workshops  -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="myworkshopsteacher.html"
+  >
+    <img
+      src="../assets/images/filesharing.svg"
+      alt="My workshops"
+      class="h-6 w-6 object-contain"
+    />
+  </div>
+
+  <!-- 4) Student suggestions -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+    data-link="studentsuggestionsteacher.html"
+  >
+    <img
+      src="../assets/images/studentsuggestions.svg"
+      alt="Student suggestions"
+      class="h-6 w-6 object-contain"
+    />
+  </div>
+
+</nav>
+
+
+     <div class="mt-auto flex flex-col gap-3">
+
+  <!-- Logout -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+           data-link="login.html">
+    <img
+      src="../assets/images/logout.svg"
+      alt="Logout"
+      class="h-6 w-6 object-contain" />
+  </div>
+
+  <!-- Notifications -->
+  <div
+    class="h-7 w-7 rounded-2xl overflow-hidden
+           bg-[#F6F6F6]
+           hover:bg-black/5
+           transition-colors duration-200
+           flex items-center justify-center"
+           data-link="notificationsteacher.html">
+
+    <img
+      src="../assets/images/notifications.svg"
+      alt="Notifications"
+      class="h-6 w-6 object-contain" />
+  </div>
+
+  <!-- User -->
+  <div
+    class="h-7 w-7 rounded-full
+           bg-[var(--navy)]
+           flex items-center justify-center
+           shadow-[var(--shadow)]
+           overflow-hidden">
+    <img
+      src="../assets/images/User.svg"
+      alt="User"
+      class="h-6 w-6 object-contain" />
+  </div>
+
+</div>
+    </aside>
 
     <!-- MAIN -->
     <main class="flex-1 h-screen overflow-hidden">
@@ -279,6 +336,12 @@
   document.querySelectorAll('[data-link]').forEach((el) => {
     el.style.pointerEvents = 'auto';
     el.style.cursor = 'pointer';
+
+    el.addEventListener('click', (e) => {
+    const href = el.getAttribute('data-link');
+    if (!href) return;
+    window.location.assign(href);
+  });
 
     el.style.transition = el.style.transition
       ? (el.style.transition + ', transform 150ms, opacity 150ms')

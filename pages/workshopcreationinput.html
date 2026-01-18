@@ -20,6 +20,27 @@
 </head>
 
 <body class="bg-[#F6F6F6] text-[#111827] overflow-x-hidden">
+  <!-- ✅ PREVIEW POPUP OVERLAY (CENTERED) -->
+<div id="pvOverlay" class="fixed inset-0 z-[9999] hidden">
+  <!-- ✅ no dark background -->
+  <div class="absolute inset-0 bg-black/20"></div>
+
+  <!-- centered modal -->
+  <div class="absolute inset-0 flex items-center justify-center p-2">
+    <div
+  id="pvPanel"
+  class="w-full max-w-[1048px] h-[104vh] rounded-[22px] overflow-hidden bg-transparent"
+>
+      <iframe
+        id="pvFrame"
+        src=""
+        class="h-full w-full rounded-[22px] bg-transparent"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
   <div class="min-h-screen w-full flex">
     <!-- LEFT SIDEBAR (md+) -->
     <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-7 flex-col items-center">
@@ -27,32 +48,51 @@
         <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
       </div>
 
+      <!-- ✅ SAME TEACHER LINKS -->
       <nav class="mt-8 flex flex-col gap-3">
-        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="dashboardpiechartteacher.html"
+        >
           <img src="../assets/images/Dashboard.svg" alt="Dashboard" class="h-6 w-6 object-contain"/>
         </div>
 
-        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="workshopoverviewteacher.html"
+        >
           <img src="../assets/images/workshopoverview.svg" alt="Workshop overview" class="h-6 w-6 object-contain" />
         </div>
 
-        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
-          <img src="../assets/images/recentlyattended.svg" alt="Recently attended" class="h-6 w-6 object-contain" />
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="myworkshopsteacher.html"
+        >
+          <img src="../assets/images/filesharing.svg" alt="My workshops" class="h-6 w-6 object-contain" />
         </div>
 
-        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="studentsuggestionsteacher.html"
+        >
           <img src="../assets/images/studentsuggestions.svg" alt="Student suggestions" class="h-6 w-6 object-contain" />
         </div>
       </nav>
 
       <div class="mt-auto flex flex-col gap-3">
         <!-- Logout -->
-        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="login.html"
+        >
           <img src="../assets/images/logout.svg" alt="Logout" class="h-6 w-6 object-contain" />
         </div>
 
         <!-- Notifications -->
-        <div class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="notificationsteacher.html"
+        >
           <img src="../assets/images/notifications.svg" alt="Notifications" class="h-6 w-6 object-contain" />
         </div>
 
@@ -92,6 +132,7 @@
                   <img src="../assets/images/Text.svg" alt="Title" class="w-6 h-6 object-contain" />
                 </div>
                 <input
+                  id="wcTitle"
                   class="w-full bg-transparent outline-none text-[20px] font-light placeholder:text-black/35 min-w-0"
                   placeholder="Title"
                 />
@@ -100,21 +141,75 @@
             </div>
 
             <!-- Topic -->
-            <div>
-              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
-                <div class="flex items-center gap-4 w-full min-w-0">
-                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
-                    <img src="../assets/images/Bookmark.svg" alt="Topic" class="w-6 h-6 object-contain" />
-                  </div>
-                  <div class="text-[20px] font-light text-black/55 truncate">Topic</div>
-                </div>
+<div>
+  <div
+    id="topicRow"
+    class="relative rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]"
+  >
+    <div class="flex items-center gap-4 w-full min-w-0">
+      <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+        <img src="../assets/images/Bookmark.svg" alt="Topic" class="w-6 h-6 object-contain" />
+      </div>
 
-                <svg class="h-5 w-5 text-black/40 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </div>
-              <p class="mt-2 text-[13px] text-black/35">Topic · select a main and an optional support topic</p>
-            </div>
+      <!-- ✅ label now has id -->
+      <div id="topicLabel" class="text-[20px] font-light text-black/55 truncate">Topic</div>
+    </div>
+
+    <!-- ✅ arrow now clickable -->
+    <button id="topicArrow" type="button" class="shrink-0 p-1 rounded-lg hover:bg-black/5">
+      <svg class="h-5 w-5 text-black/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+
+    <!-- ✅ Dropdown (hidden by default) -->
+    <div
+      id="topicDropdown"
+      class="absolute left-0 right-0 top-[calc(100%+10px)] hidden z-50 rounded-2xl bg-white border border-black/10 shadow-[0_18px_40px_rgba(0,0,0,0.12)] overflow-hidden"
+    >
+      <div class="py-3">
+        <!-- items -->
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="AI">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">AI</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Business Data">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Business Data</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="IT Management">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">IT Management</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Media Design">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Media Design</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Software">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Software</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Game Design">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Game Design</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Embedded">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Embedded</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Infrastructure">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Infrastructure</span>
+        </button>
+
+        <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Security">
+          <span class="text-[18px] font-semibold text-[#1F2D4B]">Security</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-2 text-[13px] text-black/35">Topic · select a main and an optional support topic</p>
+</div>
 
             <!-- Teacher -->
             <div>
@@ -123,7 +218,11 @@
                   <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
                     <img src="../assets/images/squareacademiccap.svg" alt="Teacher" class="w-6 h-6 object-contain" />
                   </div>
-                  <div class="text-[20px] font-light text-black/55 truncate">Teacher</div>
+                  <input
+  id="teacherInput"
+  class="w-full bg-transparent outline-none text-[20px] font-light placeholder:text-black/35 min-w-0"
+  placeholder="Teacher"
+/>
                 </div>
 
                 <button class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
@@ -140,6 +239,7 @@
                   <img src="../assets/images/peoplenearby.svg" alt="Room" class="w-6 h-6 object-contain" />
                 </div>
                 <input
+                  id="wcRoom"
                   class="w-full bg-transparent outline-none text-[20px] font-light placeholder:text-black/35 min-w-0"
                   placeholder="Room"
                 />
@@ -148,21 +248,25 @@
             </div>
 
             <!-- Date -->
-            <div>
-              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
-                <div class="flex items-center gap-4 min-w-0">
-                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
-                    <img src="../assets/images/calendarmark.svg" alt="Date" class="w-6 h-6 object-contain" />
-                  </div>
-                  <div class="text-[20px] font-light text-black/55 truncate">Date</div>
-                </div>
+<div>
+  <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
+    <div class="flex items-center gap-4 min-w-0">
+      <button id="dateIconBtn" type="button" class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0 hover:bg-black/10">
+        <img src="../assets/images/calendarmark.svg" alt="Date" class="w-6 h-6 object-contain" />
+      </button>
 
-                <button class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
-                  Today
-                </button>
-              </div>
-              <p class="mt-2 text-[13px] text-black/35">Date · avoid days with multiple scheduled workshops</p>
-            </div>
+      <div id="dateLabel" class="text-[20px] font-light text-black/55 truncate">Date</div>
+    </div>
+
+    <button id="todayBtn" class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
+      Today
+    </button>
+
+    <!-- hidden native picker -->
+    <input id="datePicker" type="date" class="absolute opacity-0 pointer-events-none w-0 h-0" />
+  </div>
+  <p class="mt-2 text-[13px] text-black/35">Date · avoid days with multiple scheduled workshops</p>
+</div>
 
             <!-- Time -->
             <div>
@@ -171,6 +275,7 @@
                   <img src="../assets/images/clockcircle.svg" alt="Time" class="w-6 h-6 object-contain" />
                 </div>
                 <input
+                  id="wcTime"
                   class="w-full bg-transparent outline-none text-[20px] font-light placeholder:text-black/35 min-w-0"
                   placeholder="Time"
                 />
@@ -179,21 +284,41 @@
             </div>
 
             <!-- Duration -->
-            <div>
-              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
-                <div class="flex items-center gap-4 min-w-0">
-                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
-                    <img src="../assets/images/Stopwatch.svg" alt="Duration" class="w-6 h-6 object-contain" />
-                  </div>
-                  <div class="text-[20px] font-light text-black/55 truncate">Duration</div>
-                </div>
+<div>
+  <div id="durationRow" class="relative rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
+    <div class="flex items-center gap-4 min-w-0">
+      <button id="durationIconBtn" type="button" class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0 hover:bg-black/10">
+        <img src="../assets/images/Stopwatch.svg" alt="Duration" class="w-6 h-6 object-contain" />
+      </button>
 
-                <button class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
-                  30 min
-                </button>
-              </div>
-              <p class="mt-2 text-[13px] text-black/35">Duration · keep under an hour to encourage participation</p>
-            </div>
+      <div id="durationLabel" class="text-[20px] font-light text-black/55 truncate">Duration</div>
+    </div>
+
+    <button id="durationQuickBtn" class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
+      30 min
+    </button>
+
+    <!-- dropdown -->
+    <div
+      id="durationDropdown"
+      class="absolute left-0 right-0 top-[calc(100%+10px)] hidden z-50 rounded-2xl bg-white border border-black/10 shadow-[0_18px_40px_rgba(0,0,0,0.12)] overflow-hidden"
+    >
+      <div class="py-2">
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="15">15 min</button>
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="30">30 min</button>
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="45">45 min</button>
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="60">1 hour</button>
+        <div class="h-px bg-black/10 my-1"></div>
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="75">1h 15m</button>
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="90">1h 30m</button>
+        <button type="button" class="dur-item w-full px-5 py-3 hover:bg-black/5 text-left" data-min="120">2 hours</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-2 text-[13px] text-black/35">Duration · keep under an hour to encourage participation</p>
+</div>
+
           </section>
 
           <!-- RIGHT COLUMN -->
@@ -205,36 +330,42 @@
                   <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
                     <img src="../assets/images/Global.svg" alt="Language" class="w-6 h-6 object-contain" />
                   </div>
-                  <div class="text-[20px] font-light text-black/55 truncate">Language</div>
+                  <div id="langLabel" class="text-[20px] font-light text-black/55 truncate">Language</div>
                 </div>
 
+                <!-- ✅ selectable -->
                 <div class="flex items-center gap-4 text-[13px] font-semibold shrink-0">
-                  <button class="text-[#3A4099]">Dutch</button>
+                  <button id="langDutch" class="text-[#3A4099]">Dutch</button>
                   <span class="h-4 w-px bg-black/10"></span>
-                  <button class="text-[#3A4099] hover:opacity-80">English</button>
+                  <button id="langEnglish" class="text-[#3A4099]">English</button>
                 </div>
               </div>
               <p class="mt-2 text-[13px] text-black/35">Language · Dutch by default</p>
             </div>
 
             <!-- Visibility -->
-            <div>
-              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
-                <div class="flex items-center gap-4 min-w-0">
-                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
-                    <img src="../assets/images/eye.svg" alt="Visibility" class="w-6 h-6 object-contain" />
-                  </div>
-                  <div class="text-[20px] font-light text-black/55 truncate">Visibility</div>
-                </div>
+<div>
+  <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
+    <div class="flex items-center gap-4 min-w-0">
+      <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+        <img src="../assets/images/eye.svg" alt="Visibility" class="w-6 h-6 object-contain" />
+      </div>
 
-                <div class="flex items-center gap-4 text-[13px] font-semibold shrink-0">
-                  <button class="text-[#3A4099]">Hidden</button>
-                  <span class="h-4 w-px bg-black/10"></span>
-                  <button class="text-[#3A4099] hover:opacity-80">Public</button>
-                </div>
-              </div>
-              <p class="mt-2 text-[13px] text-black/35">Visibility · hidden by default</p>
-            </div>
+      <!-- ✅ sol taraftaki yazı buraya gelecek -->
+      <div id="visLabel" class="text-[20px] font-light text-black/55 truncate">Visibility</div>
+    </div>
+
+    <!-- ✅ sağ taraf sabit: kayma yok -->
+    <div class="flex items-center justify-end gap-4 text-[13px] font-semibold shrink-0 whitespace-nowrap w-[140px]">
+      <button id="visHidden" class="w-[58px] text-center text-[#3A4099]">Hidden</button>
+      <span class="h-4 w-px bg-black/10"></span>
+      <button id="visPublic" class="w-[58px] text-center text-black/35 hover:text-[#3A4099]">Public</button>
+    </div>
+  </div>
+
+  <p class="mt-2 text-[13px] text-black/35">Visibility · hidden by default</p>
+</div>
+
 
             <!-- Description -->
             <div>
@@ -246,15 +377,16 @@
                   <div class="text-[20px] font-light text-black/55 truncate">Description</div>
                 </div>
 
-                <button class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
-                  Start typing
-                </button>
+                <button id="descStartBtn" class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
+  Start typing
+</button>
               </div>
 
               <p class="mt-2 text-[13px] text-black/35">Description · concise description of 500 characters or less</p>
 
               <div class="mt-4 rounded-2xl bg-white border border-black/5 shadow-[var(--shadow)] overflow-hidden">
                 <textarea
+                  id="wcDesc"
                   class="w-full h-[420px] px-6 py-5 text-[20px] font-light outline-none placeholder:text-black/30 resize-none"
                   placeholder="Start typing ..."
                 ></textarea>
@@ -262,11 +394,17 @@
 
               <!-- Buttons under description -->
               <div class="mt-6 flex items-center justify-center gap-5 flex-wrap">
-                <button class="h-[46px] w-[220px] max-w-full rounded-xl bg-white border border-black/10 text-[14px] font-semibold text-black/50 hover:text-black/60 shadow-[0_6px_16px_rgba(15,23,42,0.04)]">
+                <button
+                  id="btnCancel"
+                  class="h-[46px] w-[220px] max-w-full rounded-xl bg-white border border-black/10 text-[14px] font-semibold text-black/50 hover:text-black/60 shadow-[0_6px_16px_rgba(15,23,42,0.04)]"
+                >
                   Cancel
                 </button>
 
-                <button class="h-[46px] w-[220px] max-w-full rounded-xl bg-[var(--navy)] text-white text-[14px] font-semibold shadow-[0_10px_22px_rgba(31,45,75,0.24)] hover:opacity-95">
+                <button
+                  id="btnPreviewWorkshop"
+                  class="h-[46px] w-[220px] max-w-full rounded-xl bg-[var(--navy)] text-white text-[14px] font-semibold shadow-[0_10px_22px_rgba(31,45,75,0.24)] hover:opacity-95"
+                >
                   Preview Workshop
                 </button>
               </div>
@@ -276,5 +414,294 @@
       </div>
     </main>
   </div>
+
+<script>
+  // =========================
+  // 0) Helpers
+  // =========================
+  const $ = (id) => document.getElementById(id);
+
+  // =========================
+  // 1) Sidebar navigation
+  // =========================
+  document.querySelectorAll("[data-link]").forEach((el) => {
+    el.style.cursor = "pointer";
+    el.style.pointerEvents = "auto";
+    el.addEventListener("click", () => {
+      const href = el.getAttribute("data-link");
+      if (href) window.location.href = href;
+    });
+  });
+
+  // =========================
+  // 2) Preview popup (iframe)
+  // =========================
+  const pvOverlay = $("pvOverlay");
+  const pvFrame = $("pvFrame");
+
+  function openPreviewPopup() {
+    pvFrame.src = "workshopcreationpreview.html";
+    pvOverlay.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closePreviewPopup() {
+    pvOverlay.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+    pvFrame.src = "";
+  }
+
+  $("btnPreviewWorkshop")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openPreviewPopup();
+  });
+
+  // click outside closes
+  pvOverlay?.addEventListener("click", (e) => {
+    const panel = $("pvPanel");
+    if (panel && !e.target.closest("#pvPanel")) closePreviewPopup();
+  });
+
+  // ESC closes
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && pvOverlay && !pvOverlay.classList.contains("hidden")) {
+      closePreviewPopup();
+    }
+  });
+
+  // messages from iframe
+  window.addEventListener("message", (event) => {
+    if (event.data?.type === "CLOSE_PREVIEW_POPUP") closePreviewPopup();
+    if (event.data?.type === "CANCEL_TO_MYWORKSHOPS") {
+      // stay on input page, only close popup
+      closePreviewPopup();
+    }
+  });
+
+  // Input page Cancel -> go back
+  $("btnCancel")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "myworkshopsteacher.html";
+  });
+
+  // =========================
+  // 3) Topic dropdown (arrow opens)
+  // =========================
+  const topicRow = $("topicRow");
+  const topicArrow = $("topicArrow");
+  const topicDropdown = $("topicDropdown");
+  const topicLabel = $("topicLabel");
+
+  function closeTopic() { topicDropdown?.classList.add("hidden"); }
+  function toggleTopic() { topicDropdown?.classList.toggle("hidden"); }
+
+  topicArrow?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleTopic();
+  });
+
+  document.querySelectorAll(".topic-item").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const t = btn.getAttribute("data-topic") || "Topic";
+      if (topicLabel) topicLabel.textContent = t;
+      closeTopic();
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!topicRow || !topicDropdown) return;
+    if (topicDropdown.classList.contains("hidden")) return;
+    if (!e.target.closest("#topicRow")) closeTopic();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeTopic();
+  });
+
+  // =========================
+  // 4) Date picker (icon opens)
+  // =========================
+  const dateIconBtn = $("dateIconBtn");
+  const datePicker = $("datePicker");
+  const dateLabel = $("dateLabel");
+  const todayBtn = $("todayBtn");
+
+  function formatDate(v) {
+    if (!v) return "Date";
+    const [y, m, d] = v.split("-");
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const mm = months[(parseInt(m,10)||1)-1] || m;
+    return `${mm} ${d}, ${y}`;
+  }
+
+  dateIconBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (!datePicker) return;
+    if (datePicker.showPicker) datePicker.showPicker();
+    else datePicker.click();
+  });
+
+  datePicker?.addEventListener("change", () => {
+    if (dateLabel) dateLabel.textContent = formatDate(datePicker.value);
+  });
+
+  todayBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    const t = new Date();
+    const yyyy = t.getFullYear();
+    const mm = String(t.getMonth() + 1).padStart(2, "0");
+    const dd = String(t.getDate()).padStart(2, "0");
+    const v = `${yyyy}-${mm}-${dd}`;
+    if (datePicker) datePicker.value = v;
+    if (dateLabel) dateLabel.textContent = formatDate(v);
+  });
+
+  // =========================
+  // 5) Duration dropdown (icon opens)
+  // =========================
+  const durationRow = $("durationRow");
+  const durationIconBtn = $("durationIconBtn");
+  const durationDropdown = $("durationDropdown");
+  const durationLabel = $("durationLabel");
+  const durationQuickBtn = $("durationQuickBtn");
+
+  function closeDuration() { durationDropdown?.classList.add("hidden"); }
+  function toggleDuration() { durationDropdown?.classList.toggle("hidden"); }
+
+  function durText(min) {
+    if (min === 60) return "1 hour";
+    if (min > 60) {
+      const h = Math.floor(min / 60);
+      const m = min % 60;
+      return m ? `${h}h ${m}m` : `${h} hours`;
+    }
+    return `${min} min`;
+  }
+
+  function setDuration(min) {
+    const text = durText(min);
+    if (durationLabel) durationLabel.textContent = text;
+    if (durationQuickBtn) durationQuickBtn.textContent = text;
+    closeDuration();
+  }
+
+  durationIconBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleDuration();
+  });
+
+  durationQuickBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleDuration();
+  });
+
+  document.querySelectorAll(".dur-item").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const m = parseInt(btn.getAttribute("data-min") || "30", 10);
+      setDuration(m);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!durationRow || !durationDropdown) return;
+    if (durationDropdown.classList.contains("hidden")) return;
+    if (!e.target.closest("#durationRow")) closeDuration();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDuration();
+  });
+
+  // default duration to 30 min (as your UI shows)
+  setDuration(30);
+
+  // =========================
+// 6) Language: write into left label + selected turns blue (FIXED)
+// =========================
+const langLabel = $("langLabel");
+const langDutchBtn = $("langDutch");
+const langEnglishBtn = $("langEnglish");
+
+function paintLang(activeBtn, passiveBtn) {
+  if (!activeBtn || !passiveBtn) return;
+
+  // önce ikisinden de renk classlarını temizle (sıra problemi bitiyor)
+  activeBtn.classList.remove("text-black/35", "text-[#3A4099]");
+  passiveBtn.classList.remove("text-black/35", "text-[#3A4099]");
+
+  // aktif mavi, pasif gri
+  activeBtn.classList.add("text-[#3A4099]");
+  passiveBtn.classList.add("text-black/35");
+}
+
+function setLanguage(lang) {
+  if (langLabel) langLabel.textContent = lang;
+
+  if (lang === "Dutch") paintLang(langDutchBtn, langEnglishBtn);
+  else paintLang(langEnglishBtn, langDutchBtn);
+}
+
+langDutchBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  setLanguage("Dutch");
+});
+
+langEnglishBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  setLanguage("English");
+});
+
+  // =========================
+  // 6.5) Visibility: write into left label + selected turns blue
+  // =========================
+  const visLabel = $("visLabel");
+  const visHiddenBtn = $("visHidden");
+  const visPublicBtn = $("visPublic");
+
+  function setVisibility(vis) {
+    if (visLabel) visLabel.textContent = vis;
+
+    if (visHiddenBtn && visPublicBtn) {
+      if (vis === "Hidden") {
+        visHiddenBtn.classList.add("text-[#3A4099]");
+        visHiddenBtn.classList.remove("text-black/35");
+
+        visPublicBtn.classList.remove("text-[#3A4099]");
+        visPublicBtn.classList.add("text-black/35");
+      } else {
+        visPublicBtn.classList.add("text-[#3A4099]");
+        visPublicBtn.classList.remove("text-black/35");
+
+        visHiddenBtn.classList.remove("text-[#3A4099]");
+        visHiddenBtn.classList.add("text-black/35");
+      }
+    }
+  }
+
+  visHiddenBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    setVisibility("Hidden");
+  });
+
+  visPublicBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    setVisibility("Public");
+  });
+
+  // =========================
+  // 7) Description: "Start typing" focuses textarea
+  // =========================
+  $("descStartBtn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    $("wcDesc")?.focus();
+  });
+</script>
+
+
 </body>
 </html>
