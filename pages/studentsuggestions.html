@@ -82,7 +82,7 @@
       </div>
 
       <!-- New Button -->
-      <div class="new-btn-new">
+      <div class="new-btn-new" id="newSuggestionBtn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 5V19" stroke="white" stroke-width="2" stroke-linecap="round"/>
           <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -100,7 +100,7 @@
       <div class="content-wrapper">
         <!-- Suggestions Container -->
         <div class="suggestions-container">
-          <div class="suggestions-list two-columns">
+          <div class="suggestions-list two-columns" id="suggestionsList">
 
             <!-- first suggestion -->
 
@@ -666,5 +666,166 @@
   </div>
   </div>
 </div>
+<script>
+  // --- NEW button -> input page
+  const newBtn = document.getElementById("newSuggestionBtn");
+  if (newBtn) newBtn.addEventListener("click", () => {
+    window.location.href = "studentsuggestionsinput.html";
+  });
+
+  // --- Helpers
+  function escapeHtml(s = "") {
+    return String(s).replace(/[&<>"']/g, (m) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+    }[m]));
+  }
+
+  function formatDate(d) {
+    const dt = new Date(d);
+    if (isNaN(dt.getTime())) return "";
+    return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  }
+
+  // --- Card template (YOUR EXACT HTML)
+  function renderSuggestionRow(item) {
+    const id = item.id ?? item._id ?? "";
+    const topic = escapeHtml(item.topic ?? "Business Data");
+    const date = escapeHtml(formatDate(item.createdAt ?? item.date ?? new Date().toISOString()));
+    const title = escapeHtml(item.title ?? "Business plan definition");
+    const desc = escapeHtml(item.description ?? "");
+    const teacher = escapeHtml(item.teacher ?? "—");
+    const language = escapeHtml(item.language ?? "English");
+    const votes = Number(item.votes ?? item.voteCount ?? 0);
+
+    // "New" badge logic: backend "isNew" gönderirse onu kullanır, yoksa son 7 gün
+    const created = new Date(item.createdAt ?? item.date ?? "");
+    const isNew = (item.isNew === true) || (!isNaN(created.getTime()) && ((Date.now() - created.getTime()) < 7 * 24 * 60 * 60 * 1000));
+
+    return `
+      <div class="suggestion-row" data-id="${escapeHtml(id)}">
+        <div class="suggestion-card">
+          <div class="card-header">
+            <div class="suggestion-topic">
+              <span class="topic-tag">${topic}</span>
+              <span class="date">${date}</span>
+            </div>
+            ${isNew ? `<span class="new-badge">New</span>` : ``}
+          </div>
+
+          <h3 class="suggestion-title">${title}</h3>
+
+          <p class="suggestion-description">
+            ${desc}
+          </p>
+
+          <div class="suggestion-footer">
+            <div class="instructor-info">
+              <!-- instructor icon -->
+              <svg class="icon-small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6C4 4.34315 5.34315 3 7 3H17C18.6569 3 20 4.34315 20 6V18C20 19.6569 18.6569 21 17 21H7C5.34315 21 4 19.6569 4 18V6Z" stroke="#1F2D4B" stroke-width="1.5"/>
+                <path d="M16 3V9L13.5 7.5L11 9V3" stroke="#1F2D4B" stroke-width="1.5"/>
+                <circle cx="9" cy="12" r="2" stroke="#1F2D4B" stroke-width="1.5"/>
+                <path d="M13 17C13 15.3431 11.6569 14 10 14C8.34315 14 7 15.3431 7 17" stroke="#1F2D4B" stroke-width="1.5"/>
+              </svg>
+
+              <span class="instructor-name">${teacher}</span>
+
+              <!-- language icon -->
+              <svg class="icon-small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6L12 11L20 6" stroke="#1F2D4B" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M4 18H20V8C20 6.89543 19.1046 6 18 6H6C4.89543 6 4 6.89543 4 8V18Z" stroke="#1F2D4B" stroke-width="1.5"/>
+              </svg>
+
+              <span class="language-tag">${language}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-section">
+          <button class="circular-vote-btn upvote" data-action="upvote">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M18 15l-6-6-6 6" />
+            </svg>
+          </button>
+
+          <span class="vote-count">${votes}</span>
+
+          <button class="circular-vote-btn downvote" data-action="downvote">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  async function loadSuggestions() {
+    const listEl = document.getElementById("suggestionsList");
+    const countEl = document.querySelector(".number-box");
+    if (!listEl) return;
+
+    try {
+      const res = await fetch("/api/suggestions");
+      if (!res.ok) throw new Error("GET failed");
+
+      const data = await res.json();
+
+      // newest first
+      data.sort((a, b) => new Date(b.createdAt ?? b.date ?? 0) - new Date(a.createdAt ?? a.date ?? 0));
+
+      listEl.innerHTML = data.map(renderSuggestionRow).join("");
+
+      if (countEl) countEl.textContent = String(data.length);
+
+    } catch (e) {
+      // backend yoksa tasarım bozulmasın diye dokunmuyoruz
+      // istersen burada "Failed to load" mesajı basabiliriz ama sen 'degisiklik yapma' dedin.
+    }
+  }
+
+  // --- Voting (backend varsa çalışır)
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".circular-vote-btn");
+    if (!btn) return;
+
+    const row = btn.closest(".suggestion-row");
+    if (!row) return;
+
+    const id = row.getAttribute("data-id");
+    if (!id) return;
+
+    const action = btn.getAttribute("data-action");
+    const delta = action === "upvote" ? 1 : -1;
+
+    const countEl = row.querySelector(".vote-count");
+    const current = Number(countEl?.textContent ?? 0);
+
+    // optimistic UI
+    if (countEl) countEl.textContent = String(current + delta);
+
+    try {
+      const res = await fetch(`/api/suggestions/${encodeURIComponent(id)}/vote`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ delta })
+      });
+
+      if (!res.ok) throw new Error("vote failed");
+      const updated = await res.json().catch(() => null);
+
+      if (updated && countEl) {
+        const v = Number(updated.votes ?? updated.voteCount ?? (current + delta));
+        countEl.textContent = String(v);
+      }
+    } catch {
+      // rollback
+      if (countEl) countEl.textContent = String(current);
+    }
+  });
+
+  loadSuggestions();
+</script>
+
 </body>
 </html>

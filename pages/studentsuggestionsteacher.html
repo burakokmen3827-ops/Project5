@@ -163,12 +163,12 @@
               <h1 class="text-[18px] font-semibold text-[#0B1B3A]">Student Suggestions</h1>
               <span class="text-[#94A3B8]">•</span>
               <span class="text-[14px] text-[#94A3B8]">share your ideas and interests</span>
-              <span class="ml-2 text-[12px] font-semibold text-[#0B1B3A] bg-[#EEF2FF] px-2 py-0.5 rounded-full">16</span>
+              <span id="teacherCountPill" class="ml-2 text-[12px] font-semibold text-[#0B1B3A] bg-[#EEF2FF] px-2 py-0.5 rounded-full">16</span>
             </div>
           </div>
 
           <!-- Cards (EXACT count like screenshot) -->
-          <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6" id="teacherSuggestionsGrid">
 
             <!-- 1 -->
             <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
@@ -601,15 +601,94 @@
   </div>
 
   <script>
-    // Sidebar navigation (same behavior)
-    document.querySelectorAll("[data-link]").forEach((el) => {
-      el.style.cursor = "pointer";
-      el.style.pointerEvents = "auto";
-      el.addEventListener("click", () => {
-        const href = el.getAttribute("data-link");
-        if (href) window.location.href = href;
-      });
+   // Sidebar navigation (same behavior)
+  document.querySelectorAll("[data-link]").forEach((el) => {
+    el.style.cursor = "pointer";
+    el.style.pointerEvents = "auto";
+    el.addEventListener("click", () => {
+      const href = el.getAttribute("data-link");
+      if (href) window.location.href = href;
     });
+  });
+
+  function escapeHtml(s = "") {
+    return String(s).replace(/[&<>"']/g, (m) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+    }[m]));
+  }
+
+  function formatDate(d) {
+    const dt = new Date(d);
+    if (isNaN(dt.getTime())) return "";
+    return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  }
+
+  function teacherCard(item) {
+    const topic = escapeHtml(item.topic ?? "Business Data");
+    const date = escapeHtml(formatDate(item.createdAt ?? item.date ?? new Date().toISOString()));
+    const title = escapeHtml(item.title ?? "");
+    const desc = escapeHtml(item.description ?? "");
+    const teacher = escapeHtml(item.teacher ?? "—");
+    const language = escapeHtml(item.language ?? "English");
+
+    const created = new Date(item.createdAt ?? item.date ?? "");
+    const isNew = (item.isNew === true) || (!isNaN(created.getTime()) && ((Date.now() - created.getTime()) < 7 * 24 * 60 * 60 * 1000));
+
+    return `
+      <article class="group bg-white rounded-[18px] shadow-[var(--shadow)] px-6 py-5 cursor-pointer hover:bg-[#FBFBFD] transition">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-[12px] text-[#94A3B8]">
+            <div class="w-6 h-6 rounded-[10px] bg-[#1F2D4B]/10 grid place-items-center">
+              <div class="w-3.5 h-3.5 rounded bg-[#1F2D4B]/25"></div>
+            </div>
+            <span class="font-medium">${topic}</span>
+          </div>
+          <div class="text-[12px] text-[#94A3B8] font-medium">${date}</div>
+        </div>
+
+        <div class="mt-4 ${isNew ? "flex items-center gap-3" : ""}">
+          <h3 class="text-[18px] font-semibold text-[#0B1B3A]">${title}</h3>
+          ${isNew ? `<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#EEF2FF] text-[#0B1B3A]">new</span>` : ``}
+        </div>
+
+        <p class="mt-2 text-[13px] leading-5 text-[#94A3B8]">${desc}</p>
+
+        <div class="mt-6 flex items-center gap-5 text-[12px] text-[#94A3B8]">
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+            <span>${teacher}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded bg-[#1F2D4B]/12"></div>
+            <span>${language}</span>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadTeacherSuggestions(){
+    const grid = document.getElementById("teacherSuggestionsGrid");
+    const pill = document.getElementById("teacherCountPill");
+    if (!grid) return;
+
+    try {
+      const res = await fetch("/api/suggestions");
+      if (!res.ok) throw new Error("GET failed");
+      const data = await res.json();
+
+      data.sort((a, b) => new Date(b.createdAt ?? b.date ?? 0) - new Date(a.createdAt ?? a.date ?? 0));
+
+      grid.innerHTML = data.map(teacherCard).join("");
+      if (pill) pill.textContent = String(data.length);
+
+    } catch {
+      // backend yoksa bozmuyoruz
+    }
+  }
+
+  loadTeacherSuggestions();
+
   </script>
 </body>
 </html>

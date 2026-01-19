@@ -1,0 +1,424 @@
+<!-- studentsuggestionsinput.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop aNew – Student Suggestions (Input)</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+
+  <style>
+    * { font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    :root{
+      --page-bg:#F6F6F6;
+      --navy:#1F2D4B;
+      --muted:rgba(0,0,0,.55);
+      --line:rgba(0,0,0,.06);
+      --chip:#EEF0F6;
+      --link:#5A5BE7;
+      --radius:20px;
+      --shadow: 0 6px 16px rgba(15,23,42,0.06);
+      --accent:#3A4099;
+    }
+  </style>
+</head>
+
+<body class="bg-[var(--page-bg)] text-[#111827] overflow-x-hidden">
+  <div class="min-h-screen w-full flex">
+
+    <!-- ✅ LEFT SIDEBAR (STUDENT) -->
+    <aside class="hidden md:flex w-[86px] shrink-0 px-4 py-7 flex-col items-center">
+      <div class="h-8 w-8 rounded-2xl bg-white shadow-[var(--shadow)] flex items-center justify-center">
+        <img src="../assets/images/logo.svg" alt="Logo" class="h-full w-full object-contain" />
+      </div>
+
+      <nav class="mt-8 flex flex-col gap-3">
+        <!-- 1) Dashboard -->
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="dashboardpiechartstudent.html"
+        >
+          <img src="../assets/images/Dashboard.svg" alt="Dashboard" class="h-6 w-6 object-contain" />
+        </div>
+
+        <!-- 2) Workshop overview -->
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="workshopoverviewstudent.html"
+        >
+          <img src="../assets/images/workshopoverview.svg" alt="Workshop overview" class="h-6 w-6 object-contain" />
+        </div>
+
+        <!-- 3) Recently attended -->
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="recentlyattendedworkshopstudent.html"
+        >
+          <img src="../assets/images/recentlyattended.svg" alt="Recently attended" class="h-6 w-6 object-contain" />
+        </div>
+
+        <!-- 4) Student suggestions (active-ish background) -->
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-black/5 hover:bg-black/10 transition-colors duration-200 flex items-center justify-center"
+          data-link="studentsuggestions.html"
+        >
+          <img src="../assets/images/studentsuggestions.svg" alt="Student suggestions" class="h-6 w-6 object-contain" />
+        </div>
+      </nav>
+
+      <div class="mt-auto flex flex-col gap-3">
+        <!-- 5) Logout -->
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="login.html"
+          data-action="logout"
+        >
+          <img src="../assets/images/logout.svg" alt="Logout" class="h-6 w-6 object-contain" />
+        </div>
+
+        <!-- 6) Notifications -->
+        <div
+          class="h-7 w-7 rounded-2xl overflow-hidden bg-[#F6F6F6] hover:bg-black/5 transition-colors duration-200 flex items-center justify-center"
+          data-link="notifications.html"
+        >
+          <img src="../assets/images/notifications.svg" alt="Notifications" class="h-6 w-6 object-contain" />
+        </div>
+
+        <!-- User -->
+        <div class="h-7 w-7 rounded-full bg-[var(--navy)] flex items-center justify-center shadow-[var(--shadow)] overflow-hidden">
+          <img src="../assets/images/User.svg" alt="User" class="h-6 w-6 object-contain" />
+        </div>
+      </div>
+    </aside>
+
+    <!-- ✅ CONTENT -->
+    <main class="flex-1 min-w-0 px-5 sm:px-8 lg:px-10 py-8 sm:py-10">
+      <div class="mx-auto w-full max-w-[1160px]">
+
+        <!-- Top pill header -->
+        <div class="w-full rounded-2xl bg-white border border-black/5 px-6 py-4 shadow-[var(--shadow)]">
+          <div class="flex items-center gap-2 text-[18px] min-w-0">
+            <span class="font-semibold truncate">Student Suggestions</span>
+            <span class="text-black/35">•</span>
+            <span class="text-black/40 font-normal truncate">share your ideas and interests</span>
+          </div>
+        </div>
+
+        <!-- Form grid -->
+        <div class="mt-7 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+          <!-- LEFT COLUMN -->
+          <section class="space-y-5">
+            <!-- Title -->
+            <div>
+              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center gap-4 shadow-[var(--shadow)]">
+                <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+                  <img src="../assets/images/Text.svg" alt="Title" class="w-6 h-6 object-contain" />
+                </div>
+                <input
+                  id="ssTitle"
+                  class="w-full bg-transparent outline-none text-[20px] font-light placeholder:text-black/35 min-w-0"
+                  placeholder="Title"
+                />
+              </div>
+              <p class="mt-2 text-[13px] text-black/35">Title · use short recognizable phrases</p>
+            </div>
+
+            <!-- Topic (dropdown) -->
+            <div>
+              <div
+                id="topicRow"
+                class="relative rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]"
+              >
+                <div class="flex items-center gap-4 w-full min-w-0">
+                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+                    <img src="../assets/images/Bookmark.svg" alt="Topic" class="w-6 h-6 object-contain" />
+                  </div>
+                  <div id="topicLabel" class="text-[20px] font-light text-black/55 truncate">Topic</div>
+                </div>
+
+                <button id="topicArrow" type="button" class="shrink-0 p-1 rounded-lg hover:bg-black/5">
+                  <svg class="h-5 w-5 text-black/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </button>
+
+                <div
+                  id="topicDropdown"
+                  class="absolute left-0 right-0 top-[calc(100%+10px)] hidden z-50 rounded-2xl bg-white border border-black/10 shadow-[0_18px_40px_rgba(0,0,0,0.12)] overflow-hidden"
+                >
+                  <div class="py-3">
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="AI">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">AI</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Business Data">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Business Data</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="IT Management">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">IT Management</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Media Design">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Media Design</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Software">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Software</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Game Design">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Game Design</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Embedded">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Embedded</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Infrastructure">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Infrastructure</span>
+                    </button>
+                    <button type="button" class="topic-item w-full px-5 py-3 flex items-center gap-4 hover:bg-black/5 text-left" data-topic="Security">
+                      <span class="text-[18px] font-semibold text-[#1F2D4B]">Security</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <p class="mt-2 text-[13px] text-black/35">Topic · select a main and an optional support topic</p>
+            </div>
+
+            <!-- Teacher -->
+            <div>
+              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center gap-4 shadow-[var(--shadow)]">
+                <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+                  <img src="../assets/images/squareacademiccap.svg" alt="Teacher" class="w-6 h-6 object-contain" />
+                </div>
+
+                <input
+                  id="ssTeacher"
+                  class="w-full bg-transparent outline-none text-[20px] font-light placeholder:text-black/35 min-w-0"
+                  placeholder="Teacher"
+                />
+              </div>
+              <p class="mt-2 text-[13px] text-black/35">Teacher · check teacher qualifications beforehand</p>
+            </div>
+
+            <!-- Language -->
+            <div>
+              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
+                <div class="flex items-center gap-4 min-w-0">
+                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+                    <img src="../assets/images/Global.svg" alt="Language" class="w-6 h-6 object-contain" />
+                  </div>
+                  <div id="langLabel" class="text-[20px] font-light text-black/55 truncate">Language</div>
+                </div>
+
+                <div class="flex items-center gap-4 text-[13px] font-semibold shrink-0">
+                  <button id="langDutch" class="text-[#3A4099]">Dutch</button>
+                  <span class="h-4 w-px bg-black/10"></span>
+                  <button id="langEnglish" class="text-black/35 hover:text-[#3A4099]">English</button>
+                </div>
+              </div>
+              <p class="mt-2 text-[13px] text-black/35">Language · Dutch by default</p>
+            </div>
+          </section>
+
+          <!-- RIGHT COLUMN -->
+          <section class="space-y-5">
+            <!-- Description header -->
+            <div>
+              <div class="rounded-2xl bg-white border border-black/5 px-5 py-4 flex items-center justify-between gap-4 shadow-[var(--shadow)]">
+                <div class="flex items-center gap-4 min-w-0">
+                  <div class="rounded-xl bg-black/5 p-1.5 flex items-center justify-center shrink-0">
+                    <img src="../assets/images/documenttext.svg" alt="Description" class="w-6 h-6 object-contain" />
+                  </div>
+                  <div class="text-[20px] font-light text-black/55 truncate">Description</div>
+                </div>
+
+                <button id="descStartBtn" class="text-[13px] font-semibold text-[#3A4099] hover:opacity-80 shrink-0">
+                  Start typing
+                </button>
+              </div>
+
+              <p class="mt-2 text-[13px] text-black/35">Description · concise description of 500 characters or less</p>
+
+              <div class="mt-4 rounded-2xl bg-white border border-black/5 shadow-[var(--shadow)] overflow-hidden">
+                <textarea
+                  id="ssDesc"
+                  class="w-full h-[420px] px-6 py-5 text-[20px] font-light outline-none placeholder:text-black/30 resize-none"
+                  placeholder="Start typing ..."
+                  maxlength="500"
+                ></textarea>
+              </div>
+
+              <!-- Buttons -->
+              <div class="mt-6 flex items-center justify-center gap-5 flex-wrap">
+                <button
+                  id="btnCancel"
+                  class="h-[46px] w-[220px] max-w-full rounded-xl bg-white border border-black/10 text-[14px] font-semibold text-black/50 hover:text-black/60 shadow-[0_6px_16px_rgba(15,23,42,0.04)]"
+                >
+                  Cancel
+                </button>
+
+                <button
+                  id="btnSubmit"
+                  class="h-[46px] w-[220px] max-w-full rounded-xl bg-[var(--navy)] text-white text-[14px] font-semibold shadow-[0_10px_22px_rgba(31,45,75,0.24)] hover:opacity-95"
+                >
+                  Submit suggestion
+                </button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // =========================
+    // Helpers
+    // =========================
+    const $ = (id) => document.getElementById(id);
+
+    // =========================
+    // 1) Sidebar navigation (student links 그대로)
+    // =========================
+    document.querySelectorAll("[data-link]").forEach((el) => {
+      el.style.pointerEvents = "auto";
+      el.style.cursor = "pointer";
+
+      el.style.transition = el.style.transition
+        ? (el.style.transition + ", transform 150ms, opacity 150ms")
+        : "transform 150ms, opacity 150ms";
+
+      el.addEventListener("mouseenter", () => { el.style.opacity = "0.9"; });
+      el.addEventListener("mouseleave", () => { el.style.opacity = "1"; el.style.transform = "scale(1)"; });
+      el.addEventListener("mousedown", () => { el.style.transform = "scale(0.97)"; });
+      el.addEventListener("mouseup", () => { el.style.transform = "scale(1)"; });
+
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = el.getAttribute("data-link");
+        if (href) window.location.href = href;
+      });
+    });
+
+    // =========================
+    // 2) Topic dropdown (arrow opens)
+    // =========================
+    const topicRow = $("topicRow");
+    const topicArrow = $("topicArrow");
+    const topicDropdown = $("topicDropdown");
+    const topicLabel = $("topicLabel");
+
+    function closeTopic(){ topicDropdown?.classList.add("hidden"); }
+    function toggleTopic(){ topicDropdown?.classList.toggle("hidden"); }
+
+    topicArrow?.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleTopic();
+    });
+
+    document.querySelectorAll(".topic-item").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const t = btn.getAttribute("data-topic") || "Topic";
+        if (topicLabel) topicLabel.textContent = t;
+        closeTopic();
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!topicRow || !topicDropdown) return;
+      if (topicDropdown.classList.contains("hidden")) return;
+      if (!e.target.closest("#topicRow")) closeTopic();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeTopic();
+    });
+
+    // =========================
+    // 3) Language toggle (writes into left label + colors)
+    // =========================
+    const langLabel = $("langLabel");
+    const langDutchBtn = $("langDutch");
+    const langEnglishBtn = $("langEnglish");
+
+    function paintLang(activeBtn, passiveBtn){
+      if (!activeBtn || !passiveBtn) return;
+      activeBtn.classList.remove("text-black/35", "text-[#3A4099]");
+      passiveBtn.classList.remove("text-black/35", "text-[#3A4099]");
+      activeBtn.classList.add("text-[#3A4099]");
+      passiveBtn.classList.add("text-black/35");
+    }
+
+    function setLanguage(lang){
+      if (langLabel) langLabel.textContent = lang;
+      if (lang === "Dutch") paintLang(langDutchBtn, langEnglishBtn);
+      else paintLang(langEnglishBtn, langDutchBtn);
+    }
+
+    langDutchBtn?.addEventListener("click", (e) => { e.preventDefault(); setLanguage("Dutch"); });
+    langEnglishBtn?.addEventListener("click", (e) => { e.preventDefault(); setLanguage("English"); });
+
+    // default
+    setLanguage("Dutch");
+
+    // =========================
+    // 4) Description: Start typing focuses textarea
+    // =========================
+    $("descStartBtn")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      $("ssDesc")?.focus();
+    });
+
+    // =========================
+    // 5) Cancel + Submit
+    // =========================
+    $("btnCancel")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "studentsuggestions.html";
+    });
+
+   $("btnSubmit")?.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const title = ($("ssTitle")?.value || "").trim();
+  const topic = ($("topicLabel")?.textContent || "").trim();
+  const teacher = ($("ssTeacher")?.value || "").trim();
+  const description = ($("ssDesc")?.value || "").trim();
+  const language = ($("langLabel")?.textContent || "Dutch").trim();
+
+  if (!title) return alert("Please enter a title.");
+  if (!topic || topic === "Topic") return alert("Please select a topic.");
+  if (!description) return alert("Please enter a description.");
+
+  const payload = {
+    title,
+    topic,
+    teacher,       // boş olabilir
+    language,      // Dutch / English
+    description
+  };
+
+  try {
+    const res = await fetch("/api/suggestions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      const msg = await res.text().catch(() => "");
+      alert("Submit failed. " + msg);
+      return;
+    }
+
+    window.location.href = "studentsuggestions.html";
+  } catch (err) {
+    alert("Network error. Please try again.");
+  }
+});
+  </script>
+</body>
+</html>
